@@ -1,0 +1,55 @@
+{
+  "name": "ethlife",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node ./src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:contracts": "truffle compile && yarn contracts:sync-src",
+    "contracts:sync-src": "rimraf src/public/contracts && cp -R build/contracts/ src/public/contracts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
+    "bigchaindb-driver": "^3.2.0",
+    "bigchaindb-orm": "^0.1.9",
+    "body-parser": "^1.18.2",
+    "connect-redis": "^3.0.2",
+    "ejs": "^2.5.7",
+    "ethjs-abi": "^0.2.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "is-empty": "^1.2.0",
+    "monaco-editor": "^0.10.1",
+    "mongoose": "^5.0.3",
+    "nodemailer": "^4.4.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-linkedin": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.4.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "robots.txt": "^1.1.0",
+    "t": "^0.5.1",
+    "truffle-blockchain-utils": "0.0.3",
+    "truffle-contract-schema": "^1.0.1",
+    "web3": "^0.20.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

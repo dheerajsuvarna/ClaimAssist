@@ -1,0 +1,528 @@
+{
+  "contractName": "Storage",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820e5a14dafbc224aeb2c32d2e7f7845424ed70eab71ef5816ded0ce9dded01dc7c0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820e5a14dafbc224aeb2c32d2e7f7845424ed70eab71ef5816ded0ce9dded01dc7c0029",
+  "sourceMap": "56:521:4:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "56:521:4:-;;;;;",
+  "source": "pragma solidity ^0.4.17;\r\n\r\nimport \"./Mortal.sol\";\r\n\r\n\r\ncontract Storage {\r\n    struct Hospital {\r\n        string hospitalName;\r\n        address[] doctors;\r\n        bool initialized;\r\n    }\r\n    \r\n    mapping (address => Hospital) hospitaltoOwner;\r\n    mapping (address => bool) doctorList;\r\n\r\n    struct TrialData {\r\n        bytes32 trialHash;\r\n        address writer;\r\n    }\r\n    \r\n    mapping(bytes32 => mapping(address => bool)) trialFormIdToOwner;\r\n    mapping(address => mapping(bytes32 => bool)) ownerToTrailFormId;\r\n    mapping(bytes32 => TrialData[]) trialIdToData;\r\n}",
+  "sourcePath": "C:\\Prakktikum\\blc4pi-plc\\contracts\\Storage.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/C/Prakktikum/blc4pi-plc/contracts/Storage.sol",
+      "exportedSymbols": {
+        "Storage": [
+          318
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 278,
+        "name": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 277,
+          "absolutePath": "/C/Prakktikum/blc4pi-plc/contracts/Mortal.sol",
+          "file": "./Mortal.sol",
+          "scope": 319,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 279,
+        "name": "ImportDirective",
+        "src": "28:22:4"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            318
+          ],
+          "name": "Storage",
+          "scope": 319
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Storage.Hospital",
+              "name": "Hospital",
+              "scope": 318,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "hospitalName",
+                  "scope": 287,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 280,
+                    "name": "ElementaryTypeName",
+                    "src": "107:6:4"
+                  }
+                ],
+                "id": 281,
+                "name": "VariableDeclaration",
+                "src": "107:19:4"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "doctors",
+                  "scope": 287,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address[] storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "address[] storage pointer"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 282,
+                        "name": "ElementaryTypeName",
+                        "src": "137:7:4"
+                      }
+                    ],
+                    "id": 283,
+                    "name": "ArrayTypeName",
+                    "src": "137:9:4"
+                  }
+                ],
+                "id": 284,
+                "name": "VariableDeclaration",
+                "src": "137:17:4"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "initialized",
+                  "scope": 287,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 285,
+                    "name": "ElementaryTypeName",
+                    "src": "165:4:4"
+                  }
+                ],
+                "id": 286,
+                "name": "VariableDeclaration",
+                "src": "165:16:4"
+              }
+            ],
+            "id": 287,
+            "name": "StructDefinition",
+            "src": "80:109:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "hospitaltoOwner",
+              "scope": 318,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct Storage.Hospital storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct Storage.Hospital storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 288,
+                    "name": "ElementaryTypeName",
+                    "src": "210:7:4"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Hospital",
+                      "referencedDeclaration": 287,
+                      "type": "struct Storage.Hospital storage pointer"
+                    },
+                    "id": 289,
+                    "name": "UserDefinedTypeName",
+                    "src": "221:8:4"
+                  }
+                ],
+                "id": 290,
+                "name": "Mapping",
+                "src": "201:29:4"
+              }
+            ],
+            "id": 291,
+            "name": "VariableDeclaration",
+            "src": "201:45:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "doctorList",
+              "scope": 318,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => bool)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => bool)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 292,
+                    "name": "ElementaryTypeName",
+                    "src": "262:7:4"
+                  },
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 293,
+                    "name": "ElementaryTypeName",
+                    "src": "273:4:4"
+                  }
+                ],
+                "id": 294,
+                "name": "Mapping",
+                "src": "253:25:4"
+              }
+            ],
+            "id": 295,
+            "name": "VariableDeclaration",
+            "src": "253:36:4"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage.TrialData",
+              "name": "TrialData",
+              "scope": 318,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "trialHash",
+                  "scope": 300,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 296,
+                    "name": "ElementaryTypeName",
+                    "src": "326:7:4"
+                  }
+                ],
+                "id": 297,
+                "name": "VariableDeclaration",
+                "src": "326:17:4"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "writer",
+                  "scope": 300,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 298,
+                    "name": "ElementaryTypeName",
+                    "src": "354:7:4"
+                  }
+                ],
+                "id": 299,
+                "name": "VariableDeclaration",
+                "src": "354:14:4"
+              }
+            ],
+            "id": 300,
+            "name": "StructDefinition",
+            "src": "298:78:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "trialFormIdToOwner",
+              "scope": 318,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => mapping(address => bool))",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => mapping(address => bool))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 301,
+                    "name": "ElementaryTypeName",
+                    "src": "396:7:4"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(address => bool)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 302,
+                        "name": "ElementaryTypeName",
+                        "src": "415:7:4"
+                      },
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 303,
+                        "name": "ElementaryTypeName",
+                        "src": "426:4:4"
+                      }
+                    ],
+                    "id": 304,
+                    "name": "Mapping",
+                    "src": "407:24:4"
+                  }
+                ],
+                "id": 305,
+                "name": "Mapping",
+                "src": "388:44:4"
+              }
+            ],
+            "id": 306,
+            "name": "VariableDeclaration",
+            "src": "388:63:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ownerToTrailFormId",
+              "scope": 318,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => mapping(bytes32 => bool))",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => mapping(bytes32 => bool))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 307,
+                    "name": "ElementaryTypeName",
+                    "src": "466:7:4"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(bytes32 => bool)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 308,
+                        "name": "ElementaryTypeName",
+                        "src": "485:7:4"
+                      },
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 309,
+                        "name": "ElementaryTypeName",
+                        "src": "496:4:4"
+                      }
+                    ],
+                    "id": 310,
+                    "name": "Mapping",
+                    "src": "477:24:4"
+                  }
+                ],
+                "id": 311,
+                "name": "Mapping",
+                "src": "458:44:4"
+              }
+            ],
+            "id": 312,
+            "name": "VariableDeclaration",
+            "src": "458:63:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "trialIdToData",
+              "scope": 318,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => struct Storage.TrialData storage ref[] storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => struct Storage.TrialData storage ref[] storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 313,
+                    "name": "ElementaryTypeName",
+                    "src": "536:7:4"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "struct Storage.TrialData storage ref[] storage pointer"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "TrialData",
+                          "referencedDeclaration": 300,
+                          "type": "struct Storage.TrialData storage pointer"
+                        },
+                        "id": 314,
+                        "name": "UserDefinedTypeName",
+                        "src": "547:9:4"
+                      }
+                    ],
+                    "id": 315,
+                    "name": "ArrayTypeName",
+                    "src": "547:11:4"
+                  }
+                ],
+                "id": 316,
+                "name": "Mapping",
+                "src": "528:31:4"
+              }
+            ],
+            "id": 317,
+            "name": "VariableDeclaration",
+            "src": "528:45:4"
+          }
+        ],
+        "id": 318,
+        "name": "ContractDefinition",
+        "src": "56:521:4"
+      }
+    ],
+    "id": 319,
+    "name": "SourceUnit",
+    "src": "0:577:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-04-20T17:51:58.942Z"
+}
