@@ -4,7 +4,7 @@ App = {
 
   init: function() {
     // Load pets.
-    $.getJSON('../public/petshop/pets.json', function(data) {
+    $.getJSON('public/petshop/pets.json', function(data) {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
 
@@ -31,7 +31,7 @@ App = {
       web3 = new Web3(web3.currentProvider);
     } else {
       // set the provider you want from Web3.providers
-      App.web3Provider = new web3.providers.HttpProvider("http://localhost:8545");
+      App.web3Provider = new web3.providers.HttpProvider("http://localhost:9545");
       web3 = new Web3(App.web3Provider);
     }
 
@@ -94,7 +94,7 @@ App = {
     }).then(function(adopters) {
       for (i = 0; i < adopters.length; i++) {
         if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.panel-pet').eq(i).find('button').text('Pending...').attr('disabled', true);
+          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
         }
       }
     }).catch(function(err) {
