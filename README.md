@@ -1,5 +1,5 @@
 # BlockchainBLC4PI
-This repository contains the basic folder structure for the BlockchainBLC4PI for the SOSE 2018.
+This repository contains the basic folder structure for the BlockchainBLC4PI (SOSE 2018).
 
 You may clone it by using the command ** *git clone https://EENFortiss@bitbucket.org/EENFortiss/blockchainblc4pi.git* **
 
@@ -26,9 +26,9 @@ You may clone it by using the command ** *git clone https://EENFortiss@bitbucket
 **You have successfully installed and interacted with your first Dapp**
 
 # Project structure and How to use this project to develop a new Dapp
-1. ./contracts - Store your smart contracts in this folder
+1. ./contracts/yourProject - Store your smart contracts in this folder
 2. ./migrations - Contains the migration script - edit `./migrations/2_deploy_contracts.js` to add your own contact. It migrates the contract to the blockchain
-3. ./src/public/petshop - Contains the Dapp code for Petshop application - you can choose to create a separate folder inside ./src/public/ for your project
+3. ./src/public/petshop - Contains the Dapp code for Petshop application - you can choose to create a separate folder inside ./src/public/yourProject for your project
 4. ./src/server/index.js - Contains the server code. For petshop, it just handles redirecting the call `localhost:3001/petshop` to `../public/petshop/index.html`
 5. You can create your own application's js file in the server folder and do the server side things when and as required
 6. Every time you make a change in the contract, you need to `compile` and `migrate --reset` in **truffle develop console**
