@@ -17,7 +17,7 @@
   "dependencies": {
     "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "0.0.3",
-    "bigchaindb-driver": "^3.2.0",
+    "bigchaindb-driver": "^4.0.0",
     "bigchaindb-orm": "^0.1.9",
     "body-parser": "^1.18.2",
     "connect-redis": "^3.0.2",

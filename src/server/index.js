@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const routerpetshop = require('./petshop');
-const routerhandsOn = require('./handsOn');
 app.use('/',routerBd)
 //app.use('/', routerpetshop);
 //app.use('/', routerhandsOn);
