@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Form2.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <h1>Munich Hospital</h1>
+        <span>Claim id : MUC1234</span>
+        <p>Please fill up the following form:-</p>
+        <form id="Police_form">
+            <table class="table_form">
+                <!--Policy branch details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Hospital details</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="hospital_name">Hospital name</label></td>
+                    <td><input id="hospital_name" name="hospital_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="doctor_name">Doctor name</label></td>
+                    <td><input id="doctor_name" name="doctor_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="hospital_telephone">Telephone</label></td>
+                    <td><input id="hospital_telephone" name="hospital_telephone" type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="hospital_country">Country</label></td>
+                    <td><select name="hospital_country" id="hospital_country">
+                                <option value="">--Select your country--</option>
+                                <option value="BE">Belgium</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="EG">Egypt</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                </select></td>
+                </tr>
+
+                <!--Insurance Case details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Insurance case details</strong>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td><label for="case_id">Case id</label></td>
+                    <td><input id="case_id" name="case_id" type="text" /></td>
+                </tr> -->
+                <tr>
+                    <td><label for="patient_name">Patient name</label></td>
+                    <td><input id="patient_name" name="patient_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Admission_date">Date</label></td>
+                    <td><input type="datetime-local" id="Admission_date" name="Admission_date" value="" min="2016-01-01T00:00" max="2018-06-14T00:00" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="hospital_charges">Charges</label></td>
+                    <td><input id="hospital_charges" placeholder="Enter in Euros" name="hospital_charges" type="number" min="0.00" max="10000.00" step="1" />&nbsp;&euro;</td>
+                </tr>
+                <tr>
+                    <td><label for="hospital_report">Upload hospital bills</label></td>
+                    <td><input id="hospital_report" name="hospital_report" type="file" /></td>
+                </tr>
+
+            </table>
+            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />
+            <button id="submit" class="contact-form__button" type="submit">Submit</button>
+
+        </form>
+    </section>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Form2.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jso.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <h1>Second party form</h1>
+        <p>Please validate the received form:-</p>
+        <form id="Second_party_form" class="contact-form">
+
+
+        </form>
+    </section>
+</body>
+<script>
+    $(function() {
+
+        var jsonObj = $.parseJSON('{"Date_Time":"","Place" : "Munich","Description" : "oh hell","AP_AV_agreement" : false,"Injury" : true,"Property_damage" : true}');
+        var html = '<table class="table_form">';
+        $.each(jsonObj, function(key, value) {
+            html += '<tr>';
+            html += '<td>' + key + '</td>';
+            html += '<td>' + value + '</td>';
+            html += '</tr>';
+        });
+        html += '<tr><td colspan = "2"><strong > Remarks </strong></td></tr>';
+        html += '<tr><td><label for = "other_party_remarks">Remarks</label></td><td><textarea id = "other_party_remarks" name = "other_party_remarks" rows = "5" cols = "50" maxlength = "150" placeholder = "Maximum 150 characters"></textarea></td></tr>';
+        html += '<tr><td><label for = "agreement"> Do you agree with above details? </label></td><td><input type = "radio" name = "agreement" value = "Yes"> Yes  <input type = "radio" name = "agreement value = "No">No</td></tr>';
+        html += '</table>';
+        html += '<button id="submit" class="contact-form__button" type="submit">Submit</button>';
+
+        $('form').html(html);
+    });
+</script>
+
+</html>

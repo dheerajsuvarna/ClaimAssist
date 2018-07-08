@@ -1,0 +1,72 @@
+body {
+    background: #f9fdfe;
+    color: #686a69;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0px;
+}
+
+section {
+    margin: 16px 0 0 46px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    font-size: xx-large;
+}
+
+header {
+    text-align: center;
+}
+
+header>img {
+    height: 150px;
+}
+
+.table_form td {
+    height: 20px;
+    width: 200px;
+    padding-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="datetime-local"] {
+    height: 20px;
+    width: 200px;
+    padding-left: 5px;
+}
+
+input[type="number"] {
+    height: 20px;
+}
+
+select#policyholder_country,
+select#otherperson_country,
+select#accident_country,
+select#police_country,
+select#hospital_country,
+select#vehicle_regcountry {
+    width: 209px;
+    height: 26px;
+}
+
+strong {
+    margin-left: -10px;
+}
+
+button#submit {
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+}
+
+button#submit:hover {
+    background: #7fffd4;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Form2.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <h1>Munich Police Station</h1>
+        <span>Claim id : MUC1234</span>
+        <p>Please fill up the following form:-</p>
+        <form id="Police_form">
+            <table class="table_form">
+                <!--Policy branch details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Police station details</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="police_station_name">Police station name</label></td>
+                    <td><input id="police_station_name" name="police_station_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="police_officer_name">Police officer name</label></td>
+                    <td><input id="police_officer_name" name="police_officer_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="police_telephone">Telephone</label></td>
+                    <td><input id="police_telephone" name="police_telephone" type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="police_country">Country</label></td>
+                    <td><select name="police_country" id="police_country">
+                                <option value="">--Select your country--</option>
+                                <option value="BE">Belgium</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="EG">Egypt</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                </select></td>
+                </tr>
+                <!--Accident details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Accident Details</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Accident_time">Date/time:</label></td>
+                    <td><input type="datetime-local" id="Accident_time" name="party-time" value="" min="2016-01-01T00:00" max="2018-06-14T00:00" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="place">Place</label></td>
+                    <td><input id="place" name="place" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="p1_name">Person 1</label></td>
+                    <td><input id="p1_name" name="p1_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="p2_name">Person 2</label></td>
+                    <td><input id="p2_name" name="p2_name" type="text" /></td>
+                </tr>
+
+                <!--Insurance Case details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Insurance case details</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="case_id">Case id</label></td>
+                    <td><input id="case_id" name="case_id" type="text" /></td>
+                </tr>
+                <!-- <tr>
+                    <td><label for="p1_name">Person 1</label></td>
+                    <td><input id="p1_name" name="p1_name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="p2_name">Person 2</label></td>
+                    <td><input id="p2_name" name="p2_name" type="text" /></td>
+                </tr> -->
+                <tr>
+                    <td><label for="police_charges">Charges</label></td>
+                    <td><input id="police_charges" placeholder="Enter in Euros" name="police_charges" type="number" min="0.00" max="10000.00" step="1" />&nbsp;&euro;</td>
+                </tr>
+                <tr>
+                    <td><label for="police_report">Upload police report</label></td>
+                    <td><input id="police_report" name="police_report" type="file" /></td>
+                </tr>
+
+            </table>
+            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />
+            <button class="contact-form__button" type="submit">Submit</button>
+
+        </form>
+    </section>
+
+
+
+</body>
+
+</html>
