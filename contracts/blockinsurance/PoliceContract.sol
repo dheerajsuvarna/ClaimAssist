@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.4;
 
-import "./Agreement.sol";
+import "./AgreementContract.sol";
 
-contract Disagreement is Agreement{
+contract PoliceContract is AgreementContract{
 
     mapping (address => bool) public policeRegistry;
     address policeAdmin = 0xca35b7d915458ef540ade6068dfe2f44e8fa730e;
@@ -18,7 +18,7 @@ contract Disagreement is Agreement{
         claimS[_claimId].bigchain_hash = _newBigchain_hash;
     }
 
-    function addPoliceAddress(address _newPoliceAddress){
+    function addPoliceAddress(address _newPoliceAddress) public{
         require(msg.sender == policeAdmin);
         policeRegistry[_newPoliceAddress] = true;
     }

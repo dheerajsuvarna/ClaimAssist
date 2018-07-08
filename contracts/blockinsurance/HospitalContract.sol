@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.4;
 
-import "./Disagreement.sol";
+import "./AgreementContract.sol";
 
-contract Hospital is Disagreement{
+contract HospitalContract is AgreementContract{
 
     mapping (address => bool) public HospitalRegistry;
     address hospitalAdmin = 0xca35b7d915458ef540ade6068dfe2f44e8fa730f;
@@ -18,7 +18,7 @@ contract Hospital is Disagreement{
         claimS[_claimId].bigchain_hash = _newBigchain_hash;
     }
 
-    function addHospitalAddress(address _newHospitalAddress){
+    function addHospitalAddress(address _newHospitalAddress) public{
         require(msg.sender == hospitalAdmin);
         HospitalRegistry[_newHospitalAddress] = true;
     }

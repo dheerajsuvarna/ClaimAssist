@@ -1,7 +1,6 @@
-pragma solidity ^0.4.24;
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.4.4;
 
-contract Agreement{
+contract AgreementContract{
     struct claim {
         uint timestamp;
         bytes bigchain_hash;
@@ -11,22 +10,20 @@ contract Agreement{
     }
 
 
-    //mapping(address => bytes[]) public accidentParties;
     mapping(bytes32 => claim) public claimS;
-    event test_value(bytes32 indexed value1);
+    //event test_value(bytes32 indexed value1);
 
-    function addClaim( string _policyNumber,bytes _bigchainHash) public returns (bytes32) {
-        //accidentParties[msg.sender].push(ipfs);
+
+    function addClaim( bytes32 claimId, bytes _bigchainHash, uint _timeStamp) public returns (bytes32) {
         address[] memory sender = new address[](1);
         sender[0] = msg.sender;
-        bytes32 claimId = keccak256(abi.encodePacked(_policyNumber, block.timestamp));
-        claimS[claimId] = claim(block.timestamp, _bigchainHash, sender);
-        emit test_value(claimId);
+        //bytes32 claimId = keccak256(abi.encodePacked(_policyNumber, _timeStamp));
+        claimS[claimId] = claim(_timeStamp, _bigchainHash, sender);
+        //emit test_value(claimId);
         return claimId;
     }
 
     function signDocument(bytes32 _claimId, bytes _newBigchain_hash ) public {
-       // accidentParties[msg.sender].push(agreementId);
         //require(msg.sender == claimStatements[keccak256(agreementId)].signatures[0]);
         claimS[_claimId].bigchain_hash = _newBigchain_hash;
         claimS[_claimId].signatures.push(msg.sender);
@@ -39,5 +36,7 @@ contract Agreement{
     function getBigchainHash(bytes32 _claimId) public view returns (bytes) {
         return claimS[_claimId].bigchain_hash;
     }
+
+
 
 }

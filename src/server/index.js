@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const routerpetshop = require('./petshop');
-app.use('/',routerBd)
-//app.use('/', routerpetshop);
+//app.use('/',routerBd)
+app.use('/', routerpetshop);
 //app.use('/', routerhandsOn);
 
 const server = app.listen(PORT, function () {
