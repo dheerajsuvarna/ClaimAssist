@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="public/blockinsurance/css/form2.css" />
+	<script type="text/javascript" src="public/blockchain/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+	<section>
+		<h1>Allianz Insurance</h1>
+		<p>Please fill up the following form:-</p>
+		<form id="Policy_holder_form">
+			<table class="table_form">
+				<!--Policy holder details section-->
+				<tr>
+					<td colspan="2">
+						<strong>Policy holder details</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="ph_name">Name</label></td>
+					<td><input id="ph_name" name="ph_name" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="ph_email">Email Address</label></td>
+					<td><input id="ph_email" name="ph_email" type="email" /></td>
+				</tr>
+				<!-- <tr>
+					<td><label for="ph_address">Address</label></td>
+					<td><textarea id="ph_address" name="ph_address" rows="2" cols="65"></textarea></td>
+				</tr> -->
+				<!-- <tr>
+					<td><label for="ph_telephone">Telephone</label></td>
+					<td><input id="ph_telephone" name="ph_telephone" type="text" /></td>
+				</tr> -->
+				<tr>
+					<td><label for="ph_insurance_company">Insurance company name</label></td>
+					<td><input id="ph_insurance_company" name="ph_insurance_company" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="ph_policy_no">Policy no.</label></td>
+					<td><input id="ph_policy_no" name="ph_policy_no" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="ph_country">Country</label></td>
+					<td><select name="ph_country" id="ph_country">
+								<option value="">--Select your country--</option>
+								<option value="BE">Belgium</option>
+								<option value="HR">Croatia</option>
+								<option value="CZ">Czech Republic</option>
+								<option value="EG">Egypt</option>
+								<option value="FR">France</option>
+								<option value="DE">Germany</option>
+								</select></td>
+				</tr>
+				<!--Other party details section-->
+				<tr>
+					<td colspan="2">
+						<strong>Other party details</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="op_name">Name</label></td>
+					<td><input id="op_name" name="op_name" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="op_email">Email Address</label></td>
+					<td><input id="op_email" name="op_email" type="email" /></td>
+				</tr>
+				<!-- <tr>
+						<td><label for="op_address">Address</label></td>
+						<td><textarea id="op_address" name="op_address" rows="2" cols="65"></textarea></td>
+					</tr> -->
+				<!-- <tr>
+						<td><label for="op_teleopone">Teleopone</label></td>
+						<td><input id="op_teleopone" name="op_teleopone" type="text" /></td>
+					</tr> -->
+				<tr>
+					<td><label for="op_insurance_company">Insurance company name</label></td>
+					<td><input id="op_insurance_company" name="op_insurance_company" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="op_policy_no">Policy no.</label></td>
+					<td><input id="op_policy_no" name="op_policy_no" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="op_country">Country</label></td>
+					<td><select name="op_country" id="op_country">
+									<option value="">--Select your country--</option>
+									<option value="BE">Belgium</option>
+									<option value="HR">Croatia</option>
+									<option value="CZ">Czech Republic</option>
+									<option value="EG">Egypt</option>
+									<option value="FR">France</option>
+									<option value="DE">Germany</option>
+									</select></td>
+				</tr>
+				<!--Accident details section-->
+				<tr>
+					<td colspan="2">
+						<strong>Accident Details</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="Accident_time">Date/time:</label></td>
+					<td><input type="datetime-local" id="Accident_time" name="party-time" value="" min="2016-01-01T00:00" max="2018-06-14T00:00" />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="place">Place</label></td>
+					<td><input id="place" name="place" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="acc_country">Country</label></td>
+					<td><select name="acc_country" id="acc_country">
+							<option value="">--Select accident location--</option>
+							<option value="BE">Belgium</option>
+							<option value="HR">Croatia</option>
+							<option value="CZ">Czech Republic</option>
+							<option value="EG">Egypt</option>
+							<option value="FR">France</option>
+							<option value="DE">Germany</option>
+							</select></td>
+				</tr>
+				<tr>
+					<td><label>Reporting authority involved</label></td>
+					<td> <input type="radio" name="reporting_authority" value="yes"> Yes &nbsp;
+						<input type="radio" name="reporting_authority" value="no"> No</td>
+				</tr>
+				<tr>
+					<td><label for="injury">Injury</label></td>
+					<td> <input type="radio" name="injury" value="yes"> Yes &nbsp;
+						<input type="radio" name="injury" value="no"> No</td>
+				</tr>
+				<tr>
+					<td><label for="material_damage">Material damage</label></td>
+					<td> <input type="radio" name="material_damage" value="yes"> Yes &nbsp;
+						<input type="radio" name="material_damage" value="no"> No</td>
+				</tr>
+				<!--Witness details section-->
+				<tr>
+					<td colspan="2">
+						<strong>Witness Details</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="witness_name">Name</label></td>
+					<td><input id="witness_name" name="witness_name" type="text" /></td>
+				</tr>
+				<!-- <tr class="contact-form__input-group">
+					<td><label class="contact-form__label" for="email">Email Address</label></td>
+					<td><input class="contact-form__input contact-form__input--email" id="email" name="email" type="email" /></td>
+				</tr> -->
+				<!-- <tr>
+					<td><label for="witness_address">Address</label></td>
+					<td><textarea id="witness_address" name="witness_address" rows="2" cols="65"></textarea></td>
+				</tr> -->
+				<tr>
+					<td><label for="witness_telephone">Telephone</label></td>
+					<td><input id="witness_telephone" name="witness_telephone" type="text" /></td>
+				</tr>
+				<!--Vehicle details section-->
+				<tr>
+					<td colspan="2">
+						<strong>Vehicle Details</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="vehicle_type">Type</label></td>
+					<td><input id="vehicle_type" name="vehicle_type" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="vehicle_reg_no">Registration no.</label></td>
+					<td><input id="vehicle_reg_no" name="vehicle_reg_no" type="text" /></td>
+				</tr>
+				<tr>
+					<td><label for="vehicle_regcountry">Country of registration</label></td>
+					<td><input id="vehicle_regcountry" name="vehicle_regcountry" type="text" /></td>
+				</tr>
+				<!--Remarks section-->
+				<tr>
+					<td colspan="2">
+						<strong>Remarks</strong>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="remarks">Remarks</label></td>
+					<td><textarea id="remarks" name="remarks" rows="2" cols="65"></textarea></td>
+				</tr>
+				<tr>
+					<td><label for="responsible_party">Responsible party according to you ?</label></td>
+					<td> <input type="radio" name="responsible_party" value="yes"> Myself &nbsp;
+						<input type="radio" name="responsible_party" value="no"> Other party</td>
+				</tr>
+
+
+			</table>
+			<input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />
+			<button class="contact-form__button" id="submit" type="submit">Submit</button>
+
+		</form>
+	</section>
+	<!-- <table class="results">
+		<h2 class="results__heading">Form Data</h2>
+		<pre class="results__display-wrapper"><code class="results__display"></code></pre>
+	</table> -->
+<script>
+	$("#submit").click(function(){
+		var buttonValue = {};
+		<!-- get all the form details -->
+		$("input").each(function($i){
+			var name =$(this).attr('name') 
+			if ($(this).val())
+			{
+				buttonValue[name]=$(this).val();
+				}
+			<!-- getting the country -->
+			var e = document.getElementById("acc_country");
+			var strCountry = e.options[e.selectedIndex].value;
+			buttonValue['acc_country']= strCountry
+		});
+		
+		alert(JSON.stringify(buttonValue));
+		
+		var fs = require('fs');
+		fs.writeFile("thing.json", JSON.stringify(buttonValue));
+		
+	});
+</script>
+
+</body>
+
+</html>
