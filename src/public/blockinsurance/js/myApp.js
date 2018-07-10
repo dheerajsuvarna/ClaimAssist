@@ -1,12 +1,62 @@
-var contractController = require("./contract.js");
+let obj ={
+  "employees": [
+      {
+          "firstName": "Jeshwanth",
+          "lastName": "P"
+      },
+      {
+          "firstName": "Anna",
+          "lastName": "Smith"
+      },
+      {
+          "firstName": "Peter",
+          "lastName": "Jones"
+      }
+  ]
+}
 
-App = {
+// captureFile(event) {
+//   event.preventDefault()
+//   const file = event.target.files[0]
+//   const reader = new window.FileReader()
+//   reader.readAsArrayBuffer(file)
+//   reader.onloadend = () => {
+//     this.setState({ buffer: Buffer(reader.result) })
+//     console.log('buffer', this.state.buffer)
+//   }
+// }
+
+
+
+
+// onSubmit(event) {
+//   event.preventDefault()
+//   ipfs.files.add(this.state.buffer, (error, result) => {
+//     if(error) {
+//       console.error(error)
+//       return
+//     }
+//     console.log(result[0].hash)
+//     this.simpleStorageInstance.set(result[0].hash, { from: this.state.account }).then((r) => {
+//       return this.setState({ ipfsHash: result[0].hash })
+//       console.log('ifpsHash', this.state.ipfsHash)
+//     })
+//   })
+// }
+    function sameClaim(value){
+      console.log("Worked")
+      $.post("/saveClaim", {claimObject : value}, function(result){
+        console.log("hash ====> " + result)
+    });
+    }
+var App = {
   web3Provider: null,
   contracts: {},
+   
+  
+
 
   init: function() {
-
-
     return App.initWeb3();
   },
 

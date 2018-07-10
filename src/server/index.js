@@ -4,7 +4,8 @@ const passport = require('passport');
 const path = require('path');
 const driver = require('bigchaindb-driver')
 const routerBd = require('./bigchain')
-
+const routerpetshop = require('./petshop');
+const routerClaimAssist = require('./claimAssist');
 const app = express();
 const DEBUG = process.env.NODE_ENV !== 'production';
 const PORT = DEBUG ? '3001' : process.env.PORT;
@@ -17,9 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Bigchain DB connection
 
 
-const routerpetshop = require('./petshop');
+
 //app.use('/',routerBd)
-app.use('/', routerpetshop);
+//app.use('/', routerpetshop);
+app.use('/', routerClaimAssist);
 //app.use('/', routerhandsOn);
 
 const server = app.listen(PORT, function () {

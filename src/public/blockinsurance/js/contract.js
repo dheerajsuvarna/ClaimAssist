@@ -1,5 +1,7 @@
 
-contracts.addClaimOnBlockchain = function(claimId, bigChainHash) {
+
+
+addClaimOnBlockchain = function(claimId, bigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -10,16 +12,16 @@ contracts.addClaimOnBlockchain = function(claimId, bigChainHash) {
     App.contracts.ICSContract.deployed().then(function(instance) {
       ICSInstance = instance;
       var timeStamp = Date.now();
-      return ICSInstance.addClaim(claimId, bigChainHash,timeStamp {from: claimInitiator});
+      return ICSInstance.addClaim(claimId, bigChainHash,timeStamp ,{from: claimInitiator});
     }).then(function(claimId) {
       console.log(claimId);
     }).catch(function(err) {
       console.log(err.message);
     });
   });
-},
+}
 
-contracts.addSignature = function(claimId, newBigChainHash) {
+addSignature = function(claimId, newBigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -30,7 +32,7 @@ contracts.addSignature = function(claimId, newBigChainHash) {
     App.contracts.ICSContract.deployed().then(function(instance) {
       ICSInstance = instance;
       var timeStamp = Date.now();
-      return ICSInstance.signDocument(claimId,newBigChainHash {from: otherParty});
+      return ICSInstance.signDocument(claimId,newBigChainHash,{from: otherParty});
     }).then(function(response) {
       console.log(response);
     }).catch(function(err) {
@@ -39,7 +41,7 @@ contracts.addSignature = function(claimId, newBigChainHash) {
   });
 }
 
-contracts.getBigchainHash = function(claimId) {
+getBigchainHash = function(claimId) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -59,4 +61,6 @@ contracts.getBigchainHash = function(claimId) {
   });
 }
 
-var contracts = module.exports = {};
+test = function(){
+  console.log("Hello")
+}
