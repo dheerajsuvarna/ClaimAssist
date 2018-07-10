@@ -11,7 +11,7 @@ body {
 }
 
 section {
-    margin: 16px 0 0 46px;
+    margin: 16px 0px 30px 46px;
 }
 
 h1 {
@@ -52,7 +52,9 @@ select#otherperson_country,
 select#accident_country,
 select#police_country,
 select#hospital_country,
-select#vehicle_regcountry {
+select#vehicle_regcountry,
+select#otherperson_insurance_company,
+select#policyholder_insurance_company {
     width: 209px;
     height: 26px;
 }
@@ -61,12 +63,20 @@ strong {
     margin-left: -10px;
 }
 
-button#submit {
+button#submit,
+button#op_submit {
     width: 100px;
     height: 30px;
     margin-top: 30px;
 }
 
-button#submit:hover {
+button#submit:hover,
+button#op_submit:hover {
     background: #7fffd4;
+}
+
+input:read-only,
+textarea:read-only {
+    background-color: #ebf0f1;
+    border: none;
 }

@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="public/blockchain/css/Form2.css" />
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/Form2.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- <script type="text/javascript" src="jso.js"></script> -->
 </head>
 
 <body>
 
 
-    <header><img src="ains.png" /></header>
+    <header><img src="images/ains.png" /></header>
     <section>
         <p>Please fill up the following form:-</p>
         <form id="Policy_holder_form" class="contact-form">
@@ -27,11 +27,11 @@
                 </tr>
                 <tr>
                     <td><label for="policyholder_name">Name</label></td>
-                    <td><input id="policyholder_name" name="policyholder_name" type="text" /></td>
+                    <td><input id="policyholder_name" name="Policy holder name" type="text" /></td>
                 </tr>
                 <tr>
                     <td><label for="policyholder_email">Email Address</label></td>
-                    <td><input id="policyholder_email" name="policyholder_email" type="email" /></td>
+                    <td><input id="policyholder_email" name="Policy holder email" type="email" /></td>
                 </tr>
                 <!-- <tr>
                     <td><label for="policyholder_address">Address</label></td>
@@ -43,57 +43,65 @@
                 </tr> -->
                 <tr>
                     <td><label for="policyholder_insurance_company">Insurance company name</label></td>
-                    <td><input id="policyholder_insurance_company" name="policyholder_insurance_company" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="policyholder_policy_no">Policy no.</label></td>
-                    <td><input id="policyholder_policy_no" name="policyholder_policy_no" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="policyholder_country">Country</label></td>
-                    <td><select name="policyholder_country" id="policyholder_country">
-                                <option value="">--Select your country--</option>
-                                <option value="BE">Belgium</option>
-                                <option value="HR">Croatia</option>
-                                <option value="CZ">Czech Republic</option>
-                                <option value="EG">Egypt</option>
-                                <option value="FR">France</option>
-                                <option value="DE">Germany</option>
-                                </select></td>
-                </tr>
-                <!--Other party details section-->
-                <tr>
-                    <td colspan="2">
-                        <strong>Other party details</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="otherperson_name">Name</label></td>
-                    <td><input id="otherperson_name" name="otherperson_name" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="otherperson_email">Email Address</label></td>
-                    <td><input id="otherperson_email" name="otherperson_email" type="email" /></td>
-                </tr>
-                <!-- <tr>
+                    <td><select name="Policy holder's insurance company" id="policyholder_insurance_company">
+                            <option value="">--Select insurance company--</option>
+                            <option value="Allianz">Allianz</option>
+                            <option value="ABC">ABC</option>
+                            </select></td>
+
+                    <tr>
+                        <td><label for="policyholder_policy_no">Policy no.</label></td>
+                        <td><input id="policyholder_policy_no" name="Policy holder policy nr." type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="policyholder_country">Country</label></td>
+                        <td><select name="Policy holder country" id="policyholder_country">
+                            <option value="">--Select your country--</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            </select></td>
+                    </tr>
+                    <!--Other party details section-->
+                    <tr>
+                        <td colspan="2">
+                            <strong>Other party details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="otherperson_name">Name</label></td>
+                        <td><input id="otherperson_name" name="Other person name" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="otherperson_email">Email Address</label></td>
+                        <td><input id="otherperson_email" name="Other person email" type="email" /></td>
+                    </tr>
+                    <!-- <tr>
                         <td><label for="otherperson_address">Address</label></td>
                         <td><textarea id="otherperson_address" name="otherperson_address" rows="2" cols="65"></textarea></td>
                     </tr> -->
-                <!-- <tr>
+                    <!-- <tr>
                         <td><label for="otherperson_teleotherpersonone">Teleopone</label></td>
                         <td><input id="op_teleopone" name="op_teleopone" type="text" /></td>
                     </tr> -->
-                <tr>
-                    <td><label for="otherperson_insurance_company">Insurance company name</label></td>
-                    <td><input id="otherperson_insurance_company" name="otherperson_insurance_company" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="otherperson_policy_no">Policy no.</label></td>
-                    <td><input id="otherperson_policy_no" name="otherperson_policy_no" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="otherperson_country">Country</label></td>
-                    <td><select name="otherperson_country" id="otherperson_country">
+                    <tr>
+                        <td><label for="otherperson_insurance_company">Insurance company name</label></td>
+                        <td><select name="Other person insurance company" id="otherperson_insurance_company">
+                            <option value="">--Select insurance company--</option>
+                            <option value="Allianz">Allianz</option>
+                            <option value="ABC">ABC</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="otherperson_policy_no">Policy no.</label></td>
+                        <td><input id="otherperson_policy_no" name="Other person policy nr." type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="otherperson_country">Country</label></td>
+                        <td><select name="Other person country" id="otherperson_country">
                                     <option value="">--Select your country--</option>
                                     <option value="Belgium">Belgium</option>
                                     <option value="Croatia">Croatia</option>
@@ -102,25 +110,25 @@
                                     <option value="France">France</option>
                                     <option value="Germany">Germany</option>
                                     </select></td>
-                </tr>
-                <!--Accident details section-->
-                <tr>
-                    <td colspan="2">
-                        <strong>Accident Details</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="Accident_time">Date/time:</label></td>
-                    <td><input type="datetime-local" id="Accident_time" name="party-time" value="" min="2016-01-01T00:00" max="2018-06-14T00:00" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="place">Place</label></td>
-                    <td><input id="place" name="place" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="accident_country">Country</label></td>
-                    <td><select name="accident_country" id="accident_country">
+                    </tr>
+                    <!--Accident details section-->
+                    <tr>
+                        <td colspan="2">
+                            <strong>Accident Details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Accident_time">Date/time:</label></td>
+                        <td><input type="datetime-local" id="Accident_time" name="Accident date-time" value="" min="2016-01-01T00:00" max="2018-06-14T00:00" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="place">Place</label></td>
+                        <td><input id="place" name="Accident place" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="accident_country">Country</label></td>
+                        <td><select name="Accident country" id="accident_country">
                             <option value="">--Select accident location--</option>
                             <option value="Belgium">Belgium</option>
                             <option value="Croatia">Croatia</option>
@@ -129,61 +137,69 @@
                             <option value="France">France</option>
                             <option value="Germany">Germany</option>
                             </select></td>
-                </tr>
-                <tr>
-                    <td><label>Reporting authority involved</label></td>
-                    <td> <input type="radio" name="reporting_authority" value="yes"> Yes &nbsp;
-                        <input type="radio" name="reporting_authority" value="no"> No</td>
-                </tr>
-                <tr>
-                    <td><label for="injury">Injury</label></td>
-                    <td> <input type="radio" name="injury" value="yes"> Yes &nbsp;
-                        <input type="radio" name="injury" value="no"> No</td>
-                </tr>
-                <tr>
-                    <td><label for="material_damage">Material damage</label></td>
-                    <td> <input type="radio" name="material_damage" value="yes"> Yes &nbsp;
-                        <input type="radio" name="material_damage" value="no"> No</td>
-                </tr>
-                <!--Witness details section-->
-                <tr>
-                    <td colspan="2">
-                        <strong>Witness Details</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="witness_name">Name</label></td>
-                    <td><input id="witness_name" name="witness_name" type="text" /></td>
-                </tr>
-                <!-- <tr class="contact-form__input-group">
+                    </tr>
+                    <tr>
+                        <td><label>Reporting authority involved</label></td>
+                        <td> <input type="radio" name="Reporting authority" value="yes"> Yes &nbsp;
+                            <input type="radio" name="Reporting authority" value="no"> No</td>
+                    </tr>
+                    <tr>
+                        <td><label for="injury">Injury</label></td>
+                        <td> <input type="radio" name="Injury" value="yes"> Yes &nbsp;
+                            <input type="radio" name="Injury" value="no"> No</td>
+                    </tr>
+                    <tr>
+                        <td><label for="material_damage">Material damage</label></td>
+                        <td> <input type="radio" name="Material damage" value="yes"> Yes &nbsp;
+                            <input type="radio" name="Material damage" value="no"> No</td>
+                    </tr>
+                    <tr>
+                        <td><label for="Accident_photos">Upload accident photos</label></td>
+                        <td><input id="Accident_photos" name="Accident photos" type="file" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Accident_claim_form">Upload claim form</label></td>
+                        <td><input id="Accident_claim_form" name="Accident claim form" type="file" /></td>
+                    </tr>
+                    <!--Witness details section-->
+                    <tr>
+                        <td colspan="2">
+                            <strong>Witness Details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="witness_name">Name</label></td>
+                        <td><input id="witness_name" name="Witness name" type="text" /></td>
+                    </tr>
+                    <!-- <tr class="contact-form__input-group">
                     <td><label class="contact-form__label" for="email">Email Address</label></td>
                     <td><input class="contact-form__input contact-form__input--email" id="email" name="email" type="email" /></td>
                 </tr> -->
-                <!-- <tr>
+                    <!-- <tr>
                     <td><label for="witness_address">Address</label></td>
                     <td><textarea id="witness_address" name="witness_address" rows="2" cols="65"></textarea></td>
                 </tr> -->
-                <tr>
-                    <td><label for="witness_telephone">Telephone</label></td>
-                    <td><input id="witness_telephone" name="witness_telephone" type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /></td>
-                </tr>
-                <!--Vehicle details section-->
-                <tr>
-                    <td colspan="2">
-                        <strong>Vehicle Details</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="vehicle_type">Type</label></td>
-                    <td><input id="vehicle_type" name="vehicle_type" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="vehicle_reg_no">Registration no.</label></td>
-                    <td><input id="vehicle_reg_no" name="vehicle_reg_no" type="text" /></td>
-                </tr>
-                <tr>
-                    <td><label for="vehicle_regcountry">Country of registration</label></td>
-                    <td><select name="vehicle_regcountry" id="vehicle_regcountry">
+                    <tr>
+                        <td><label for="witness_telephone">Telephone</label></td>
+                        <td><input id="witness_telephone" name="Witness telephone" type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /></td>
+                    </tr>
+                    <!--Vehicle details section-->
+                    <tr>
+                        <td colspan="2">
+                            <strong>Vehicle Details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="vehicle_type">Type</label></td>
+                        <td><input id="vehicle_type" name="Vehicle type" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="vehicle_reg_no">Registration no.</label></td>
+                        <td><input id="vehicle_reg_no" name="Vehicle reg nr." type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="vehicle_regcountry">Country of registration</label></td>
+                        <td><select name="Vehicle registration country" id="vehicle_regcountry">
                             <option value="">--Select accident location--</option>
                             <option value="Belgium">Belgium</option>
                             <option value="Croatia">Croatia</option>
@@ -192,34 +208,34 @@
                             <option value="France">France</option>
                             <option value="Germany">Germany</option>
                             </select></td>
-                </tr>
-                <!--Remarks section-->
-                <tr>
-                    <td colspan="2">
-                        <strong>Remarks</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="policy_holder_remarks">Remarks</label></td>
-                    <td><textarea id="policy_holder_remarks" name="policy_holder_remarks" rows="5" cols="50" maxlength="150" placeholder="Maximum 150 characters"></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="responsible_party">Responsible party according to you ?</label></td>
-                    <td> <input type="radio" name="responsible_party" value="yes"> Myself &nbsp;
-                        <input type="radio" name="responsible_party" value="no"> Other party</td>
-                </tr>
+                    </tr>
+                    <!--Remarks section-->
+                    <tr>
+                        <td colspan="2">
+                            <strong>Remarks</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="policy_holder_remarks">Remarks</label></td>
+                        <td><textarea id="policy_holder_remarks" name="Policy holder remarks" rows="5" cols="50" maxlength="150" placeholder="Maximum 150 characters"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="responsible_party">Responsible party according to you ?</label></td>
+                        <td> <input type="radio" name="Responsible party" value="Myself"> Myself &nbsp;
+                            <input type="radio" name="Responsible party" value="Other party"> Other party</td>
+                    </tr>
 
 
             </table>
-            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />
+            <!-- <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />-->
             <button id="submit" class="contact-form__button" type="submit">Submit</button>
 
         </form>
     </section>
-    <div class="results">
+    <!-- <div class="results">
         <h2 class="results__heading">Form Data</h2>
         <pre class="results__display-wrapper"><code class="results__display"></code></pre>
-    </div>
+    </div> -->
     <!-- <table class="results">
         <h2 class="results__heading">Form Data</h2>
         <pre class="results__display-wrapper"><code class="results__display"></code></pre>
@@ -228,60 +244,73 @@
 
 </body>
 <script>
-    $("#submit").click(function() {
-        var data = html2json();
-        alert(data);
-        // storeUserDataInSession(data);
-        // window.location = 'slider.html';  
-    });
+    // $("#submit").click(function() {
+    //     var data = html2json();
+    //     alert(data);
+    //     // storeUserDataInSession(data);
+    //     // window.location = 'slider.html';  
+    // });
 
-    function html2json() {
-        var key = ['Terms', 'Definitions'];
-        var c = 0;
-        var json = '{"UserData":[';
-        var otArr = [];
-        var tbl2 = $('#Policy_holder_form tr').each(function(i) {
-            x = $(this).find('.input');
-            var itArr = [];
-            x.each(function() {
-                itArr.push('"' + key[c] + '":' + '"' + $(this).text().trim() + '"');
-                c++;
-            });
-            y.each(function() {
-                itArr.push('"' + key[c] + '":' + '"' + $(this).attr('src') + '"');
-            });
-            otArr.push('{' + itArr.join(',') + '}');
-            c = 0;
-        })
-        json += otArr.join(",") + ']}';
-        return json;
-    }
+    // function html2json() {
+    //     var key = ['Terms', 'Definitions'];
+    //     var c = 0;
+    //     var json = '{"UserData":[';
+    //     var otArr = [];
+    //     var tbl2 = $('#Policy_holder_form tr').each(function(i) {
+    //         x = $(this).find('.input');
+    //         var itArr = [];
+    //         x.each(function() {
+    //             itArr.push('"' + key[c] + '":' + '"' + $(this).text().trim() + '"');
+    //             c++;
+    //         });
+    //         y.each(function() {
+    //             itArr.push('"' + key[c] + '":' + '"' + $(this).attr('src') + '"');
+    //         });
+    //         otArr.push('{' + itArr.join(',') + '}');
+    //         c = 0;
+    //     })
+    //     json += otArr.join(",") + ']}';
+    //     return json;
+    // }
     // $("#submit").click(function() {
     //     var formData = JSON.stringify($("#Policy_holder_form"));
-    //     alert(formData);
+    //     console.log(formData);
     // });
-    // $("#submit").click(function() {
-    //     var buttonValue = {};
+    $("#submit").click(function() {
+        var jsondata = {};
 
-    //     $("input").each(function($i) {
-    //         var name = $(this).attr('name')
-    //         if ($(this).val()) {
-    //             buttonValue[name] = $(this).val();
-    //         }
+        $("input").each(function($i) {
+            var name = $(this).attr('name')
+            if ($(this).val()) {
+                jsondata[name] = $(this).val();
+            }
 
-    //         var e = document.getElementById("accident_country");
-    //         var strCountry = e.options[e.selectedIndex].value;
-    //         buttonValue['accident_country'] = strCountry
-    //     });
 
-    //     alert(JSON.stringify(buttonValue));
+            var ph = document.getElementById("policyholder_country");
+            var strCountry = ph.options[ph.selectedIndex].value;
+            jsondata['Policy holder country'] = strCountry;
 
-    //     var fs = require('fs');
-    //     fs.writeFile("thing.json", JSON.stringify(buttonValue));
+            var op = document.getElementById("otherperson_country");
+            var strCountry = op.options[op.selectedIndex].value;
+            jsondata['Other person country'] = strCountry;
 
-    //     alert(thing.json);
+            var ac = document.getElementById("accident_country");
+            var strCountry = ac.options[ac.selectedIndex].value;
+            jsondata['Accident country'] = strCountry;
 
-    // });
+            var vr = document.getElementById("vehicle_regcountry");
+            var strCountry = vr.options[vr.selectedIndex].value;
+            jsondata['Vehicle registration country'] = strCountry;
+        });
+        console.log(jsondata);
+        alert(JSON.stringify(jsondata));
+
+        // var fs = require('fs');
+        // fs.writeFile("thing.json", JSON.stringify(buttonValue));
+
+        // alert(thing.json);
+
+    });
 
     // function getAttrs(DOMelement) {
     //     var obj = {};
