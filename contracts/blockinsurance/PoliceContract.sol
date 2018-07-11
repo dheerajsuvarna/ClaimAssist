@@ -11,9 +11,9 @@ contract PoliceContract is AgreementContract{
            policeRegistry[0xca35b7d915458ef540ade6068dfe2f44e8fa733b] = true;
      }
 
-    function addPoliceReport(bytes32 _claimId, bytes _newBigchain_hash, address _policeAddress ) public {
+    function addPoliceReport(bytes32 _claimId, bytes _newBigchain_hash) public {
        // accidentParties[msg.sender].push(agreementId);
-        require(policeRegistry[_policeAddress] == true);
+        require(policeRegistry[msg.sender] == true);
         //require(claimS[_claimId].currentStage == "initial");
         claimS[_claimId].bigchain_hash = _newBigchain_hash;
     }

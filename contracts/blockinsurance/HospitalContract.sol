@@ -11,9 +11,9 @@ contract HospitalContract is AgreementContract{
            HospitalRegistry[0xca35b7d915458ef540ade6068dfe2f44e8fa733d] = true;
      }
 
-    function addHospitalBill(bytes32 _claimId, bytes _newBigchain_hash, address _HospitalAddress ) public {
+    function addHospitalBill(bytes32 _claimId, bytes _newBigchain_hash ) public {
        // accidentParties[msg.sender].push(agreementId);
-        require(HospitalRegistry[_HospitalAddress] == true);
+        require(HospitalRegistry[msg.sender] == true);
         //require(claimS[_claimId].currentStage == "initial");
         claimS[_claimId].bigchain_hash = _newBigchain_hash;
     }
