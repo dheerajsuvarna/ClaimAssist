@@ -37,14 +37,24 @@ exports.encryptStringWithRsaPublicKey = function() {
 exports.store = function (obj){
     var deferred = defer();
     var buf = Buffer.from(JSON.stringify(obj));
-    var hash;
-    ipfs.files.add(buf, (error, result) => {
-    	    if(error) {  
-    	        console.error(error)
-    	        deferred.reject(error) ;
-    	    }
-            deferred.resolve(result[0].hash)
-        }); 
+    ipfs.files.add(buf)
+    .then(function(result){
+        deferred.resolve(result[0].hash)
+    }).catch(function(error){
+        deferred.reject(error) ;
+    });
+   return deferred.promise;
+}
+
+exports.getFile = function (hash){
+    var deferred = defer();
+    ipfs.files.get(hash)
+    .then(function(data){
+        let content_json = JSON.parse(data[0].content)
+        deferred.resolve(content_json)
+    }).catch(function(error){
+        deferred.reject(error) ;
+    });  
    return deferred.promise;
 }
 

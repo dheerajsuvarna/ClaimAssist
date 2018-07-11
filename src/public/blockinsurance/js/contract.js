@@ -60,7 +60,3 @@ getBigchainHash = function(claimId) {
     });
   });
 }
-
-test = function(){
-  console.log("Hello")
-}

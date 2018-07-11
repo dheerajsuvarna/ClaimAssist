@@ -64,7 +64,6 @@ const claimData = {
 // });
 
 exports.saveHashToBCDB = function(hash){
-    console.log("Receiverd IPFS hash ====> " + hash)
     var deferred = defer();
     const txCreateClaim = driver.Transaction.makeCreateTransaction(
         // Asset Data
@@ -88,6 +87,15 @@ exports.saveHashToBCDB = function(hash){
 } 
 
 
-//search asset
-// conn.searchAssets('insuranceAgent')
-//   .then(assets => console.log(assets));
+//search for IPFS hash in BigchainDB
+exports.getIPFSHash = function(bcdb_txid){
+    var deferred = defer();
+    conn.searchAssets(bcdb_txid)
+    .then(function(asset){
+        console.log("The Asset ===> " + JSON.stringify(asset[0].data.hash))
+        deferred.resolve(asset[0].data.hash)
+    }).catch(function(error){
+        deferred.resolve(error)
+    })
+    return deferred.promise;
+}
