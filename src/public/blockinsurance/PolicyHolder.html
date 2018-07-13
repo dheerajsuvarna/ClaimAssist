@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Policy Holder page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/Form2.css" />
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <!-- <script type="text/javascript" src="jso.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,9 +20,9 @@
             <table class="table_form">
                 <!--Policy holder details section-->
                 <tr>
-                    <td colspan="2">
-                        <strong>Policy holder details</strong>
-                    </td>
+                    <th>
+                        Policy holder details
+                    </th>
                 </tr>
                 <tr>
                     <td><label for="policyholder_name">Name</label></td>
@@ -140,18 +139,18 @@
                     </tr>
                     <tr>
                         <td><label>Reporting authority involved</label></td>
-                        <td> <input type="radio" name="Reporting authority" value="yes"> Yes &nbsp;
-                            <input type="radio" name="Reporting authority" value="no"> No</td>
+                        <td> <input class="R1" type="radio" name="Reporting authority" value="yes"> Yes &nbsp;
+                            <input class="R1" type="radio" name="Reporting authority" value="no"> No</td>
                     </tr>
                     <tr>
                         <td><label for="injury">Injury</label></td>
-                        <td> <input type="radio" name="Injury" value="yes"> Yes &nbsp;
-                            <input type="radio" name="Injury" value="no"> No</td>
+                        <td> <input class="R2" type="radio" name="Injury" value="yes"> Yes &nbsp;
+                            <input class="R2" type="radio" name="Injury" value="no"> No</td>
                     </tr>
                     <tr>
                         <td><label for="material_damage">Material damage</label></td>
-                        <td> <input type="radio" name="Material damage" value="yes"> Yes &nbsp;
-                            <input type="radio" name="Material damage" value="no"> No</td>
+                        <td> <input class="R3" type="radio" name="Material damage" value="yes"> Yes &nbsp;
+                            <input class="R3" type="radio" name="Material damage" value="no"> No</td>
                     </tr>
                     <tr>
                         <td><label for="Accident_photos">Upload accident photos</label></td>
@@ -221,8 +220,8 @@
                     </tr>
                     <tr>
                         <td><label for="responsible_party">Responsible party according to you ?</label></td>
-                        <td> <input type="radio" name="Responsible party" value="Myself"> Myself &nbsp;
-                            <input type="radio" name="Responsible party" value="Other party"> Other party</td>
+                        <td> <input class="R4" type="radio" name="Responsible party" value="Myself"> Myself &nbsp;
+                            <input class="R4" type="radio" name="Responsible party" value="Other party"> Other party</td>
                     </tr>
 
 
@@ -244,38 +243,6 @@
 
 </body>
 <script>
-    // $("#submit").click(function() {
-    //     var data = html2json();
-    //     alert(data);
-    //     // storeUserDataInSession(data);
-    //     // window.location = 'slider.html';  
-    // });
-
-    // function html2json() {
-    //     var key = ['Terms', 'Definitions'];
-    //     var c = 0;
-    //     var json = '{"UserData":[';
-    //     var otArr = [];
-    //     var tbl2 = $('#Policy_holder_form tr').each(function(i) {
-    //         x = $(this).find('.input');
-    //         var itArr = [];
-    //         x.each(function() {
-    //             itArr.push('"' + key[c] + '":' + '"' + $(this).text().trim() + '"');
-    //             c++;
-    //         });
-    //         y.each(function() {
-    //             itArr.push('"' + key[c] + '":' + '"' + $(this).attr('src') + '"');
-    //         });
-    //         otArr.push('{' + itArr.join(',') + '}');
-    //         c = 0;
-    //     })
-    //     json += otArr.join(",") + ']}';
-    //     return json;
-    // }
-    // $("#submit").click(function() {
-    //     var formData = JSON.stringify($("#Policy_holder_form"));
-    //     console.log(formData);
-    // });
     $("#submit").click(function() {
         var jsondata = {};
 
@@ -284,64 +251,36 @@
             if ($(this).val()) {
                 jsondata[name] = $(this).val();
             }
+            $("input:radio:checked").each(function($i) {
+                var name = $(this).attr('name')
+                if ($(this).val()) {
+                    jsondata[name] = $(this).val();
+                }
+            });
 
+            $("select").each(function($i) {
+                var name = $(this).attr('name')
+                if ($(this).val()) {
+                    jsondata[name] = $(this).val();
+                }
+            });
 
-            var ph = document.getElementById("policyholder_country");
-            var strCountry = ph.options[ph.selectedIndex].value;
-            jsondata['Policy holder country'] = strCountry;
-
-            var op = document.getElementById("otherperson_country");
-            var strCountry = op.options[op.selectedIndex].value;
-            jsondata['Other person country'] = strCountry;
-
-            var ac = document.getElementById("accident_country");
-            var strCountry = ac.options[ac.selectedIndex].value;
-            jsondata['Accident country'] = strCountry;
-
-            var vr = document.getElementById("vehicle_regcountry");
-            var strCountry = vr.options[vr.selectedIndex].value;
-            jsondata['Vehicle registration country'] = strCountry;
         });
         console.log(jsondata);
         alert(JSON.stringify(jsondata));
 
-        // var fs = require('fs');
-        // fs.writeFile("thing.json", JSON.stringify(buttonValue));
-
-        // alert(thing.json);
+        $.post("/saveClaim", {
+                claimObject: jsondata
+            },
+            function(result) {
+                console.log("hash ====> " + result)
+            });
 
     });
 
-    // function getAttrs(DOMelement) {
-    //     var obj = {};
-    //     $.each(DOMelement.attributes, function() {
-    //         if (this.specified) {
-    //             obj[this.name] = this.value;
-    //         }
-    //     });
-    //     return obj;
-    // }
-
-    // $("form").each(function() {
-    //     var json = {
-    //         "form": []
-    //     };
-    //     $(this).find("input").each(function() {
-    //         json.form.push(getAttrs(this));
-    //     });
-
-    //     $(this).find("select").each(function() {
-    //         var select = getAttrs(this);
-    //         select["type"] = "select";
-    //         var options = [];
-    //         $(this).children().each(function() {
-    //             options.push(getAttrs(this));
-    //         });
-    //         select["options"] = options;
-    //         json.form.push(select);
-    //     });
-    //     console.log(json);
-    // });
+    function saveClaim() {
+        console.log("Reached HEre ")
+    }
 </script>
 
 </html>
