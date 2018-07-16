@@ -1,16 +1,39 @@
-var contractController = require("./contract.js");
+function claim() {
+  event.preventDefault();
+  var buttonValue = {};
+  $("input").each(function ($i) {
+    var name = $(this).attr('name')
+    if ($(this).val()) {
+      buttonValue[name] = $(this).val();
+    }
+    var e = document.getElementById("acc_country");
+    var strCountry = e.options[e.selectedIndex].value;
+    buttonValue['acc_country'] = strCountry;
+  });
+  //Make the POST call to save the claim on IPFS and get back Bigchain hash
+  $.post("/saveClaim", {
+    claimObject: buttonValue
+  }, function (result) {
+    console.log("hash ====> " + result)
+    //Save this hash on Smart Contract
+    window.location.replace("http://localhost:3001/showAgreement");
+  });
+}
 
-App = {
+
+
+var App = {
   web3Provider: null,
   contracts: {},
 
-  init: function() {
 
 
+
+  init: function () {
     return App.initWeb3();
   },
 
-  initWeb3: function() {
+  initWeb3: function () {
     // metamask and mist inject their own web3 instances, so just
     // set the provider if it exists
     if (typeof web3 !== "undefined") {
@@ -25,9 +48,9 @@ App = {
     return App.initICSContract();
   },
 
-  initICSContract: function() {
+  initICSContract: function () {
 
-    $.getJSON('/public/contracts/ICSContract.json', function(data) {
+    $.getJSON('/public/contracts/ICSContract.json', function (data) {
 
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var ICSArtifact = data;
@@ -43,8 +66,9 @@ App = {
 
 };
 
-$(function() {
-  $(window).load(function() {
+$(function () {
+  $(window).load(function () {
     App.init();
+
   });
 });
