@@ -2,20 +2,25 @@
 
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
-    password = 'd6F3Efeq';
+    password = 'd6F3Efeq',
+    defer = require("promise-defer");
 
-function encrypt(buffer){
+
+var exports = module.exports = {}; 
+
+exports.encrypt = function (buffer){
+  var deferred = defer();
   var cipher = crypto.createCipher(algorithm,password)
   var crypted = Buffer.concat([cipher.update(buffer),cipher.final()]);
-  return crypted;
+  deferred.resolve(crypted);
+  return deferred.promise;
 }
  
-function decrypt(buffer){
+exports.decrypt = function(buffer){
+	 var deferred = defer();
   var decipher = crypto.createDecipher(algorithm,password)
   var dec = Buffer.concat([decipher.update(buffer) , decipher.final()]);
-  return dec;
+  deferred.resolve(dec);
+  return deferred.promise;
 }
  
-var hw = encrypt(new Buffer("hello world", "utf8"))
-// outputs hello world
-console.log(decrypt(hw).toString('utf8'));

@@ -3,6 +3,7 @@ const ipfs = new IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 var crypto = require("crypto");
 var path = require("path");
 var fs = require("fs");
+const encrypt_decrypt = require('./encrypt_decrypt')
 var defer = require("promise-defer")
 
 
@@ -37,8 +38,10 @@ exports.encryptStringWithRsaPublicKey = function() {
 exports.store = function (obj){
     var deferred = defer();
     var buf = Buffer.from(JSON.stringify(obj));
-    ipfs.files.add(buf)
-    .then(function(result){
+    encrypt_decrypt.encrypt(buf)
+    .then(function(encrypted_buf){
+       return  ipfs.files.add(encrypted_buf)
+    }).then(function(result){
         deferred.resolve(result[0].hash)
     }).catch(function(error){
         deferred.reject(error) ;
@@ -50,6 +53,8 @@ exports.getFile = function (hash){
     var deferred = defer();
     ipfs.files.get(hash)
     .then(function(data){
+        return  encrypt_decrypt.decrypt(data)
+         }).then(function(data){  
         let content_json = JSON.parse(data[0].content)
         deferred.resolve(content_json)
     }).catch(function(error){
