@@ -42,25 +42,45 @@ var App = {
       web3 = new Web3(web3.currentProvider);
     } else {
       // set the provider you want from Web3.providers
-      App.web3Provider = new web3.providers.HttpProvider("http://localhost:9545");
+      App.web3Provider = new web3.providers.HttpProvider("https://rinkeby.infura.io/eqWL8Q6R8MZLGS1XF0z5");
       web3 = new Web3(App.web3Provider);
     }
-
+    console.log("Init WEB3")
     return App.initICSContract();
   },
 
   initICSContract: function () {
-
-    $.getJSON('/public/contracts/ICSContract.json', function (data) {
-
+    console.log("In initICSContract")
+    console.log(web3)
+    $.getJSON('/public/contracts/Claim.json', function (data) {
+      console.log("Inside the getJSON function")
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var ICSArtifact = data;
+      var ClaimArtifact = data;
 
-      App.contracts.ICSContract = TruffleContract(ICSArtifact);
+      App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
 
       // Set the provider for our contract.
-      App.contracts.ICSContract.setProvider(App.web3Provider);
+      App.contracts.ClaimContract.setProvider(App.web3Provider);
+      //addClaimOnBlockchain("0x1435","0x986979789",ClaimContract );
 
+      var ClaimInstance;
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        var claimInitiator = accounts[0];
+        console.log("Inside web3")
+        App.contracts.ClaimContract.deployed().then(function(instance) {
+          console.log("inside deployed")
+          ClaimInstance = instance;
+          return ClaimInstance.addClaim("0x545454", 0x234455234 ,{from: claimInitiator});
+        }).then(function(response) {
+          console.log("Inside this");
+          console.log(response);
+        }).catch(function(err) {
+          console.log(err.message);
+        });
+      });
     });
   }
 

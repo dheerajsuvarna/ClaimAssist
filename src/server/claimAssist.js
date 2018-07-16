@@ -13,6 +13,7 @@ routerClaimAssist.post('/saveClaim', function (req, res) {
 		console.log("hello ficker")
     let claimDetails = req.body.claimObject;
     ipfs.store(claimDetails)
+    //call encryption function
     .then(function(ipfs_hash){
         return bcdb.saveHashToBCDB(ipfs_hash)
     }).then(function(bcdb_txid){
@@ -30,6 +31,7 @@ routerClaimAssist.get('/getFile/:bcdb_txid', function (req, res) {
     .then(function(ipfsHash){
         return ipfs.getFile(ipfsHash)
     }).then(function(content_json){
+        // Decrypt the File
         res.send(content_json )
     }).catch(function(error){
         console.log("There is an error ===> " + error.stack)

@@ -43,9 +43,11 @@
     "promise-defer": "^1.0.0",
     "request-promise": "^4.2.2",
     "robots.txt": "^1.1.0",
+    "scrypt": "^6.0.3",
     "t": "^0.5.1",
     "truffle-blockchain-utils": "0.0.3",
     "truffle-contract-schema": "^1.0.1",
+    "truffle-hdwallet-provider": "0.0.5",
     "uport-connect": "^0.7.3",
     "web3": "^0.20.4"
   },

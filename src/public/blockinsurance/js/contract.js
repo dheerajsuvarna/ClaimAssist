@@ -1,18 +1,24 @@
 
+<<<<<<< Updated upstream
 addClaimOnBlockchain = function(claimId, bigChainHash) {
 
   var ICSInstance;
+=======
+addClaimOnBlockchain = function(claimId, bigChainHash, ClaimContract) {
+  console.log("Reaching addClaimOnBlockchain")
+  var ClaimInstance;
+>>>>>>> Stashed changes
   web3.eth.getAccounts(function(error, accounts) {
     if (error) {
       console.log(error);
     }
     var claimInitiator = accounts[0];
-    App.contracts.ICSContract.deployed().then(function(instance) {
-      ICSInstance = instance;
-      var timeStamp = Date.now();
-      return ICSInstance.addClaim(claimId, bigChainHash,timeStamp ,{from: claimInitiator});
-    }).then(function(claimId) {
-      console.log(claimId);
+    ClaimContract.deployed().then(function(instance) {
+      ClaimInstance = instance;
+      return ClaimInstance.addClaim(claimId, bigChainHash ,{from: claimInitiator});
+    }).then(function(response) {
+      console.log("Inside this");
+      console.log(response);
     }).catch(function(err) {
       console.log(err.message);
     });
@@ -135,3 +141,8 @@ addHospital = function(hospitalAddress) {
     });
   });
 }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
