@@ -1,5 +1,5 @@
 
-contracts.addClaimOnBlockchain = function(claimId, bigChainHash) {
+addClaimOnBlockchain = function(claimId, bigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -19,7 +19,7 @@ contracts.addClaimOnBlockchain = function(claimId, bigChainHash) {
   });
 }
 
-contracts.addSignature = function(claimId, newBigChainHash) {
+addSignature = function(claimId, newBigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -30,7 +30,7 @@ contracts.addSignature = function(claimId, newBigChainHash) {
     App.contracts.ICSContract.deployed().then(function(instance) {
       ICSInstance = instance;
       var timeStamp = Date.now();
-      return ICSInstance.signDocument(claimId,newBigChainHash {from: otherParty});
+      return ICSInstance.signDocument(claimId,newBigChainHash, {from: otherParty});
     }).then(function(response) {
       console.log(response);
     }).catch(function(err) {
@@ -39,7 +39,7 @@ contracts.addSignature = function(claimId, newBigChainHash) {
   });
 }
 
-contracts.getBigchainHash = function(claimId) {
+getBigchainHash = function(claimId) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -59,7 +59,7 @@ contracts.getBigchainHash = function(claimId) {
   });
 }
 
-contracts.addReportOnBlockchain = function(claimId, bigChainHash) {
+addReportOnBlockchain = function(claimId, bigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -79,7 +79,7 @@ contracts.addReportOnBlockchain = function(claimId, bigChainHash) {
   });
 }
 
-contracts.addPolice = function(policeAddress) {
+addPolice = function(policeAddress) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -98,7 +98,7 @@ contracts.addPolice = function(policeAddress) {
   });
 }
 
-contracts.addBillOnBlockchain = function(claimId, bigChainHash) {
+addBillOnBlockchain = function(claimId, bigChainHash) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -117,7 +117,7 @@ contracts.addBillOnBlockchain = function(claimId, bigChainHash) {
   });
 }
 
-contracts.addHospital = function(hospitalAddress) {
+addHospital = function(hospitalAddress) {
 
   var ICSInstance;
   web3.eth.getAccounts(function(error, accounts) {
@@ -135,5 +135,3 @@ contracts.addHospital = function(hospitalAddress) {
     });
   });
 }
-
-var contracts = module.exports = {};

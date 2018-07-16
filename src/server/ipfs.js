@@ -7,7 +7,7 @@ const encrypt_decrypt = require('./encrypt_decrypt')
 var defer = require("promise-defer")
 
 
-var exports = module.exports = {}; 
+var exports = module.exports = {};
 
 exports.encryptStringWithRsaPublicKey = function() {
 	let obj ={
@@ -38,8 +38,10 @@ exports.encryptStringWithRsaPublicKey = function() {
 exports.store = function (obj){
     var deferred = defer();
     var buf = Buffer.from(JSON.stringify(obj));
+		console.log(buf);
     encrypt_decrypt.encrypt(buf)
     .then(function(encrypted_buf){
+			console.log(encrypt_decrypt.encrypt(buf))
        return  ipfs.files.add(encrypted_buf)
     }).then(function(result){
         deferred.resolve(result[0].hash)
@@ -54,13 +56,11 @@ exports.getFile = function (hash){
     ipfs.files.get(hash)
     .then(function(data){
         return  encrypt_decrypt.decrypt(data)
-         }).then(function(data){  
+         }).then(function(data){
         let content_json = JSON.parse(data[0].content)
         deferred.resolve(content_json)
     }).catch(function(error){
         deferred.reject(error) ;
-    });  
+    });
    return deferred.promise;
 }
-
-

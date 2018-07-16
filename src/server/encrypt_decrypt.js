@@ -6,16 +6,17 @@ var crypto = require('crypto'),
     defer = require("promise-defer");
 
 
-var exports = module.exports = {}; 
+var exports = module.exports = {};
 
 exports.encrypt = function (buffer){
   var deferred = defer();
   var cipher = crypto.createCipher(algorithm,password)
+  console.log("Reached Encryption")
   var crypted = Buffer.concat([cipher.update(buffer),cipher.final()]);
   deferred.resolve(crypted);
   return deferred.promise;
 }
- 
+
 exports.decrypt = function(buffer){
 	 var deferred = defer();
   var decipher = crypto.createDecipher(algorithm,password)
@@ -23,4 +24,3 @@ exports.decrypt = function(buffer){
   deferred.resolve(dec);
   return deferred.promise;
 }
- 

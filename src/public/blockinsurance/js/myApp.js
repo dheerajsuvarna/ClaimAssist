@@ -1,5 +1,6 @@
 function claim() {
   event.preventDefault();
+  console.log("Reached Here")
   var buttonValue = {};
   $("input").each(function ($i) {
     var name = $(this).attr('name')

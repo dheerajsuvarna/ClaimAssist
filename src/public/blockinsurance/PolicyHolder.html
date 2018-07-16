@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Policy Holder page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/Form2.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/Form2.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 
 
-    <header><img src="images/ains.png" /></header>
+    <!-- <header><img src=".src/public/blockinsurance/images/ains.png" /></header> -->
     <section>
         <p>Please fill up the following form:-</p>
         <form id="Policy_holder_form" class="contact-form">
@@ -227,7 +227,7 @@
 
             </table>
             <!-- <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7" />-->
-            <button id="submit" class="contact-form__button" type="submit">Submit</button>
+            <button id="submit" class="contact-form__button" onclick="claim()">Submit</button>
 
         </form>
     </section>
@@ -240,12 +240,18 @@
         <pre class="results__display-wrapper"><code class="results__display"></code></pre>
     </table> -->
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="public/blockinsurance/js/web3.min.js"></script>
+    <script src="public/blockinsurance/js/truffle-contract.js"></script>
+    <script src="public/blockinsurance/js/myApp.js" type="text/javascript"></script>
+    <script src="public/blockinsurance/js/contract.js" type="text/javascript" ></script>
 </body>
 <script>
-    $("#submit").click(function() {
-        var jsondata = {};
+    function claim() = {
+      e.preventDefault();
 
+        var jsondata = {};
+        alert("Data")
         $("input").each(function($i) {
             var name = $(this).attr('name')
             if ($(this).val()) {
@@ -266,9 +272,6 @@
             });
 
         });
-        console.log(jsondata);
-        alert(JSON.stringify(jsondata));
-
         $.post("/saveClaim", {
                 claimObject: jsondata
             },
@@ -276,11 +279,7 @@
                 console.log("hash ====> " + result)
             });
 
-    });
-
-    function saveClaim() {
-        console.log("Reached HEre ")
-    }
+    };
 </script>
 
 </html>

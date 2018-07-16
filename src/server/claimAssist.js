@@ -6,10 +6,11 @@ const bcdb = require('./bigchain')
 var routerClaimAssist = express.Router();
 
 routerClaimAssist.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/blockinsurance/userView.html'));
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder.html'));
 });
 
 routerClaimAssist.post('/saveClaim', function (req, res) {
+		console.log("hello ficker")
     let claimDetails = req.body.claimObject;
     ipfs.store(claimDetails)
     .then(function(ipfs_hash){
@@ -19,7 +20,7 @@ routerClaimAssist.post('/saveClaim', function (req, res) {
     }).catch(function(error){
         console.log("There is an error ===> " + error.stack)
     })
-    
+
 });
 
 
@@ -33,7 +34,7 @@ routerClaimAssist.get('/getFile/:bcdb_txid', function (req, res) {
     }).catch(function(error){
         console.log("There is an error ===> " + error.stack)
     })
-    
+
 });
 
 routerClaimAssist.get('/showAgreement', function (req, res) {
