@@ -31,6 +31,7 @@ exports.encryptStringWithRsaPublicKey = function() {
     var buffer = new Buffer.from(JSON.stringify(obj));
     console.log(buffer)
     var encrypted = crypto.publicEncrypt(publicKey, buffer);
+		console.log("encrypted");
     console.log(encrypted.toString("base64"));
 }
 
@@ -38,12 +39,12 @@ exports.encryptStringWithRsaPublicKey = function() {
 exports.store = function (obj){
     var deferred = defer();
     var buf = Buffer.from(JSON.stringify(obj));
-		console.log(buf);
     encrypt_decrypt.encrypt(buf)
-    .then(function(encrypted_buf){
-			console.log(encrypt_decrypt.encrypt(buf))
-       return  ipfs.files.add(encrypted_buf)
+    .then(function(data){
+			console.log("Before IPFS  " + data)
+       return  ipfs.files.add(data)
     }).then(function(result){
+			console.log("Reached IPFS "+ result[0].hash )
         deferred.resolve(result[0].hash)
     }).catch(function(error){
         deferred.reject(error) ;

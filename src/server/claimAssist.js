@@ -16,7 +16,9 @@ routerClaimAssist.post('/saveClaim', function (req, res) {
     //call encryption function
     .then(function(ipfs_hash){
         return bcdb.saveHashToBCDB(ipfs_hash)
+				console.log(ipfs_hash)
     }).then(function(bcdb_txid){
+			console.log(bcdb_txid)
         res.send(bcdb_txid)
     }).catch(function(error){
         console.log("There is an error ===> " + error.stack)
