@@ -6,7 +6,7 @@ const bcdb = require('./bigchain')
 var routerClaimAssist = express.Router();
 
 routerClaimAssist.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder.html'));
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolderForm.html'));
 });
 
 routerClaimAssist.post('/saveClaim', function (req, res) {
