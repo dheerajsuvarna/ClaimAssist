@@ -1,4 +1,4 @@
-![Logo of the project](src/public/blockinsurance/images/ClaimAssist.jpeg)
+![Logo of the project](readme_images/logo.png)
 
 # Claim Assit
 `> All your claims under one roof`
