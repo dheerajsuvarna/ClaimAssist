@@ -1,4 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](https://bitbucket.org/dheerajsuvarna2/blockinsurance/src/develop/readme_images/usecases.png)
 
 # Claim Assit
 > Additional information or tagline
@@ -18,6 +18,9 @@ awesome-project "Do something!"  # prints "Nah."
 ```
 
 Here you should say what actually happens when you execute the code above.
+
+# Usecases
+(https://bitbucket.org/dheerajsuvarna2/blockinsurance/src/develop/readme_images/usecases.png)
 
 ### Initial Configuration
 
