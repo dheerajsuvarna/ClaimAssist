@@ -16,6 +16,8 @@ packagemanager install awesome-project
 awesome-project start
 awesome-project "Do something!"  # prints "Nah."
 ```
+# Usecases
+!(https://bitbucket.org/dheerajsuvarna2/blockinsurance/src/develop/readme_images/usecases.png)
 
 Here you should say what actually happens when you execute the code above.
 
