@@ -1,4 +1,4 @@
-![Logo of the project](readme_images/logo.png)
+![](readme_images/logo.png)
 
 # Claim Assit
 `> All your claims under one roof`
@@ -22,7 +22,7 @@ This is a secure, decentralized application to handle all the claims at a single
 
 ## Application Workflow
 ----------------------------
-![Work-Flow](readme_images/workflow.jpg)
+![Work-Flow](/readme_images/workflow.jpg)
 
 ## Steps:
 ----------------------------
