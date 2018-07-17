@@ -1,9 +1,13 @@
 ![](readme_images/logo.png)
 
 # Claim Assit
-`> All your claims under one roof`
+> All your claims under one roof
 ----------------------------
-This is a secure, decentralized application to handle all the claims at a single click.
+Claim assist is a secure, decentralized application to handle all the claims settlement at the click of a button.
+
+Currently when a accident ooccurs, the two parties will have to involve in the whole process of claim settlement physically starting from filling the form to claim generation,
+and in this process there is a lot of time and energy wasted. So we wanted to make the life of the policy holders easy by developing an online process that is automated, secure and simple. 
+We use blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
 
 
 ## Included Components
@@ -23,6 +27,13 @@ This is a secure, decentralized application to handle all the claims at a single
 ## Application Workflow
 ----------------------------
 ![Work-Flow](/readme_images/workflow.jpg)
+
+There are 3 usercases involved
+
+1. Usecase 1: At the scene of accident both the parties agree on the fault and settle the claim on their own.
+2. usecase 2: There is no mutual agreement on the accident perpetrator and hence they call police to the scene and get the verification done. The Police will also generate a report based on the evidences collected.
+3. usecase 3: There is an injury involved and hence there will police and hospital invloved in the claim process. The police and hiospital will generate their bill and reports and upload it.
+
 
 ## Steps:
 ----------------------------
