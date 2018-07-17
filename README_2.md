@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dd65bf9b0cb627679a4048a46294309314159f56
 ![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
 
 # Name of the project
@@ -132,6 +135,7 @@ One really important part: Give your project a proper license. Here you should
 state what the license is and how to find the text version of the license.
 Something like:
 
+<<<<<<< HEAD
 "The code in this project is licensed under MIT license."
 =======
 <article class="markdown-body entry-content" itemprop="text"><p><em>Read this in other languages: <a href="/IBM/build-blockchain-insurance-app/blob/master/README-cn.md">中国語</a>,<a href="/IBM/build-blockchain-insurance-app/blob/master/README-ja.md">日本語</a>.</em></p>
@@ -288,3 +292,6 @@ Successfully instantiated chaincode on all peers.
 <p><a href="/IBM/build-blockchain-insurance-app/blob/master/LICENSE">Apache 2.0</a></p>
 </article>
 >>>>>>> 0c3c15ffb9a2c74edbcbe23bafab5e63261db98e
+=======
+"The code in this project is licensed under MIT license."
+>>>>>>> dd65bf9b0cb627679a4048a46294309314159f56
