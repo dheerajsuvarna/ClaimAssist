@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;height: 190px;">
+                        <a href="index.html" class="site_title" style="height: 190px;padding-left: 0px"><img src="images/ClaimAssist.jpeg" style="width: 100%" /></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>Jeshwant Pilla</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a> </li>
+                                <li><a href="form.html"><i class="fa fa-edit"></i> Create Claim </a></li>
+                                <li><a href="tables.html"><i class="fa fa-desktop"></i> Claim Status</a></li>
+                                <li><a href="project_detail.html"><i class="fa fa-table"></i> Notifications</span></a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.jpg" alt="">Jeshwant Pilla
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                          <span>John Smith</span>
+                                            <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                          <span>John Smith</span>
+                                            <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                          <span>John Smith</span>
+                                            <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                          <span>John Smith</span>
+                                            <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                                                <strong>See All Alerts</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h4>Please fill the following form :-</h4>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- Start - Policy holder form -->
+                    <form id="PolicyHolder_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+                        <!-- Start Personal details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Personal details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <!-- <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a> -->
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="policyholder_name">Name <span class="required">*</span>
+                        </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="policyholder_name" name="Policy holder name" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Email address<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="policyholder_email" name="Policy holder email" class="date-picker form-control col-md-7 col-xs-12 " required="required " type="Email ">
+                                                <span class="fa fa-envelope form-control-feedback right " aria-hidden="true "></span></div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Insurance company name<span class="required ">*</span>
+                        </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Policy holder's insurance company" class="form-control" id="policyholder_insurance_company">
+                                                            <option value="">--Select insurance company--</option>
+                                                            <option value="Allianz">Allianz</option>
+                                                            <option value="ABC">ABC</option>
+                                                            </select>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="ln_solid "></div>
+                                        <div class="form-group ">
+                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
+                                                <button class="btn btn-primary " type="button ">Cancel</button>
+                                                <button class="btn btn-primary " type="reset ">Reset</button>
+                                                <button type="submit " class="btn btn-success ">Submit</button>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Policy no.<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="policyholder_policy_no" name="Policy holder policy no." class="date-picker form-control col-md-7 col-xs-12 " type="text ">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Policy holder country" class="form-control" id="policyholder_country">
+                                                            <option value="">--Select your country--</option>
+                                                            <option value="Belgium">Belgium</option>
+                                                            <option value="Croatia">Croatia</option>
+                                                            <option value="Czech Republic">Czech Republic</option>
+                                                            <option value="Egypt">Egypt</option>
+                                                            <option value="France">France</option>
+                                                            <option value="Germany">Germany</option>
+                                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Personal details -->
+                        <!-- Start other party details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Other party details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="otherperson_name">Name<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="otherperson_name" name="Accident place" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Email address<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="otherperson_email" name="Other person email" class="date-picker form-control col-md-7 col-xs-12 " type="email ">
+                                                <span class="fa fa-envelope form-control-feedback right " aria-hidden="true "></span></div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Insurance company name<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Other party insurance company" class="form-control" id="other_party_insurance_company">
+                                                                <option value="">--Select insurance company--</option>
+                                                                <option value="Allianz">Allianz</option>
+                                                                <option value="ABC">ABC</option>
+                                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Policy no.<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="other_party_policy_no" name="Other party policy no." class="date-picker form-control col-md-7 col-xs-12 " type="email ">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Other party country" class="form-control" id="other_party_country">
+                                                                <option value="">--Select your country--</option>
+                                                                <option value="Belgium">Belgium</option>
+                                                                <option value="Croatia">Croatia</option>
+                                                                <option value="Czech Republic">Czech Republic</option>
+                                                                <option value="Egypt">Egypt</option>
+                                                                <option value="France">France</option>
+                                                                <option value="Germany">Germany</option>
+                                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End - other party details -->
+                        <!-- Start - Accident details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Accident details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="otherperson_name">Place<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="accident_place" name="Accident place" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Accident country" class="form-control" id="accident_country">
+                                                                        <option value="">--Select your country--</option>
+                                                                        <option value="Belgium">Belgium</option>
+                                                                        <option value="Croatia">Croatia</option>
+                                                                        <option value="Czech Republic">Czech Republic</option>
+                                                                        <option value="Egypt">Egypt</option>
+                                                                        <option value="France">France</option>
+                                                                        <option value="Germany">Germany</option>
+                                                                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Reporting authority involved<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="radio" name="Reporting authority" value="yes"> Yes &nbsp;
+                                                <input type="radio" name="Reporting authority" value="no"> No
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Injury<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="radio" name="Injury" value="yes"> Yes &nbsp;
+                                                <input type="radio" name="Injury" value="no"> No
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Material damage<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="radio" name="Material damage" value="yes"> Yes &nbsp;
+                                                <input type="radio" name="Material damage" value="no"> No
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Claim_form">Upload Claim form</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="file" id="claim_form" name="Claim form" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Accident photos">Upload Accident photos</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="file" id="Accident_photos" name="Accident photos" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End - Accident details -->
+                        <!-- Start - Witness details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Witness details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="witness_name">Name</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="witness_name" name="Witness name" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Telephone</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="witness_telephone" name="Witness telephone" class="form-control col-md-7 col-xs-12 " type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                                <span class="fa fa-phone form-control-feedback right " aria-hidden="true "></span></div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End- Witness details -->
+                        <!-- Start - Vehicle details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Vehicle details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehicle_type">Vehicle type<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="vehicle_type" name="Vehicle type" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehicle_reg_no">Vehicle registration nr.<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="vehicle_reg_no" name="Vehicle reg nr." class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country of registration<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <select name="Vehicle registration country" class="form-control" id="vehicle_regcountry">
+                                                                                        <option value="">--Select your country--</option>
+                                                                                        <option value="Belgium">Belgium</option>
+                                                                                        <option value="Croatia">Croatia</option>
+                                                                                        <option value="Czech Republic">Czech Republic</option>
+                                                                                        <option value="Egypt">Egypt</option>
+                                                                                        <option value="France">France</option>
+                                                                                        <option value="Germany">Germany</option>
+                                                                                            </select>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End- Vehicle details -->
+                        <!-- Start - Remarks -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Witness details</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Remarks</label>
+                                            <div class="col-md-9 col-sm-9 col-xs-12 ">
+                                                <textarea id="policy_holder_remarks" class="resizable_textarea form-control " placeholder="Please enter your remarks (Max 150 characters)" maxlength="150"></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Telephone</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                <input id="witness_telephone" name="Witness telephone" class="form-control col-md-7 col-xs-12 " type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                                <span class="fa fa-phone form-control-feedback right " aria-hidden="true "></span></div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End- Remarks -->
+                        <div class="ln_solid "></div>
+                        <div class="form-group ">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
+                                <!-- <button class="btn btn-primary " type="button ">Cancel</button> -->
+                                <button class="btn btn-primary " type="reset ">Reset</button>
+                                <button type="submit" class="btn btn-success " id="submit">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                    <!-- Required attr removed for testing purpose. To be added later -->
+                </div>
+            </div>
+
+            <!-- jQuery -->
+            <script src="vendors/jquery/dist/jquery.min.js "></script>
+            <!-- Bootstrap -->
+            <script src="vendors/bootstrap/dist/js/bootstrap.min.js "></script>
+            <!-- FastClick -->
+            <script src="vendors/fastclick/lib/fastclick.js "></script>
+            <!-- NProgress -->
+            <script src="vendors/nprogress/nprogress.js "></script>
+            <!-- bootstrap-progressbar -->
+            <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js "></script>
+            <!-- iCheck -->
+            <script src="vendors/iCheck/icheck.min.js "></script>
+            <!-- bootstrap-daterangepicker -->
+            <script src="vendors/moment/min/moment.min.js "></script>
+            <script src="vendors/bootstrap-daterangepicker/daterangepicker.js "></script>
+            <!-- bootstrap-wysiwyg -->
+            <script src="vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js "></script>
+            <script src="vendors/jquery.hotkeys/jquery.hotkeys.js "></script>
+            <script src="vendors/google-code-prettify/src/prettify.js "></script>
+            <!-- jQuery Tags Input -->
+            <script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js "></script>
+            <!-- Switchery -->
+            <script src="vendors/switchery/dist/switchery.min.js "></script>
+            <!-- Select2 -->
+            <script src="vendors/select2/dist/js/select2.full.min.js "></script>
+            <!-- Parsley -->
+            <script src="vendors/parsleyjs/dist/parsley.min.js "></script>
+            <!-- Autosize -->
+            <script src="vendors/autosize/dist/autosize.min.js "></script>
+            <!-- jQuery autocomplete -->
+            <script src="vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js "></script>
+            <!-- starrr -->
+            <script src="vendors/starrr/dist/starrr.js "></script>
+            <!-- Custom Theme Scripts -->
+            <script src="js/custom.min.js "></script>
+
+</body>
+<script>
+    $("#submit").click(function() {
+        event.preventDefault();
+        var jsondata = {};
+        var claim_form;
+        // var accident_photos;
+        var file = document.getElementById('claim_form').files[0];
+        if (file) {
+            // create reader
+            var reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = function(e) {
+                claim_form = e.target.result;
+            };
+        }
+        // var image = document.getElementById('Accident_photos').files[0];
+        // if (image) {
+        //     // create reader
+        //     var reader = new FileReader();
+        //     reader.readAsText(image);
+        //     reader.onload = function(e) {
+        //         accident_photos = e.target.result;
+        //     };
+        // }
+        $("input").each(function($i) {
+            var name = $(this).attr('name')
+            if ($(this).val()) {
+                jsondata[name] = $(this).val();
+            }
+            $("input:radio:checked").each(function($i) {
+                var name = $(this).attr('name')
+                if ($(this).val()) {
+                    jsondata[name] = $(this).val();
+                }
+            });
+
+            $("select").each(function($i) {
+                var name = $(this).attr('name')
+                if ($(this).val()) {
+                    jsondata[name] = $(this).val();
+                }
+            });
+
+        });
+        console.log(jsondata);
+        console.log(claim_form);
+        alert(JSON.stringify(jsondata));
+
+        $.post("/saveClaim", {
+                claimObject: jsondata
+            },
+            function(result) {
+                console.log("hash ====> " + result)
+            });
+
+    });
+
+    function saveClaim() {
+        console.log("Reached HEre ")
+    }
+</script>
+
+</html>
