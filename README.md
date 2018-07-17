@@ -1,10 +1,15 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](src/public/blockinsurance/images/ClaimAssist.jpeg)
 
 # Claim Assit
-> Additional information or tagline
+`> All your claims under one roof`
 
-A brief description of your project, what it is used for and how does life get
-awesome when someone starts to use it.
+This is a secure, decentralized application to handle all the claims at a single click.
+
+
+## Included Components
+- Ethereum
+- Bigchain
+- IPFS
 
 ## Instalation links
 
@@ -12,6 +17,13 @@ awesome when someone starts to use it.
 - NPM : https://www.npmjs.com/
 - Truffle : https://truffleframework.com/
 - BigchainDB : https://www.bigchaindb.com/
+- IPFS : https://ipfs.io/
+
+## Application Workflow
+
+![Work-Flow](readme_images/workflow.jpg)
+
+
 
 ```shell
 packagemanager install awesome-project
