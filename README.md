@@ -2,17 +2,18 @@
 
 # Claim Assit
 `> All your claims under one roof`
-
+----------------------------
 This is a secure, decentralized application to handle all the claims at a single click.
 
 
 ## Included Components
+----------------------------
 - Ethereum
 - Bigchain
 - IPFS
 
 ## Prerequisites
-
+----------------------------
 - Node : https://nodejs.org/en/
 - NPM : https://www.npmjs.com/
 - Truffle : https://truffleframework.com/
@@ -20,16 +21,54 @@ This is a secure, decentralized application to handle all the claims at a single
 - IPFS : https://ipfs.io/
 
 ## Application Workflow
-
+----------------------------
 ![Work-Flow](readme_images/workflow.jpg)
 
 ## Steps:
+----------------------------
 # 1.Run the application
 - Clone the repository:
-```git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git```
+`git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git`
 - Go to the project directory and intall the dependencies:
 ```npm install```
+- Run the application finally :
+` npm run `
 
+Use the link http://localhost:3001 to load the web application in browser.
+
+This will take you to the landing page of our application. You can find more details about our application here.
+![Landing_page](readme_images/workflow.jpg)
+
+
+
+# 
+#
+## 
+#
+## 
+#
+## 
+#
+#
+# 
+#
+## 
+#
+## 
+#
+## 
+#
+## 
+#
+## 
+#
+## 
+#
+## 
+#
+## 
+#
+#
 
 ```shell
 packagemanager install awesome-project
