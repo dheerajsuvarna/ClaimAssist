@@ -11,7 +11,7 @@ This is a secure, decentralized application to handle all the claims at a single
 - Bigchain
 - IPFS
 
-## Instalation links
+## Prerequisites
 
 - Node : https://nodejs.org/en/
 - NPM : https://www.npmjs.com/
@@ -23,6 +23,12 @@ This is a secure, decentralized application to handle all the claims at a single
 
 ![Work-Flow](readme_images/workflow.jpg)
 
+## Steps:
+# 1.Run the application
+- Clone the repository:
+```git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git```
+- Go to the project directory and intall the dependencies:
+```npm install```
 
 
 ```shell
