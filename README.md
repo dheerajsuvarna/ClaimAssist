@@ -6,10 +6,12 @@
 A brief description of your project, what it is used for and how does life get
 awesome when someone starts to use it.
 
-## Installing / Getting started
+## Instalation links
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+- Node : https://nodejs.org/en/
+- NPM : https://www.npmjs.com/
+- Truffle : https://truffleframework.com/
+- BigchainDB : https://www.bigchaindb.com/
 
 ```shell
 packagemanager install awesome-project
