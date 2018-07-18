@@ -39,14 +39,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60806040527303c0026656a617e9673046f1693c12d72863a4356000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034801561006457600080fd5b50610425806100746000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631949c3e814610051578063f7e13da8146100c8575b600080fd5b34801561005d57600080fd5b506100c66004803603810190808035600019169060200190929190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610172565b005b3480156100d457600080fd5b506100f760048036038101908080356000191690602001909291905050506102c7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013757808201518184015260208101905061011c565b50505050905090810190601f1680156101645780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b35497db8383336040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808460001916600019168152602001806020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825284818151815260200191508051906020019080838360005b8381101561025d578082015181840152602081019050610242565b50505050905090810190601f16801561028a5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b1580156102ab57600080fd5b505af11580156102bf573d6000803e3d6000fd5b505050505050565b60606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f7e13da8836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561039f57600080fd5b8101908080516401000000008111156103b757600080fd5b828101905060208101848111156103cd57600080fd5b81518560018202830111640100000000821117156103ea57600080fd5b505092919050505090509190505600a165627a7a723058209603654add36f15d9290331e3c0f593c75bf09c6d113d0ccb6b1455e384504220029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631949c3e814610051578063f7e13da8146100c8575b600080fd5b34801561005d57600080fd5b506100c66004803603810190808035600019169060200190929190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610172565b005b3480156100d457600080fd5b506100f760048036038101908080356000191690602001909291905050506102c7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013757808201518184015260208101905061011c565b50505050905090810190601f1680156101645780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b35497db8383336040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808460001916600019168152602001806020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825284818151815260200191508051906020019080838360005b8381101561025d578082015181840152602081019050610242565b50505050905090810190601f16801561028a5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b1580156102ab57600080fd5b505af11580156102bf573d6000803e3d6000fd5b505050505050565b60606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f7e13da8836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561039f57600080fd5b8101908080516401000000008111156103b757600080fd5b828101905060208101848111156103cd57600080fd5b81518560018202830111640100000000821117156103ea57600080fd5b505092919050505090509190505600a165627a7a723058209603654add36f15d9290331e3c0f593c75bf09c6d113d0ccb6b1455e384504220029",
-  "sourceMap": "61:538:1:-;;;129:42;88:84;;;;;;;;;;;;;;;;;;;;61:538;8:9:-1;5:2;;;30:1;27;20:12;5:2;61:538:1;;;;;;;",
-  "deployedSourceMap": "61:538:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;298:139;;8:9:-1;5:2;;;30:1;27;20:12;5:2;298:139:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;445:145;;8:9:-1;5:2;;;30:1;27;20:12;5:2;445:145:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;445:145:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;298:139;372:12;;;;;;;;;;;:21;;;394:7;403:13;418:10;372:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;372:57:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;372:57:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;372:57:1;;;;298:139;;:::o;445:145::-;509:5;534:12;;;;;;;;;;;:28;;;563:8;534:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;534:38:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;534:38:1;;;;;;39:16:-1;36:1;17:17;2:54;534:38:1;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;13:2;8:3;5:11;2:2;;;29:1;26;19:12;2:2;534:38:1;;;;;;20:11:-1;15:3;12:20;9:2;;;45:1;42;35:12;9:2;73:11;68:3;64:21;57:28;;126:4;121:3;117:14;163:9;145:16;142:31;139:2;;;186:1;183;176:12;139:2;224:3;218:10;338:9;333:1;319:12;315:20;297:16;293:43;290:58;268:11;254:12;251:29;239:118;236:2;;;370:1;367;360:12;236:2;0:382;;534:38:1;;;;;;527:45;;445:145;;;:::o",
-  "source": "pragma solidity ^0.4.4;\r\n\r\nimport \"./ClaimStorage.sol\";\r\n\r\n\r\ncontract Claim{\r\n    \r\n    ClaimStorage claimStorage = ClaimStorage(0x03c0026656a617e9673046f1693c12d72863a435);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained\r\n    bytes hash;\r\n  \r\n    function addClaim( bytes32 claimId, bytes _bigchainHash) public {\r\n       claimStorage.setClaim(claimId, _bigchainHash, msg.sender);\r\n    }\r\n\r\n    function getBigchainHash(bytes32 _claimId) public view returns (bytes) {\r\n        return claimStorage.getBigchainHash(_claimId);\r\n        \r\n    }\r\n\r\n\r\n\r\n}\r\n",
-  "sourcePath": "C:\\Users\\dheer\\Documents\\BlockchainAPC\\blockinsurance\\contracts\\claimAssist\\Claim.sol",
+  "bytecode": "0x608060405273ecfcab0a285d3380e488a39b4bb21e777f8a4eac6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034801561006457600080fd5b50610425806100746000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631949c3e814610051578063f7e13da8146100c8575b600080fd5b34801561005d57600080fd5b506100c66004803603810190808035600019169060200190929190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610172565b005b3480156100d457600080fd5b506100f760048036038101908080356000191690602001909291905050506102c7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013757808201518184015260208101905061011c565b50505050905090810190601f1680156101645780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b35497db8383336040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808460001916600019168152602001806020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825284818151815260200191508051906020019080838360005b8381101561025d578082015181840152602081019050610242565b50505050905090810190601f16801561028a5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b1580156102ab57600080fd5b505af11580156102bf573d6000803e3d6000fd5b505050505050565b60606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f7e13da8836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561039f57600080fd5b8101908080516401000000008111156103b757600080fd5b828101905060208101848111156103cd57600080fd5b81518560018202830111640100000000821117156103ea57600080fd5b505092919050505090509190505600a165627a7a72305820e5ba0b4067c4f90a6a8000b8ae1edeca9d66b799c32ff71569278bbbf8e030970029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631949c3e814610051578063f7e13da8146100c8575b600080fd5b34801561005d57600080fd5b506100c66004803603810190808035600019169060200190929190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610172565b005b3480156100d457600080fd5b506100f760048036038101908080356000191690602001909291905050506102c7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013757808201518184015260208101905061011c565b50505050905090810190601f1680156101645780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b35497db8383336040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808460001916600019168152602001806020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825284818151815260200191508051906020019080838360005b8381101561025d578082015181840152602081019050610242565b50505050905090810190601f16801561028a5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b1580156102ab57600080fd5b505af11580156102bf573d6000803e3d6000fd5b505050505050565b60606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f7e13da8836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561039f57600080fd5b8101908080516401000000008111156103b757600080fd5b828101905060208101848111156103cd57600080fd5b81518560018202830111640100000000821117156103ea57600080fd5b505092919050505090509190505600a165627a7a72305820e5ba0b4067c4f90a6a8000b8ae1edeca9d66b799c32ff71569278bbbf8e030970029",
+  "sourceMap": "61:524:1:-;;;125:42;84:84;;;;;;;;;;;;;;;;;;;;61:524;8:9:-1;5:2;;;30:1;27;20:12;5:2;61:524:1;;;;;;;",
+  "deployedSourceMap": "61:524:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;292:139;;8:9:-1;5:2;;;30:1;27;20:12;5:2;292:139:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;439:137;;8:9:-1;5:2;;;30:1;27;20:12;5:2;439:137:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;439:137:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;292:139;366:12;;;;;;;;;;;:21;;;388:7;397:13;412:10;366:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;366:57:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;366:57:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;366:57:1;;;;292:139;;:::o;439:137::-;503:5;528:12;;;;;;;;;;;:28;;;557:8;528:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;528:38:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;528:38:1;;;;;;39:16:-1;36:1;17:17;2:54;528:38:1;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;13:2;8:3;5:11;2:2;;;29:1;26;19:12;2:2;528:38:1;;;;;;20:11:-1;15:3;12:20;9:2;;;45:1;42;35:12;9:2;73:11;68:3;64:21;57:28;;126:4;121:3;117:14;163:9;145:16;142:31;139:2;;;186:1;183;176:12;139:2;224:3;218:10;338:9;333:1;319:12;315:20;297:16;293:43;290:58;268:11;254:12;251:29;239:118;236:2;;;370:1;367;360:12;236:2;0:382;;528:38:1;;;;;;521:45;;439:137;;;:::o",
+  "source": "pragma solidity ^0.4.4;\r\n\r\nimport \"./ClaimStorage.sol\";\r\n\r\n\r\ncontract Claim{\r\n\r\n    ClaimStorage claimStorage = ClaimStorage(0xecfcab0a285d3380e488a39b4bb21e777f8a4eac);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained\r\n    bytes hash;\r\n\r\n    function addClaim( bytes32 claimId, bytes _bigchainHash) public {\r\n       claimStorage.setClaim(claimId, _bigchainHash, msg.sender);\r\n    }\r\n\r\n    function getBigchainHash(bytes32 _claimId) public view returns (bytes) {\r\n        return claimStorage.getBigchainHash(_claimId);\r\n\r\n    }\r\n\r\n\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\jeshw\\blockinsurance\\contracts\\claimAssist\\Claim.sol",
   "ast": {
-    "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/Claim.sol",
+    "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/Claim.sol",
     "exportedSymbols": {
       "Claim": [
         81
@@ -67,7 +67,7 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
         "file": "./ClaimStorage.sol",
         "id": 43,
         "nodeType": "ImportDirective",
@@ -96,7 +96,7 @@
             "name": "claimStorage",
             "nodeType": "VariableDeclaration",
             "scope": 81,
-            "src": "88:84:1",
+            "src": "84:84:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -109,7 +109,7 @@
               "name": "ClaimStorage",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 556,
-              "src": "88:12:1",
+              "src": "84:12:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ClaimStorage_$556",
                 "typeString": "contract ClaimStorage"
@@ -120,7 +120,7 @@
               "arguments": [
                 {
                   "argumentTypes": null,
-                  "hexValue": "307830336330303236363536613631376539363733303436663136393363313264373238363361343335",
+                  "hexValue": "307865636663616230613238356433333830653438386133396234626232316537373766386134656163",
                   "id": 46,
                   "isConstant": false,
                   "isLValue": false,
@@ -128,20 +128,20 @@
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "129:42:1",
+                  "src": "125:42:1",
                   "subdenomination": null,
                   "typeDescriptions": {
-                    "typeIdentifier": "t_rational_21408924439138701575628471791667393314798412853_by_1",
-                    "typeString": "int_const 2140...(39 digits omitted)...2853"
+                    "typeIdentifier": "t_rational_1352956509361826893016312894193395015112448429740_by_1",
+                    "typeString": "int_const 1352...(41 digits omitted)...9740"
                   },
-                  "value": "0x03c0026656a617e9673046f1693c12d72863a435"
+                  "value": "0xecfcab0a285d3380e488a39b4bb21e777f8a4eac"
                 }
               ],
               "expression": {
                 "argumentTypes": [
                   {
-                    "typeIdentifier": "t_rational_21408924439138701575628471791667393314798412853_by_1",
-                    "typeString": "int_const 2140...(39 digits omitted)...2853"
+                    "typeIdentifier": "t_rational_1352956509361826893016312894193395015112448429740_by_1",
+                    "typeString": "int_const 1352...(41 digits omitted)...9740"
                   }
                 ],
                 "id": 45,
@@ -149,7 +149,7 @@
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 556,
-                "src": "116:12:1",
+                "src": "112:12:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$556_$",
                   "typeString": "type(contract ClaimStorage)"
@@ -163,7 +163,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "116:56:1",
+              "src": "112:56:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ClaimStorage_$556",
                 "typeString": "contract ClaimStorage"
@@ -177,7 +177,7 @@
             "name": "hash",
             "nodeType": "VariableDeclaration",
             "scope": 81,
-            "src": "277:10:1",
+            "src": "273:10:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -188,7 +188,7 @@
               "id": 49,
               "name": "bytes",
               "nodeType": "ElementaryTypeName",
-              "src": "277:5:1",
+              "src": "273:5:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes_storage_ptr",
                 "typeString": "bytes"
@@ -201,7 +201,7 @@
             "body": {
               "id": 66,
               "nodeType": "Block",
-              "src": "362:75:1",
+              "src": "356:75:1",
               "statements": [
                 {
                   "expression": {
@@ -214,7 +214,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 52,
-                        "src": "394:7:1",
+                        "src": "388:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -227,7 +227,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 54,
-                        "src": "403:13:1",
+                        "src": "397:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -242,7 +242,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 664,
-                          "src": "418:3:1",
+                          "src": "412:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -256,7 +256,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "418:10:1",
+                        "src": "412:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -285,7 +285,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 48,
-                        "src": "372:12:1",
+                        "src": "366:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_ClaimStorage_$556",
                           "typeString": "contract ClaimStorage"
@@ -299,7 +299,7 @@
                       "memberName": "setClaim",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 501,
-                      "src": "372:21:1",
+                      "src": "366:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes_memory_ptr_$_t_address_$returns$__$",
                         "typeString": "function (bytes32,bytes memory,address) external"
@@ -313,7 +313,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "372:57:1",
+                    "src": "366:57:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -321,7 +321,7 @@
                   },
                   "id": 65,
                   "nodeType": "ExpressionStatement",
-                  "src": "372:57:1"
+                  "src": "366:57:1"
                 }
               ]
             },
@@ -343,7 +343,7 @@
                   "name": "claimId",
                   "nodeType": "VariableDeclaration",
                   "scope": 67,
-                  "src": "317:15:1",
+                  "src": "311:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -354,7 +354,7 @@
                     "id": 51,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "317:7:1",
+                    "src": "311:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -369,7 +369,7 @@
                   "name": "_bigchainHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 67,
-                  "src": "334:19:1",
+                  "src": "328:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -380,7 +380,7 @@
                     "id": 53,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "334:5:1",
+                    "src": "328:5:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -390,17 +390,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "315:39:1"
+              "src": "309:39:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 56,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "362:0:1"
+              "src": "356:0:1"
             },
             "scope": 81,
-            "src": "298:139:1",
+            "src": "292:139:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -409,7 +409,7 @@
             "body": {
               "id": 79,
               "nodeType": "Block",
-              "src": "516:74:1",
+              "src": "510:66:1",
               "statements": [
                 {
                   "expression": {
@@ -422,7 +422,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 69,
-                        "src": "563:8:1",
+                        "src": "557:8:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -443,7 +443,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 48,
-                        "src": "534:12:1",
+                        "src": "528:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_ClaimStorage_$556",
                           "typeString": "contract ClaimStorage"
@@ -457,7 +457,7 @@
                       "memberName": "getBigchainHash",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 365,
-                      "src": "534:28:1",
+                      "src": "528:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bytes_memory_ptr_$",
                         "typeString": "function (bytes32) view external returns (bytes memory)"
@@ -471,7 +471,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "534:38:1",
+                    "src": "528:38:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory_ptr",
                       "typeString": "bytes memory"
@@ -480,7 +480,7 @@
                   "functionReturnParameters": 73,
                   "id": 78,
                   "nodeType": "Return",
-                  "src": "527:45:1"
+                  "src": "521:45:1"
                 }
               ]
             },
@@ -502,7 +502,7 @@
                   "name": "_claimId",
                   "nodeType": "VariableDeclaration",
                   "scope": 80,
-                  "src": "470:16:1",
+                  "src": "464:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -513,7 +513,7 @@
                     "id": 68,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "470:7:1",
+                    "src": "464:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -523,7 +523,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "469:18:1"
+              "src": "463:18:1"
             },
             "payable": false,
             "returnParameters": {
@@ -536,7 +536,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 80,
-                  "src": "509:5:1",
+                  "src": "503:5:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -547,7 +547,7 @@
                     "id": 71,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "509:5:1",
+                    "src": "503:5:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -557,23 +557,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "508:7:1"
+              "src": "502:7:1"
             },
             "scope": 81,
-            "src": "445:145:1",
+            "src": "439:137:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 82,
-        "src": "61:538:1"
+        "src": "61:524:1"
       }
     ],
-    "src": "0:601:1"
+    "src": "0:587:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/Claim.sol",
+    "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/Claim.sol",
     "exportedSymbols": {
       "Claim": [
         81
@@ -594,7 +594,7 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
         "file": "./ClaimStorage.sol",
         "id": 43,
         "nodeType": "ImportDirective",
@@ -623,7 +623,7 @@
             "name": "claimStorage",
             "nodeType": "VariableDeclaration",
             "scope": 81,
-            "src": "88:84:1",
+            "src": "84:84:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -636,7 +636,7 @@
               "name": "ClaimStorage",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 556,
-              "src": "88:12:1",
+              "src": "84:12:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ClaimStorage_$556",
                 "typeString": "contract ClaimStorage"
@@ -647,7 +647,7 @@
               "arguments": [
                 {
                   "argumentTypes": null,
-                  "hexValue": "307830336330303236363536613631376539363733303436663136393363313264373238363361343335",
+                  "hexValue": "307865636663616230613238356433333830653438386133396234626232316537373766386134656163",
                   "id": 46,
                   "isConstant": false,
                   "isLValue": false,
@@ -655,20 +655,20 @@
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "129:42:1",
+                  "src": "125:42:1",
                   "subdenomination": null,
                   "typeDescriptions": {
-                    "typeIdentifier": "t_rational_21408924439138701575628471791667393314798412853_by_1",
-                    "typeString": "int_const 2140...(39 digits omitted)...2853"
+                    "typeIdentifier": "t_rational_1352956509361826893016312894193395015112448429740_by_1",
+                    "typeString": "int_const 1352...(41 digits omitted)...9740"
                   },
-                  "value": "0x03c0026656a617e9673046f1693c12d72863a435"
+                  "value": "0xecfcab0a285d3380e488a39b4bb21e777f8a4eac"
                 }
               ],
               "expression": {
                 "argumentTypes": [
                   {
-                    "typeIdentifier": "t_rational_21408924439138701575628471791667393314798412853_by_1",
-                    "typeString": "int_const 2140...(39 digits omitted)...2853"
+                    "typeIdentifier": "t_rational_1352956509361826893016312894193395015112448429740_by_1",
+                    "typeString": "int_const 1352...(41 digits omitted)...9740"
                   }
                 ],
                 "id": 45,
@@ -676,7 +676,7 @@
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 556,
-                "src": "116:12:1",
+                "src": "112:12:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$556_$",
                   "typeString": "type(contract ClaimStorage)"
@@ -690,7 +690,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "116:56:1",
+              "src": "112:56:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ClaimStorage_$556",
                 "typeString": "contract ClaimStorage"
@@ -704,7 +704,7 @@
             "name": "hash",
             "nodeType": "VariableDeclaration",
             "scope": 81,
-            "src": "277:10:1",
+            "src": "273:10:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -715,7 +715,7 @@
               "id": 49,
               "name": "bytes",
               "nodeType": "ElementaryTypeName",
-              "src": "277:5:1",
+              "src": "273:5:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes_storage_ptr",
                 "typeString": "bytes"
@@ -728,7 +728,7 @@
             "body": {
               "id": 66,
               "nodeType": "Block",
-              "src": "362:75:1",
+              "src": "356:75:1",
               "statements": [
                 {
                   "expression": {
@@ -741,7 +741,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 52,
-                        "src": "394:7:1",
+                        "src": "388:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -754,7 +754,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 54,
-                        "src": "403:13:1",
+                        "src": "397:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -769,7 +769,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 664,
-                          "src": "418:3:1",
+                          "src": "412:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -783,7 +783,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "418:10:1",
+                        "src": "412:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -812,7 +812,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 48,
-                        "src": "372:12:1",
+                        "src": "366:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_ClaimStorage_$556",
                           "typeString": "contract ClaimStorage"
@@ -826,7 +826,7 @@
                       "memberName": "setClaim",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 501,
-                      "src": "372:21:1",
+                      "src": "366:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes_memory_ptr_$_t_address_$returns$__$",
                         "typeString": "function (bytes32,bytes memory,address) external"
@@ -840,7 +840,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "372:57:1",
+                    "src": "366:57:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -848,7 +848,7 @@
                   },
                   "id": 65,
                   "nodeType": "ExpressionStatement",
-                  "src": "372:57:1"
+                  "src": "366:57:1"
                 }
               ]
             },
@@ -870,7 +870,7 @@
                   "name": "claimId",
                   "nodeType": "VariableDeclaration",
                   "scope": 67,
-                  "src": "317:15:1",
+                  "src": "311:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -881,7 +881,7 @@
                     "id": 51,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "317:7:1",
+                    "src": "311:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -896,7 +896,7 @@
                   "name": "_bigchainHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 67,
-                  "src": "334:19:1",
+                  "src": "328:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -907,7 +907,7 @@
                     "id": 53,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "334:5:1",
+                    "src": "328:5:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -917,17 +917,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "315:39:1"
+              "src": "309:39:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 56,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "362:0:1"
+              "src": "356:0:1"
             },
             "scope": 81,
-            "src": "298:139:1",
+            "src": "292:139:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -936,7 +936,7 @@
             "body": {
               "id": 79,
               "nodeType": "Block",
-              "src": "516:74:1",
+              "src": "510:66:1",
               "statements": [
                 {
                   "expression": {
@@ -949,7 +949,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 69,
-                        "src": "563:8:1",
+                        "src": "557:8:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -970,7 +970,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 48,
-                        "src": "534:12:1",
+                        "src": "528:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_ClaimStorage_$556",
                           "typeString": "contract ClaimStorage"
@@ -984,7 +984,7 @@
                       "memberName": "getBigchainHash",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 365,
-                      "src": "534:28:1",
+                      "src": "528:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bytes_memory_ptr_$",
                         "typeString": "function (bytes32) view external returns (bytes memory)"
@@ -998,7 +998,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "534:38:1",
+                    "src": "528:38:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory_ptr",
                       "typeString": "bytes memory"
@@ -1007,7 +1007,7 @@
                   "functionReturnParameters": 73,
                   "id": 78,
                   "nodeType": "Return",
-                  "src": "527:45:1"
+                  "src": "521:45:1"
                 }
               ]
             },
@@ -1029,7 +1029,7 @@
                   "name": "_claimId",
                   "nodeType": "VariableDeclaration",
                   "scope": 80,
-                  "src": "470:16:1",
+                  "src": "464:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1040,7 +1040,7 @@
                     "id": 68,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "470:7:1",
+                    "src": "464:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1050,7 +1050,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "469:18:1"
+              "src": "463:18:1"
             },
             "payable": false,
             "returnParameters": {
@@ -1063,7 +1063,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 80,
-                  "src": "509:5:1",
+                  "src": "503:5:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1074,7 +1074,7 @@
                     "id": 71,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "509:5:1",
+                    "src": "503:5:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1084,20 +1084,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "508:7:1"
+              "src": "502:7:1"
             },
             "scope": 81,
-            "src": "445:145:1",
+            "src": "439:137:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 82,
-        "src": "61:538:1"
+        "src": "61:524:1"
       }
     ],
-    "src": "0:601:1"
+    "src": "0:587:1"
   },
   "compiler": {
     "name": "solc",
@@ -1107,10 +1107,10 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0x855d1c79ad3fb086d516554dc7187e3fdfc1c79a",
-      "transactionHash": "0x14030e9b90fb57bfb78384d644e90a0e82be5fedc1864f259ce5372efaae85bf"
+      "address": "0x8e4c131b37383e431b9cd0635d3cf9f3f628edae",
+      "transactionHash": "0x26f50fe9f0de0a35c2435f59b4dcd6d836eb0a01a3deb4e48023a4f89a01d3bd"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-16T15:42:43.469Z"
+  "updatedAt": "2018-07-17T23:07:44.528Z"
 }

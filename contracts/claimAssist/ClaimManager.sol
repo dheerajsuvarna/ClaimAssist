@@ -6,7 +6,7 @@ import "./Claim.sol";
 
 contract ClaimManager {
 
-    ClaimStorage claimStorage = ClaimStorage(0x75a3a98f5696299071da253c1433a2661898103e); 
+    ClaimStorage claimStorage = ClaimStorage(0xecfcab0a285d3380e488a39b4bb21e777f8a4eac); 
      /*** Events ****************/
 
     event ContractUpgraded (
@@ -69,11 +69,11 @@ contract ClaimManager {
         // Log it
         emit ContractAdded(_contractAddress, now);
     }
-    
+
     function addHospitalToRegistry(address _newHospitalAddress) public{
         claimStorage.setHospitalBool(_newHospitalAddress);
     }
-    
+
     function addPoliceToRegistry(address _newPoliceAddress) public{
         claimStorage.setPoliceBool(_newPoliceAddress);
     }
