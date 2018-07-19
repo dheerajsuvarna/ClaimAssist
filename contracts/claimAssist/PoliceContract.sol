@@ -13,7 +13,7 @@ contract PoliceContract {
 
     /*** Contracts **************/
 
-    ClaimStorage claimStorage = ClaimStorage(0xecfcab0a285d3380e488a39b4bb21e777f8a4eac);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
+    ClaimStorage claimStorage = ClaimStorage(0x2467636bea0f3c2441227eedbffac59f11d54a80);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
 
     /*** Modifiers ***********/
 

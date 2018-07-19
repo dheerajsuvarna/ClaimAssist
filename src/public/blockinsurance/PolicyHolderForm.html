@@ -49,11 +49,11 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="public/blockinsurance/images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img src="public/blockinsurance/images/sid.jpeg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Jeshwant Pilla</h2>
+                            <h2>Sid</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -106,7 +106,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="public/blockinsurance/images/img.jpg" alt="">Jeshwant Pilla
+                                    <img src="public/blockinsurance/images/sid.jpeg" alt="">Sid
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -558,7 +558,7 @@
     $("#submit").click(function() {
         event.preventDefault();
         var jsondata = {};
-        var claim_form;
+        var accidentPhotos;
         // var accident_photos;
         var file = document.getElementById('claim_form').files[0];
         if (file) {
@@ -566,7 +566,8 @@
             var reader = new FileReader();
             reader.readAsText(file);
             reader.onload = function(e) {
-                claim_form = e.target.result;
+                accidentPhotos = e.target.result;
+                console.log(accidentPhotos);
             };
         }
         // var image = document.getElementById('Accident_photos').files[0];
