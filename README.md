@@ -33,6 +33,16 @@ There are 3 usercases involved
 2. usecase 2: There is no mutual agreement on the accident perpetrator and hence they call police to the scene and get the verification done. The Police will also generate a report based on the evidences collected.
 3. usecase 3: There is an injury involved and hence there will police and hospital invloved in the claim process. The police and hiospital will generate their bill and reports and upload it.
 
+## Architecture
+----------------------------
+
+
+
+## Compatibility with other blockchain based insurance Application
+----------------------------
+The system is designed such that it can provide service to multiple insurance companies. The aim is to reduce the job of the insurance companies of getting involved in the claim generation process which is actually painful. We provide an API for the insurance comapnies where they can request for all the data that is requeired for their claim handling process. All the data is encrypted and cant be tampered. 
+
+
 
 ## Application Workflow
 ----------------------------
