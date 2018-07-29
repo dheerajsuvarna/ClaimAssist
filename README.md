@@ -42,7 +42,7 @@ There are 3 usercases involved
 ----------------------------
 The Accident victim/ AP logs in into the system and starts to fill the data for the claim form, the details include his personal as well as the other party's information. once the person submits the form, the supporting files are stored on the IPFS, and the form details is stored in the IPFS as a json, the hash of this file is stored over the Bigchaindb along with the claim id. The bigchaindb acts as a registery for all the claim related data. The hash of bigchain is now stored in the blockchain against the claim id.
 
-![](readme_images/claim_generation.gif)
+![claim generation process](readme_images/claim_generation.gif)
 
 
 ## Steps:
