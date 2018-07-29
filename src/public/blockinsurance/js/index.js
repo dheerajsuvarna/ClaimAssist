@@ -1,5 +1,6 @@
 function claim() {
   event.preventDefault();
+  console.log("Reached Here")
   var buttonValue = {};
   $("input").each(function ($i) {
     var name = $(this).attr('name')
@@ -7,8 +8,8 @@ function claim() {
       buttonValue[name] = $(this).val();
     }
     var e = document.getElementById("acc_country");
-    var strCountry = e.options[e.selectedIndex].value;
-    buttonValue['acc_country'] = strCountry;
+    // var strCountry = e.options[e.selectedIndex].value;
+    // buttonValue['acc_country'] = strCountry;
   });
   //Make the POST call to save the claim on IPFS and get back Bigchain hash
   $.post("/saveClaim", {
@@ -18,6 +19,37 @@ function claim() {
     //Save this hash on Smart Contract
     window.location.replace("http://localhost:3001/showAgreement");
   });
+
+    // e.preventDefault();
+    //
+    //   var jsondata = {};
+    //   alert("Data")
+    //   $("input").each(function($i) {
+    //       var name = $(this).attr('name')
+    //       if ($(this).val()) {
+    //           jsondata[name] = $(this).val();
+    //       }
+    //       $("input:radio:checked").each(function($i) {
+    //           var name = $(this).attr('name')
+    //           if ($(this).val()) {
+    //               jsondata[name] = $(this).val();
+    //           }
+    //       });
+    //
+    //       $("select").each(function($i) {
+    //           var name = $(this).attr('name')
+    //           if ($(this).val()) {
+    //               jsondata[name] = $(this).val();
+    //           }
+    //       });
+    //
+    //   });
+      // $.post("/saveClaim", {
+      //         claimObject: jsondata
+      //     },
+      //     function(result) {
+      //         console.log("hash ====> " + result)
+      //     });
 }
 
 
@@ -25,9 +57,6 @@ function claim() {
 var App = {
   web3Provider: null,
   contracts: {},
-
-
-
 
   init: function () {
     return App.initWeb3();
@@ -41,44 +70,28 @@ var App = {
       web3 = new Web3(web3.currentProvider);
     } else {
       // set the provider you want from Web3.providers
-      App.web3Provider = new web3.providers.HttpProvider("https://rinkeby.infura.io/eqWL8Q6R8MZLGS1XF0z5");
+      App.web3Provider = new web3.providers.HttpProvider("http://localhost:9545");
       web3 = new Web3(App.web3Provider);
     }
     console.log("Init WEB3")
-    return App.initICSContract();
+    return App.callContracts();
   },
 
-  initICSContract: function () {
-   
-    $.getJSON('/public/contracts/Claim.json', function (data) {
-      // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var ClaimArtifact = data;
-      App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
-      // Set the provider for our contract.
-      App.contracts.ClaimContract.setProvider(App.web3Provider);
-      addClaimOnBlockchain("0x2222","0x123456789");
+  callContracts: function () {
 
-  
-      // web3.eth.getAccounts(function(error, accounts) {
-      //   if (error) {
-      //     console.log(error);
-      //   }
-      //   var claimInitiator = accounts[0];
-      //   console.log("Inside web3")
-      //   App.contracts.ClaimContract.deployed().then(function(instance) {
-      //     console.log("inside deployed")
-      //     ClaimInstance = instance;
-      //     return ClaimInstance.addClaim("0x545454", 0x234455234 ,{from: claimInitiator});
-      //   }).then(function(response) {
-      //     console.log("Inside this");
-      //     console.log(response);
-      //   }).catch(function(err) {
-      //     console.log(err.message);
-      //   });
-      // });
-    });
+    //addClaimOnBlockchain("0x1231234", "0x999999");
+    //getBigchainHash("0x545454");
+    //getBigchainHash("0x123123");
+    //addSignature("0x123123","0x888888");
+    //getSignatures("0x123123");
+    //addPolice("0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef");
+    //addReportOnBlockchain("0x123123","0x777777");
+    //getBigchainHash("0x123123");
+    //addHospital("0x821aEa9a577a9b44299B9c15c88cf3087F3b5544");
+    //addBillOnBlockchain("0x123123","0x66666");
+    console.log("Hash");
+    getBigchainHash("0x1231234");
   }
-
 
 };
 
