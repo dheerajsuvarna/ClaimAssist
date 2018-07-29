@@ -24,7 +24,7 @@ We use blockchain technology for handling the claim data which makes it fully ta
 - BigchainDB : https://www.bigchaindb.com/
 - IPFS : https://ipfs.io/
 
-## Application Workflow
+## Usecases
 ----------------------------
 ![Work-Flow](/readme_images/workflow.jpg)
 
@@ -33,6 +33,16 @@ There are 3 usercases involved
 1. Usecase 1: At the scene of accident both the parties agree on the fault and settle the claim on their own.
 2. usecase 2: There is no mutual agreement on the accident perpetrator and hence they call police to the scene and get the verification done. The Police will also generate a report based on the evidences collected.
 3. usecase 3: There is an injury involved and hence there will police and hospital invloved in the claim process. The police and hiospital will generate their bill and reports and upload it.
+
+
+## Application Workflow
+----------------------------
+
+### Claim generation
+----------------------------
+The Accident victim/ AP logs in into the system and starts to fill the data for the claim form, the details include his personal as well as the other party's information. once the person submits the form, the supporting files are stored on the IPFS, and the form details is stored in the IPFS as a json, the hash of this file is stored over the Bigchaindb along with the claim id. The bigchaindb acts as a registery for all the claim related data. The hash of bigchain is now stored in the blockchain against the claim id.
+
+![](readme_images/claim_generation.gif)
 
 
 ## Steps:
