@@ -1,4 +1,4 @@
->>>>>>>>>>![Logo](readme_images/logo2.png)
+![Logo](readme_images/logo2.png)
 
 # Claim Assit
 >> All your claims under one roof
