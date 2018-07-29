@@ -2,19 +2,16 @@ pragma solidity ^0.4.4;
 
 import "./ClaimStorage.sol";
 
-
 contract Claim{
 
-    ClaimStorage claimStorage = ClaimStorage(0x2467636BEa0F3c2441227eeDBfFaC59f11D54a80);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
-    bytes hash;
+    ClaimStorage claimStorage = ClaimStorage(0xbde95422681e4c3984635af2f2f35f8c44a4ddc9);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
 
-    function addClaim( bytes32 claimId, bytes _bigchainHash) public {
+    function addClaim(string claimId, string _bigchainHash) public {
        claimStorage.setClaim(claimId, _bigchainHash, msg.sender);
     }
 
-    function getBigchainHash(bytes32 _claimId) public view returns (bytes) {
+    function getBigchainHash(string _claimId) public view returns (string) {
         return claimStorage.getBigchainHash(_claimId);
-
     }
 
 

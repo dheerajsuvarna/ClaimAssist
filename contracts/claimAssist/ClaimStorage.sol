@@ -1,10 +1,10 @@
 pragma solidity ^0.4.4;
 
 contract ClaimStorage {
-    
+
     struct claim {
         uint timestamp;
-        bytes bigchain_hash;
+        string bigchain_hash;
         address[] signatures;
     }
 
@@ -15,12 +15,12 @@ contract ClaimStorage {
     mapping(address => bool)       private policeRegistry;
     mapping(address => bool)       private hospitalRegistry;
     mapping(bytes32 => claim)      private claims;
-    
+
 
 
     /*** Modifiers ************/
-    
-    
+
+
      /*modifier onlyOwner() {
         roleCheck("owner", msg.sender);
         _;
@@ -44,44 +44,44 @@ contract ClaimStorage {
         // Set the main owner upon deployment
       //  boolStorage[keccak256(abi.encodePacked("access.role", "owner", msg.sender))] = true;
    // }
-    
-    
+
+
    /* function roleHas(string _role, address _address) internal view returns (bool) {
         return claimStorage.getBool(keccak256("access.role", _role, _address));
     }
-    
+
        /**
     * @dev Check if an address has this role, reverts if it doesn't
-    
+
     function roleCheck(string _role, address _address) view internal {
         require(roleHas(_role, _address) == true);
     } */
      /**** Get Methods ***********/
-   
+
     /// @param _key The key for the record
     function getAddress(bytes32 _key) external view returns (address) {
         return addressStorage[_key];
     }
 
     /// The key for the record
-    function getBigchainHash(bytes32 _claimId) external view returns (bytes) {
-        return claims[_claimId].bigchain_hash;
+    function getBigchainHash(string _claimId) external view returns (string) {
+        return claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash;
     }
 
     ///  The key for the record
-    function getSignatures(bytes32 _claimId) external view returns (address[]) {
-        return claims[_claimId].signatures;
+    function getSignatures(string _claimId) external view returns (address[]) {
+        return claims[keccak256(abi.encodePacked(_claimId))].signatures;
     }
-    
+
     function getHospitalBool(address _hospitalAddress) external view returns (bool) {
         return hospitalRegistry[_hospitalAddress];
     }
-    
+
      function getPoliceBool(address _policeAddress) external view returns (bool) {
         return policeRegistry[_policeAddress];
     }
-    
-    
+
+
 
     /**** Set Methods ***********/
 
@@ -90,42 +90,42 @@ contract ClaimStorage {
         addressStorage[_key] = _value;
     }
 
-    
-    function setNewHash(bytes32 _claimId, bytes _newBigchain_hash) onlyLatestClaimAssistContract external {
-        claims[_claimId].bigchain_hash = _newBigchain_hash;
+
+    function setNewHash(string _claimId, string _newBigchain_hash) onlyLatestClaimAssistContract external {
+        claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash = _newBigchain_hash;
     }
-    
+
     ///  The key for the record
-    function addSignatures(bytes32 _claimId, bytes _newBigchain_hash,address _sender) onlyLatestClaimAssistContract external {
-        claims[_claimId].bigchain_hash = _newBigchain_hash;
-        claims[_claimId].signatures.push(_sender);
+    function addSignatures(string _claimId, string _newBigchain_hash,address _sender) onlyLatestClaimAssistContract external {
+        claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash = _newBigchain_hash;
+        claims[keccak256(abi.encodePacked(_claimId))].signatures.push(_sender);
     }
-    
+
     /// The key for the record
-    function setClaim(bytes32 _claimId, bytes _bigchainHash,address _senderAddress) onlyLatestClaimAssistContract  external{
+    function setClaim(string _claimId, string _bigchainHash,address _senderAddress) onlyLatestClaimAssistContract  external{
         address[] memory sender = new address[](1);
         sender[0] = _senderAddress;
-        claims[_claimId] = claim(now, _bigchainHash, sender);
+        claims[keccak256(abi.encodePacked(_claimId))] = claim(now, _bigchainHash, sender);
     }
-    
+
     function setHospitalBool(address _hospitalAddress) onlyLatestClaimAssistContract external {
         hospitalRegistry[_hospitalAddress] = true;
     }
-    
+
     function setPoliceBool(address _policeAddress) onlyLatestClaimAssistContract external {
         policeRegistry[_policeAddress] = true;
     }
 
     /**** Delete Methods ***********/
-    
+
     ///  The key for the record
     function deleteAddress(bytes32 _key) onlyLatestClaimAssistContract external {
         delete addressStorage[_key];
     }
 
-   
-    function deleteClaim(bytes32 _claimId) onlyLatestClaimAssistContract external {
-        delete claims[_claimId];
+
+    function deleteClaim(string _claimId) onlyLatestClaimAssistContract external {
+        delete claims[keccak256(abi.encodePacked(_claimId))];
     }
 
 }
