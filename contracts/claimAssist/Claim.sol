@@ -5,7 +5,7 @@ import "./ClaimStorage.sol";
 
 contract Claim{
 
-    ClaimStorage claimStorage = ClaimStorage(0xecfcab0a285d3380e488a39b4bb21e777f8a4eac);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
+    ClaimStorage claimStorage = ClaimStorage(0x2467636BEa0F3c2441227eeDBfFaC59f11D54a80);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
     bytes hash;
 
     function addClaim( bytes32 claimId, bytes _bigchainHash) public {

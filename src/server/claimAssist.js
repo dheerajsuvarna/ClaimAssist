@@ -6,23 +6,24 @@ const bcdb = require('./bigchain')
 var routerClaimAssist = express.Router();
 
 routerClaimAssist.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder_index.html'));
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolderForm.html'));
 });
 
 routerClaimAssist.post('/saveClaim', function (req, res) {
-		console.log("hello ficker")
     let claimDetails = req.body.claimObject;
-    ipfs.store(claimDetails)
-    //call encryption function
-    .then(function(ipfs_hash){
-        return bcdb.saveHashToBCDB(ipfs_hash)
-				console.log(ipfs_hash)
-    }).then(function(bcdb_txid){
-			console.log(bcdb_txid)
-        res.send(bcdb_txid)
-    }).catch(function(error){
-        console.log("There is an error ===> " + error.stack)
-    })
+
+    console.log("claimDetails ===> ", claimDetails )
+    // ipfs.store(claimDetails)
+    // //call encryption function
+    // .then(function(ipfs_hash){
+    //     return bcdb.saveHashToBCDB(ipfs_hash)
+	// 			console.log(ipfs_hash)
+    // }).then(function(bcdb_txid){
+	// 		console.log(bcdb_txid)
+    //     res.send(bcdb_txid)
+    // }).catch(function(error){
+    //     console.log("There is an error ===> " + error.stack)
+    // })
 
 });
 
@@ -112,10 +113,22 @@ routerClaimAssist.get('/hospitalForm', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../public/blockinsurance/HospForm.html'));
 });
 
+/* ========================================== Other Party Details ========================================================*/
+
+routerClaimAssist.get('/otherParty', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/OtherPartyForm.html'));
+});
+
 /* ========================================== Project Details ========================================================*/
 
 routerClaimAssist.get('/projectDetail', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../public/blockinsurance/project_detail.html'));
+});
+
+/* ========================================== Claim Status ========================================================*/
+
+routerClaimAssist.get('/claimStatus', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Claim_status.html'));
 });
 
 module.exports = routerClaimAssist;
