@@ -6,7 +6,7 @@ import "./Claim.sol";
 
 contract ClaimManager {
 
-    ClaimStorage claimStorage = ClaimStorage(0x2467636bea0f3c2441227eedbffac59f11d54a80); 
+    ClaimStorage claimStorage = ClaimStorage(0xbde95422681e4c3984635af2f2f35f8c44a4ddc9);
      /*** Events ****************/
 
     event ContractUpgraded (
