@@ -1,7 +1,7 @@
->>![](readme_images/logo.png)
+>>>>>>>>>>![](readme_images/logo.png)
 
 # Claim Assit
-> All your claims under one roof
+>> All your claims under one roof
 ----------------------------
 Claim assist is a secure, decentralized application to handle all the claims settlement at the click of a button.
 
