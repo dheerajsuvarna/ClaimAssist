@@ -10,19 +10,20 @@ routerClaimAssist.get('/', function (req, res) {
 });
 
 routerClaimAssist.post('/saveClaim', function (req, res) {
-		console.log("hello ficker")
     let claimDetails = req.body.claimObject;
-    ipfs.store(claimDetails)
-    //call encryption function
-    .then(function(ipfs_hash){
-        return bcdb.saveHashToBCDB(ipfs_hash)
-				console.log(ipfs_hash)
-    }).then(function(bcdb_txid){
-			console.log(bcdb_txid)
-        res.send(bcdb_txid)
-    }).catch(function(error){
-        console.log("There is an error ===> " + error.stack)
-    })
+
+    console.log("claimDetails ===> ", claimDetails )
+    // ipfs.store(claimDetails)
+    // //call encryption function
+    // .then(function(ipfs_hash){
+    //     return bcdb.saveHashToBCDB(ipfs_hash)
+	// 			console.log(ipfs_hash)
+    // }).then(function(bcdb_txid){
+	// 		console.log(bcdb_txid)
+    //     res.send(bcdb_txid)
+    // }).catch(function(error){
+    //     console.log("There is an error ===> " + error.stack)
+    // })
 
 });
 
@@ -45,21 +46,89 @@ routerClaimAssist.get('/showAgreement', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../public/blockinsurance/SecondParty.html'));
 });
 
-routerClaimAssist.get('/police', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Police.html'));
+/* ========================================== Policy Holder Routes ========================================================*/
+routerClaimAssist.get('/policyHolder', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder_index.html'));
 });
+
+
+routerClaimAssist.get('/policyHolderClaimStatus', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder_claimstatus.html'));
+});
+
+routerClaimAssist.get('/policyHolderNotifications',  function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolder_notifications.html'));
+});
+
+routerClaimAssist.get('/policyHolderForm', function (req, res) { 
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolderForm.html'));
+});
+
+/* ========================================== Police Routes ========================================================*/
+
+
+routerClaimAssist.get('/police', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Police_index.html'));
+});
+
+routerClaimAssist.get('/policeClaimHistory', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Police_ClaimHistory.html'));
+});
+
+routerClaimAssist.get('/policeNotifications', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Police_notifications.html'));
+});
+
+routerClaimAssist.get('/policePendingClaims', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Police_PendingClaims.html'));
+});
+
+routerClaimAssist.get('/policeForm', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/PoliceForm.html'));
+});
+
+
+
+/* ========================================== Hospital Routes ========================================================*/
+
+
 
 routerClaimAssist.get('/hospital', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Hospital.html'));
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Hospital_index.html'));
 });
 
-routerClaimAssist.get('/petshop', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/petshop/index.html'));
+routerClaimAssist.get('/hospitalClaimHistory', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Hosp_claimhistory.html'));
 });
 
+routerClaimAssist.get('/hospitalNotifications', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Hosp_notifications.html'));
+});
 
-routerClaimAssist.get('/petshop', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/petshop/index.html'));
+routerClaimAssist.get('/hospitalPendingClaims', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Hosp_pendingClaims.html'));
+});
+
+routerClaimAssist.get('/hospitalForm', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/HospForm.html'));
+});
+
+/* ========================================== Other Party Details ========================================================*/
+
+routerClaimAssist.get('/otherParty', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/OtherPartyForm.html'));
+});
+
+/* ========================================== Project Details ========================================================*/
+
+routerClaimAssist.get('/projectDetail', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/project_detail.html'));
+});
+
+/* ========================================== Claim Status ========================================================*/
+
+routerClaimAssist.get('/claimStatus', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/blockinsurance/Claim_status.html'));
 });
 
 module.exports = routerClaimAssist;

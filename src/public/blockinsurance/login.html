@@ -1,103 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>Claim Assist</title>
 
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/blockinsurance/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/blockinsurance/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/public/blockinsurance/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/public/blockinsurance/vendors/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-  <body class="login">
+<body class="login">
     <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
 
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
-              </div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Login Form</h1>
+                        <div>
 
-              <div class="clearfix"></div>
+                            <select name="Role" class="form-control" id="role" required>
+                                                        <option value="">--Select your role--</option>
+                                                        <option value="Policy Holder">Policy Holder</option>
+                                                        <option value="Police">Police</option>
+                                                        <option value="Hospital">Hospital</option>
+                                                            </select>
 
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
-                </p>
+                        </div><br>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <button type="submit" id="login" style="border: 0px; background: none;">
+                            <a id="logina" style="font-size: 15px; color: steelblue" >Log in</a>
+                            </button>
+                            <!-- <a class="btn btn-default submit" href="PolicyHolder_index.html">Log in</a> -->
+                            <!-- <a class="reset_pass" href="#">Lost your password?</a> -->
+                        </div>
 
-                <div class="clearfix"></div>
-                <br />
+                        <div class="clearfix"></div>
 
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-              </div>
-            </form>
-          </section>
+                        <div class="separator">
+                            <p class="change_link">New to site?
+                                <a href="#signup" class="to_register"> Create Account </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1>Claim Assist</h1>
+                                <p>©2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required />
+                        </div>
+                        <div>
+
+                            <select name="Role" class="form-control" id="role" required>
+                                                        <option value="">--Select your role--</option>
+                                                        <option value="Policy Holder">Policy Holder</option>
+                                                        <option value="Police">Police</option>
+                                                        <option value="Hospital">Hospital</option>
+                                                            </select>
+
+                        </div><br>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required />
+                        </div>
+                        <div>
+
+                            <a class="btn btn-default submit" href="login.html">Submit</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">Already a member ?
+                                <a href="#signin" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1>Claim Assist</h1>
+                                <p>©2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </div>
-
-        <div id="register" class="animate form registration_form">
-          <section class="login_content">
-            <form>
-              <h1>Create Account</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
+<script>
+    $(document).ready(function() {
+
+        $("#login").click(function() {
+            if ($("#role").val() == "Policy Holder") {
+                $("#logina").attr("href", "PolicyHolder_index.html");
+            }
+            if ($("#role").val() == "Police") {
+                $("#logina").attr("href", "Police_index.html");
+            }
+            if ($("#role").val() == "Hospital") {
+                $("#logina").attr("href", "Hospital_index.html");
+            }
+        });
+    });
+</script>
+
 </html>

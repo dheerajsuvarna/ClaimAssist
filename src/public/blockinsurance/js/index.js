@@ -1,6 +1,5 @@
 function claim() {
   event.preventDefault();
-  console.log("Reached Here")
   var buttonValue = {};
   $("input").each(function ($i) {
     var name = $(this).attr('name')
@@ -8,8 +7,8 @@ function claim() {
       buttonValue[name] = $(this).val();
     }
     var e = document.getElementById("acc_country");
-    // var strCountry = e.options[e.selectedIndex].value;
-    // buttonValue['acc_country'] = strCountry;
+    var strCountry = e.options[e.selectedIndex].value;
+    buttonValue['acc_country'] = strCountry;
   });
   //Make the POST call to save the claim on IPFS and get back Bigchain hash
   $.post("/saveClaim", {
@@ -19,37 +18,6 @@ function claim() {
     //Save this hash on Smart Contract
     window.location.replace("http://localhost:3001/showAgreement");
   });
-
-    // e.preventDefault();
-    //
-    //   var jsondata = {};
-    //   alert("Data")
-    //   $("input").each(function($i) {
-    //       var name = $(this).attr('name')
-    //       if ($(this).val()) {
-    //           jsondata[name] = $(this).val();
-    //       }
-    //       $("input:radio:checked").each(function($i) {
-    //           var name = $(this).attr('name')
-    //           if ($(this).val()) {
-    //               jsondata[name] = $(this).val();
-    //           }
-    //       });
-    //
-    //       $("select").each(function($i) {
-    //           var name = $(this).attr('name')
-    //           if ($(this).val()) {
-    //               jsondata[name] = $(this).val();
-    //           }
-    //       });
-    //
-    //   });
-      // $.post("/saveClaim", {
-      //         claimObject: jsondata
-      //     },
-      //     function(result) {
-      //         console.log("hash ====> " + result)
-      //     });
 }
 
 

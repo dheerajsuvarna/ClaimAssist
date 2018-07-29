@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Claim Assist</title>
+
+    <link href="/public/blockinsurance/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/starrr/dist/starrr.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <link href="/public/blockinsurance/css/custom.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;height: 190px;">
+                        <a href="PolicyHolder_index.html" class="site_title" style="height: 190px;padding-left: 0px"><img src="/public/blockinsurance/images/ClaimAssist.jpeg" style="width: 100%" /></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="/public/blockinsurance/images/jp.jpeg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>Jeshwant Pilla</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a href="/policyHolder_index"><i class="fa fa-home"></i> Home</a> </li>
+                                <li><a href="/policyHolderForm"><i class="fa fa-edit"></i> Create Claim </a></li>
+                                <li><a href="/policyHolderClaimStatus"><i class="fa fa-desktop"></i> Claim Status</a></li>
+                                <li><a href="/policyHolderNotifications"><i class="fa fa-table"></i> Notifications</span></a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="/public/blockinsurance/images/jp.jpeg" alt="">Jeshwant Pilla
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h4>Please verify the received form :-</h4>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- Start - Verification form -->
+                    <form id="Verification_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+
+                        <!-- Start - Accident details -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Claim form</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_title" style="border-bottom: none;">
+                                        <h2><strong>Accident details</strong></h2>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="claim_id">Claim id :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <input id="claim_id" name="Claim id" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="otherperson_name">Other party name :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <input id="otherperson_name" name="Other party name" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="accident_place">Place :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <input id="accident_place" name="Accident place" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Accident_datetime">Date-Time :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <input type="text" id="Accident_datetime" name="Accident date-time" value="" class="form-control col-md-7 col-xs-12" class="form-control col-md-7 col-xs-12" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <input id="accident_country" name="Accident country" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Reporting authority involved :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <input id="reporting_authority" name="Reporting authority involved" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Injury :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <input id="accident_injury" name="Injury" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Material damage :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <input id="material_damage" name="Material damage" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                    <div class="x_title" style="border-bottom: none;">
+                                        <h2><strong>Remarks</strong></h2>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Remark :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <textarea id="policy_holder_remarks" class="resizable_textarea form-control " name="Policy holder remarks" maxlength="150" class="form-control col-md-7 col-xs-12" readonly></textarea></td>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Responsible party according to you :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                                                <input id="responsible_party" name="Responsible party" type="text" value="" class="form-control col-md-7 col-xs-12" readonly/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <!-- End - Accident details -->
+
+                        <!-- Start - Remarks -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Your Remarks</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <br />
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Remark</label>
+                                            <div class="col-md-9 col-sm-9 col-xs-12 ">
+                                                <textarea id="verification_remarks" class="resizable_textarea form-control " placeholder="Please enter your remarks (Max 150 characters)" maxlength="150"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Do you agree with above details?<span class="required ">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 " style="padding-top: 7px;">
+                                                <input id="agreement" type="radio" name="Agreement" value="yes"> yes &nbsp;
+                                                <input id="agreement" type="radio" name="Agreement" value="no"> no
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End- Remarks -->
+                        <div class="ln_solid "></div>
+                        <div class="form-group ">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
+                                <!-- <button class="btn btn-primary " type="button ">Cancel</button> -->
+                                <button class="btn btn-primary " type="reset ">Reset</button>
+                                <button type="submit" class="btn btn-success " id="submit_op">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!-- Required attr removed for testing purpose. To be added later -->
+                </div>
+            </div>
+
+            <!-- jQuery -->
+            <script src="/public/blockinsurance/vendors/jquery/dist/jquery.min.js "></script>
+            <!-- Bootstrap -->
+            <script src="/public/blockinsurance/vendors/bootstrap/dist/js/bootstrap.min.js "></script>
+            <!-- FastClick -->
+            <script src="/public/blockinsurance/vendors/fastclick/lib/fastclick.js "></script>
+            <!-- NProgress -->
+            <script src="/public/blockinsurance/vendors/nprogress/nprogress.js "></script>
+            <!-- bootstrap-progressbar -->
+            <script src="/public/blockinsurance/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js "></script>
+            <!-- iCheck -->
+            <script src="/public/blockinsurance/vendors/iCheck/icheck.min.js "></script>
+            <!-- bootstrap-daterangepicker -->
+            <script src="/public/blockinsurance/vendors/moment/min/moment.min.js "></script>
+            <script src="/public/blockinsurance/vendors/bootstrap-daterangepicker/daterangepicker.js "></script>
+            <!-- bootstrap-wysiwyg -->
+            <script src="/public/blockinsurance/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js "></script>
+            <script src="/public/blockinsurance/vendors/jquery.hotkeys/jquery.hotkeys.js "></script>
+            <script src="/public/blockinsurance/vendors/google-code-prettify/src/prettify.js "></script>
+            <!-- jQuery Tags Input -->
+            <script src="/public/blockinsurance/vendors/jquery.tagsinput/src/jquery.tagsinput.js "></script>
+            <!-- Switchery -->
+            <script src="/public/blockinsurance/vendors/switchery/dist/switchery.min.js "></script>
+            <!-- Select2 -->
+            <script src="/public/blockinsurance/vendors/select2/dist/js/select2.full.min.js "></script>
+            <!-- Parsley -->
+            <script src="/public/blockinsurance/vendors/parsleyjs/dist/parsley.min.js "></script>
+            <!-- Autosize -->
+            <script src="/public/blockinsurance/vendors/autosize/dist/autosize.min.js "></script>
+            <!-- jQuery autocomplete -->
+            <script src="/public/blockinsurance/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js "></script>
+            <!-- starrr -->
+            <script src="/public/blockinsurance/vendors/starrr/dist/starrr.js "></script>
+            <!-- Custom Theme Scripts -->
+            <script src="/public/blockinsurance/js/custom.min.js "></script>
+
+</body>
+
+<script>
+    $(function() {
+        //Retrieve hash
+        var your_url = 'https://ipfs.io/ipfs/QmbMpz6X8LSgoWXo14QWKWSKjUnYAwRinELPKWZeAkKRbD';
+        var jsonobj;
+        $.ajax({
+            url: your_url,
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+                jsonobj = jQuery.parseJSON(res);
+                // $('#claim_id').val("A786543");
+                // $('#otherperson_name').val("Siddhesh");
+                // $('#Accident_datetime').val("20-07-2018");
+                // $('#accident_place').val("Munich");
+                // $('#accident_country').val("Germany");
+                // $('#reporting_authority').val("Yes");
+                // $('#accident_injury').val("No");
+                // $('#material_damage').val("Yes");
+                // // $('#vehicle_reg_no').val(jsonobj["table"]);
+                // $('#policy_holder_remarks').val("The other party hit my car.");
+                // $('#responsible_party').val("Other Party");
+                $('#claim_id').val("C12345");
+                $('#otherperson_name').val(jsonobj["Policy holder name"]);
+                $('#Accident_datetime').val("22-02-2017");
+                $('#accident_place').val(jsonobj["Accident place"]);
+                $('#accident_country').val(jsonobj["Accident country"]);
+                $('#reporting_authority').val(jsonobj["Reporting authority"]);
+                $('#accident_injury').val(jsonobj["Injury"]);
+                $('#material_damage').val(jsonobj["Material damage"]);
+                // $('#vehicle_reg_no').val(jsonobj["table"]);
+                $('#policy_holder_remarks').val(jsonobj["Policy holder remarks"]);
+                $('#responsible_party').val(jsonobj["Responsible party according to you"]);
+
+
+            }
+        });
+
+    });
+</script>
+<script>
+    $("#submit_op").click(function() {
+        event.preventDefault();
+        var jsondata = {};
+
+        // $("input").each(function($i) {
+        //     var name = $(this).attr('name')
+        //     if ($(this).val()) {
+        //         jsondata[name] = $(this).val();
+        //     }
+        //     $("input:radio:checked").each(function($i) {
+        //         var name = $(this).attr('name')
+        //         if ($(this).val()) {
+        //             jsondata[name] = $(this).val();
+        //         }
+        //     });
+
+        //     $("select").each(function($i) {
+        //         var name = $(this).attr('name')
+        //         if ($(this).val()) {
+        //             jsondata[name] = $(this).val();
+        //         }
+        //     });
+
+        // });
+        jsondata["Agreement"] = $("#agreement").val();
+        jsondata["Verification remarks"] = $("#verification_remarks").val();
+        console.log(jsondata);
+
+        alert(JSON.stringify(jsondata));
+
+        $.post("/saveClaim", {
+                claimObject: jsondata
+            },
+            function(result) {
+                console.log("hash ====> " + result)
+            });
+
+    });
+
+    function saveClaim() {
+        console.log("Reached HEre ")
+    }
+</script>
+
+</html>
