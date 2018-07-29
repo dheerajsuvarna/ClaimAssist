@@ -335,17 +335,28 @@
             success: function(res) {
                 console.log(res);
                 jsonobj = jQuery.parseJSON(res);
-                $('#claim_id').val("A786543");
-                $('#otherperson_name').val("Siddhesh");
-                $('#Accident_datetime').val("20-07-2018");
-                $('#accident_place').val("Munich");
-                $('#accident_country').val("Germany");
-                $('#reporting_authority').val("Yes");
-                $('#accident_injury').val("No");
-                $('#material_damage').val("Yes");
+                // $('#claim_id').val("A786543");
+                // $('#otherperson_name').val("Siddhesh");
+                // $('#Accident_datetime').val("20-07-2018");
+                // $('#accident_place').val("Munich");
+                // $('#accident_country').val("Germany");
+                // $('#reporting_authority').val("Yes");
+                // $('#accident_injury').val("No");
+                // $('#material_damage').val("Yes");
+                // // $('#vehicle_reg_no').val(jsonobj["table"]);
+                // $('#policy_holder_remarks').val("The other party hit my car.");
+                // $('#responsible_party').val("Other Party");
+                $('#claim_id').val("C12345");
+                $('#otherperson_name').val(jsonobj["Policy holder name"]);
+                $('#Accident_datetime').val("22-02-2017");
+                $('#accident_place').val(jsonobj["Accident place"]);
+                $('#accident_country').val(jsonobj["Accident country"]);
+                $('#reporting_authority').val(jsonobj["Reporting authority"]);
+                $('#accident_injury').val(jsonobj["Injury"]);
+                $('#material_damage').val(jsonobj["Material damage"]);
                 // $('#vehicle_reg_no').val(jsonobj["table"]);
-                $('#policy_holder_remarks').val("The other party hit my car.");
-                $('#responsible_party').val("Other Party");
+                $('#policy_holder_remarks').val(jsonobj["Policy holder remarks"]);
+                $('#responsible_party').val(jsonobj["Responsible party according to you"]);
 
 
             }
