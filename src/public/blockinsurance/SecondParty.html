@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="public/blockchain/css/Form2.css" />
-    <script type="text/javascript" src="public/blockchain/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="jso.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/Form2.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/ipfs-api/dist/index.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -17,30 +18,163 @@
         <h1>Second party form</h1>
         <p>Please validate the received form:-</p>
         <form id="Second_party_form" class="contact-form">
-
-
+            <table>
+                <!--Accident details section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Accident Details</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Accident_time">Date/time:</label></td>
+                    <td><input type="text" id="Accident_time" name="Accident date-time" value="" readonly /></td>
+                </tr>
+                <tr>
+                    <td><label for="place">Place</label></td>
+                    <td><input id="place" name="Accident place" type="text" value="" readonly/></td>
+                </tr>
+                <tr>
+                    <td><label for="accident_country">Country</label></td>
+                    <td><input id="accident_country" name="Accident country" type="text" value="" readonly/></td>
+                </tr>
+                <tr>
+                    <td><label for="vehicle_reg_no">Vehicle registration no.</label></td>
+                    <td><input id="vehicle_reg_no" name="Vehicle reg nr." type="text" value="" readonly/></td>
+                </tr>
+                <tr>
+                    <td><label>Reporting authority involved</label></td>
+                    <td><input id="reporting_authority" name="Reporting authority involved" type="text" value="" readonly/></td>
+                </tr>
+                <tr>
+                    <td><label for="injury">Any Injury</label></td>
+                    <td><input id="accident_injury" name="Injury" type="text" value="" readonly/></td>
+                </tr>
+                <!--Remarks section-->
+                <tr>
+                    <td colspan="2">
+                        <strong>Other party remarks</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="policy_holder_remarks">Remarks</label></td>
+                    <td><textarea id="policy_holder_remarks" name="Policy holder remarks" rows="5" cols="50" maxlength="150" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="responsible_party">Responsible party according to you ?</label></td>
+                    <td><input id="responsible_party" name="Responsible party" type="text" value="" readonly/></td>
+                </tr>
+                <!--Second party remarks section-->
+                <tr>
+                    <td colspan="2">
+                        <strong> Please enter your remarks </strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="other_party_remarks">Remarks</label>
+                    </td>
+                    <td>
+                        <textarea id="other_party_remarks" name="other_party_remarks" rows="5" cols="50" maxlength="150" placeholder="Maximum 150 characters">                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="agreement"> Do you agree with above details? </label>
+                    </td>
+                    <td><input type="radio" name="agreement" value="Yes"> Yes
+                        <input type="radio" name="agreement" value="No">No
+                    </td>
+                </tr>
+            </table>
+            <button id="op_submit" class="contact-form__button" type="submit">Submit</button>
         </form>
+
     </section>
 </body>
 <script>
     $(function() {
+        //Retrieve hash
+        var your_url = 'https://ipfs.io/ipfs/QmVD1pqc6uDKCagmXVi5UWinz14hLKKSmwKYamNGMi6mW7';
+        var jsonobj;
+        $.ajax({
+            url: your_url,
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+                jsonobj = jQuery.parseJSON(res);
+                //console.log(jsonobj);
+                //var result = res.responseText;
+                //console.log(jsonobj["table"]);
+                //var myHtml = $(result).text();
+                //I get stuck here and I'm not sure how to get the results in the format i specified above (in the question portion)
+                //alert(myHtml);
+                // var html = '<table class="table_form">';
+                // $.each(jsonobj, function(key, value) {
+                //     html += '<tr>';
+                //     html += '<td>' + key + '</td>';
+                //     html += '<td>' + value + '</td>';
+                //     html += '</tr>';
+                // });
+                // html += '<tr><td colspan = "2"><strong > Remarks </strong></td></tr>';
+                // html += '<tr><td><label for = "other_party_remarks">Remarks</label></td><td><textarea id = "other_party_remarks" name = "other_party_remarks" rows = "5" cols = "50" maxlength = "150" placeholder = "Maximum 150 characters"></textarea></td></tr>';
+                // html += '<tr><td><label for = "agreement"> Do you agree with above details? </label></td><td><input type = "radio" name = "agreement" value = "Yes"> Yes  <input type = "radio" name = "agreement value = "No">No</td></tr>';
+                // html += '</table>';
+                // html += '<button id="submit" class="contact-form__button" type="submit">Submit</button>';
 
-        var jsonObj = $.parseJSON('{"Date_Time":"","Place" : "Munich","Description" : "oh hell","AP_AV_agreement" : false,"Injury" : true,"Property_damage" : true}');
-        var html = '<table class="table_form">';
-        $.each(jsonObj, function(key, value) {
-            html += '<tr>';
-            html += '<td>' + key + '</td>';
-            html += '<td>' + value + '</td>';
-            html += '</tr>';
+                // $('form').html(html);
+                $('#Accident_time').val(jsonobj["table"]);
+                $('#place').val(jsonobj["table"]);
+                $('#accident_country').val(jsonobj["table"]);
+                $('#reporting_authority').val(jsonobj["table"]);
+                $('#accident_injury').val(jsonobj["table"]);
+                $('#vehicle_reg_no').val(jsonobj["table"]);
+                $('#policy_holder_remarks').val(jsonobj["table"]);
+                $('#responsible_party').val(jsonobj["table"]);
+
+
+            }
         });
-        html += '<tr><td colspan = "2"><strong > Remarks </strong></td></tr>';
-        html += '<tr><td><label for = "other_party_remarks">Remarks</label></td><td><textarea id = "other_party_remarks" name = "other_party_remarks" rows = "5" cols = "50" maxlength = "150" placeholder = "Maximum 150 characters"></textarea></td></tr>';
-        html += '<tr><td><label for = "agreement"> Do you agree with above details? </label></td><td><input type = "radio" name = "agreement" value = "Yes"> Yes  <input type = "radio" name = "agreement value = "No">No</td></tr>';
-        html += '</table>';
-        html += '<button id="submit" class="contact-form__button" type="submit">Submit</button>';
+        //var requestURL = "https://ipfs.io/ipfs/QmVD1pqc6uDKCagmXVi5UWinz14hLKKSmwKYamNGMi6mW7";
+        //var request = new XMLHttpRequest();
+        //request.open('GET', requestURL);
 
-        $('form').html(html);
+        //var jsonObj = $.parseJSON('{"Date_Time":"","Place" : "Munich","Description" : "oh hell","AP_AV_agreement" : false,"Injury" : true,"Property_damage" : true}');
+
+
+        //var url = 'https://ipfs.io/ipfs/QmacvUkwHXqjqaHevcNXRvTHompuCSXgTwFRxp2yWJQJah';
+        //console.log('Url --> ${url}');
+        ///document.getElementById("url").innerHTML = url;
+        //document.getElementById("url").href = url;
+        //document.getElementById("output").src = url;
+
+        // $.ajax({
+        //     url: 'https://ipfs.io/ipfs/QmacvUkwHXqjqaHevcNXRvTHompuCSXgTwFRxp2yWJQJah',
+        //     type: 'GET',
+        //     success: function(res) {
+
+        //         var result = res.responseText;
+        //         var myHtml = $(result).find('pre');
+
+        //         myHtml.each(function() {
+        //             alert($(this).find("p").text());
+        //             alert($(this).find("h3").text());
+        //         });
+
+        //     }
+        // });
+        //var stroutput = getIPFSdata('QmacvUkwHXqjqaHevcNXRvTHompuCSXgTwFRxp2yWJQJah');
+        //var IPFS = require('ipfs');
+        //var ipfs = new IPFS();
+        //     const validCID = 'QmacvUkwHXqjqaHevcNXRvTHompuCSXgTwFRxp2yWJQJah';
+        //     ipfs.files.get(validCID, function(err, files) {
+        //         files.forEach((file) => {
+        //             console.log(file.path)
+        //             console.log("File content >> ", file.content.toString('utf8'))
+        //         })
+        //     })
     });
+</script>
+<script type="text/javascript">
 </script>
 
 </html>
