@@ -1,19 +1,12 @@
-<<<<<<< HEAD
-ee![](/public/blockinsurance/readme_images/logo.png)
-
 # Claim Assist
 > All your claims under one roof
-=======
-		![Logo](readme_images/logo.png)
 
-# Claim Assit
->> All your claims under one roof
->>>>>>> 413c5e97309e9083df507859d036aa3ca160abba
+![Logo](/readme_images/logo.png)
+
 ----------------------------
 Claim assist is a secure, decentralized application to handle all the claims settlement.
 
-In the current scenario when an accident occurs, the two parties involved have to go through the entire rigorous and time-consuming process of claim settlement, starting from form filling to claim generation. To facilitate the policyholders, we have developed a web application that is automated, secure and easy to use. 
-Further, we have used blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
+In the current scenario when an accident occurs, the two parties involved have to go through the entire rigorous and time-consuming process of claim settlement, starting from form filling to claim generation. To facilitate the policyholders, we have developed a web application that is automated, secure and easy to use. Further, we have used blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
 
 
 ## Included Components
@@ -41,12 +34,12 @@ We have covered three different use cases :
 
 ## Architecture
 ----------------------------
-
+We have used Hub and Spoke architecture where `ClaimStorage.sol` is our hub and other contracts as our spokes. We also employed a persistent storage model which helps in upgradability of contracts. The DApp code interacts with the spokes and store/update/retrieve the data from the storage contract.  
 
 
 ## Compatibility with other Blockchain based insurance applications
 ----------------------------
-We have designed our distributed application such that it can act as a third-party service to multiple insurance companies. Our aim is to ease the claim generation and settlement process for insurance companies and involved stakeholders. We provide an API for the insurance companies where they can request for all the data that is required for their claim handling process. Claim data is encrypted and tamper-proof. 
+We have designed our distributed application such that it can act as a third-party service to multiple insurance companies. Our aim is to ease the claim generation and settlement process for insurance companies and involved stakeholders. We provide an API for the insurance companies where they can request for all the data that is required for their claim handling process. Claim data is encrypted and tamper-proof.
 
 
 
@@ -65,9 +58,9 @@ Now the other party can log into our system and see the respective claim on Noti
 
 ![Verification and update](readme_images/claim_generation.gif)
 
-### Police Report 
+### Police Report
 ----------------------------
-Meanwhile, the police will get a notification about the accident. They will investigate the case, generate a report and upload all the supporting documents. 
+Meanwhile, the police will get a notification about the accident. They will investigate the case, generate a report and upload all the supporting documents.
 ![police report](readme_images/police.gif)
 
 ### Hospital Report
@@ -78,61 +71,26 @@ If any injuries are involved in the accident the Hospital also will come into th
 ## Steps:
 ----------------------------
 # 1.Run the application
-- Clone the repository:
-`git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git`
-- Go to the project directory and install the dependencies:
-```npm install```
-- Run the application finally :
-` npm run `
-
-Use the link http://localhost:3001 to load the web application in the browser.
-
-This will take you to the landing page of our application. You can find more details about our application here.
-<<<<<<< HEAD
+- Clone the repository: `git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git`
+- Install truffle - `npm install -g truffle`
+- Install rimraf - `npm install -g rimraf`
+- Navigate to the project folder and run - `npm install` - this installs all the dependency modules
+- Open another console in the same folder and run - `truffle develop` - this starts the truffle testrpc, which is an Ethereum blockchain test network
+- In truffle console, run - `compile` - this compiles the smart contract
+- In truffle console, run - `migrate` - this migrates the smart contracts to the test network
+- Open another console and run - `npm run build:contracts` - this script copies the contracts from **./.build** folder to **/src/public/contracts**  
+- In the first console, run - `npm run start`
+- Use the link http://localhost:3001 to load the web application in the browser. This will take you to the landing page of our application. You can find more details about our application here.
 
 ![Landing_page](readme_images/workflow.jpg)
 
 
 
-## Contributing
-
-When you publish something open source, one of the greatest motivations is that
-anyone can just jump in and start contributing to your project.
-
-These paragraphs are meant to welcome those kind souls to feel that they are
-needed. You should state something like:
-
-"If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome."
-
-If there's anything else the developer needs to know (e.g. the code style
-guide), you should link it here. If there's a lot of things to take into
-consideration, it is common to separate this section to its own file called
-`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
-
-## Links
-
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
-
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using the issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
-  - Your other project: https://github.com/your/other-project/
-  - Someone else's project: https://github.com/someones/awesome-project/
-
-
-## Licensing
-
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
-
-"The code in this project is licensed under MIT license."
-=======
->>>>>>> 413c5e97309e9083df507859d036aa3ca160abba
+# Project structure
+- ./contracts/claimAssist - Smart contracts are in this folder.
+- ./migrations - Contains the migration script. It migrates the contract to the blockchain.
+- ./src/public/blockinsurance - Contains the Dapp code for Claim Assist application.
+- ./src/public/blockinsurance/js/controllers/index.js - Contains the frontend JavaScript code.
+- ./src/server/claimAssist.js - Contains the routes.
+- ./src/server/index.js - Contains the server code.
+- ./src/server - Contains the code for encryption and interacting with BigchainDB and IPFS.
