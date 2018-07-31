@@ -8,17 +8,25 @@ addClaimOnBlockchain = function(claimId, bigChainHash) {
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
-      }   
+      }
       var claimInitiator = accounts[0];
       App.contracts.ClaimContract.deployed().then(function(instance) {
         ClaimInstance = instance;
         return ClaimInstance.addClaim(claimId, bigChainHash ,{from: claimInitiator});
       }).then(function(response) {
+        var event = ClaimInstance.ClaimStatus();
+        event.watch(function(error, result){
+          // result will contain various information
+          // including the argumets given to the `ClaimStatus`
+          // call.
+          if (!error)
+          console.log("Claim Status: "+ result.args._claimstatus);
+        });
         var para = document.createElement("p");
         var node = document.createTextNode("http://localhost:3001/otherParty?claim_id="+claimId);
         para.appendChild(node);
         var element = document.getElementById("successPara");
-        document.getElementById("otherPartyLink").href="http://localhost:3001/otherParty?claim_id="+claimId; 
+        document.getElementById("otherPartyLink").href="http://localhost:3001/otherParty?claim_id="+claimId;
         element.appendChild(para);
         $('#modal').trigger('click');
       }).catch(function(err) {
@@ -56,7 +64,7 @@ function getFile(claimId)  {
       });
     });
   });
-  
+
 }
 
 addSignature = function(claimId, newBigChainHash) {
@@ -80,6 +88,16 @@ addSignature = function(claimId, newBigChainHash) {
       }).then(function(response) {
         console.log("Signing successful!");
         console.log("Signature added to claim with id: " + claimId);
+        var event = AgreementInstance.AgreementStatus();
+        event.watch(function(error, result){
+          // result will contain various information
+          // including the argumets given to the `ClaimStatus`
+          // call.
+          if (!error)
+          console.log(result.args);
+          console.log(JSON.stringify(result.args));
+
+        });
       }).catch(function(err) {
         console.log(err.message);
       });

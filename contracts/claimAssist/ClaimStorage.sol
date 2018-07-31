@@ -2,14 +2,18 @@ pragma solidity ^0.4.4;
 
 contract ClaimStorage {
 
+    enum Status { Initiated, Signed, ReceivedAllDocuments, ClaimSettled }
+
     struct claim {
         uint timestamp;
         string bigchain_hash;
         address[] signatures;
+        Status claimStatus;
     }
 
 
     /**** Storage Types *******/
+
     mapping(bytes32 => address)    private addressStorage;
     mapping(bytes32 => bool)       private boolStorage;
     mapping(address => bool)       private policeRegistry;
@@ -19,12 +23,6 @@ contract ClaimStorage {
 
 
     /*** Modifiers ************/
-
-
-     /*modifier onlyOwner() {
-        roleCheck("owner", msg.sender);
-        _;
-    }*/
 
     /// Only allow access from the latest version of a contract in the network after deployment
     modifier onlyLatestClaimAssistContract() {
@@ -37,38 +35,16 @@ contract ClaimStorage {
     }
 
 
-
-
-    /// @dev constructor
-    //constructor() public payable{
-        // Set the main owner upon deployment
-      //  boolStorage[keccak256(abi.encodePacked("access.role", "owner", msg.sender))] = true;
-   // }
-
-
-   /* function roleHas(string _role, address _address) internal view returns (bool) {
-        return claimStorage.getBool(keccak256("access.role", _role, _address));
-    }
-
-       /**
-    * @dev Check if an address has this role, reverts if it doesn't
-
-    function roleCheck(string _role, address _address) view internal {
-        require(roleHas(_role, _address) == true);
-    } */
      /**** Get Methods ***********/
 
-    /// @param _key The key for the record
     function getAddress(bytes32 _key) external view returns (address) {
         return addressStorage[_key];
     }
 
-    /// The key for the record
     function getBigchainHash(string _claimId) external view returns (string) {
         return claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash;
     }
 
-    ///  The key for the record
     function getSignatures(string _claimId) external view returns (address[]) {
         return claims[keccak256(abi.encodePacked(_claimId))].signatures;
     }
@@ -81,11 +57,17 @@ contract ClaimStorage {
         return policeRegistry[_policeAddress];
     }
 
+    function getClaimStatus(string _claimId) external view returns (string) {
+        if (Status.Initiated ==  claims[keccak256(abi.encodePacked(_claimId))].claimStatus) return "Initiated";
+        if (Status.Signed ==  claims[keccak256(abi.encodePacked(_claimId))].claimStatus) return "Signed";
+        if (Status.ReceivedAllDocuments ==  claims[keccak256(abi.encodePacked(_claimId))].claimStatus) return "ReceivedAllDocuments";
+        if (Status.ClaimSettled ==  claims[keccak256(abi.encodePacked(_claimId))].claimStatus) return "ClaimSettled";
+        return "";
+    }
 
 
     /**** Set Methods ***********/
 
-    /// @param _key The key for the record
     function setAddress(bytes32 _key, address _value) onlyLatestClaimAssistContract external {
         addressStorage[_key] = _value;
     }
@@ -93,19 +75,19 @@ contract ClaimStorage {
 
     function setNewHash(string _claimId, string _newBigchain_hash) onlyLatestClaimAssistContract external {
         claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash = _newBigchain_hash;
+        claims[keccak256(abi.encodePacked(_claimId))].claimStatus = Status.ReceivedAllDocuments;
     }
 
-    ///  The key for the record
     function addSignatures(string _claimId, string _newBigchain_hash,address _sender) onlyLatestClaimAssistContract external {
         claims[keccak256(abi.encodePacked(_claimId))].bigchain_hash = _newBigchain_hash;
         claims[keccak256(abi.encodePacked(_claimId))].signatures.push(_sender);
+        claims[keccak256(abi.encodePacked(_claimId))].claimStatus = Status.Signed;
     }
 
-    /// The key for the record
     function setClaim(string _claimId, string _bigchainHash,address _senderAddress) onlyLatestClaimAssistContract  external{
         address[] memory sender = new address[](1);
         sender[0] = _senderAddress;
-        claims[keccak256(abi.encodePacked(_claimId))] = claim(now, _bigchainHash, sender);
+        claims[keccak256(abi.encodePacked(_claimId))] = claim(now, _bigchainHash, sender, Status.Initiated);
     }
 
     function setHospitalBool(address _hospitalAddress) onlyLatestClaimAssistContract external {
@@ -118,7 +100,6 @@ contract ClaimStorage {
 
     /**** Delete Methods ***********/
 
-    ///  The key for the record
     function deleteAddress(bytes32 _key) onlyLatestClaimAssistContract external {
         delete addressStorage[_key];
     }
