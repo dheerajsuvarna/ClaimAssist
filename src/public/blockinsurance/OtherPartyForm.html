@@ -393,7 +393,7 @@
         jsondata["Verification remarks"] = $("#verification_remarks").val();
         console.log(jsondata);
 
-        alert(JSON.stringify(jsondata));
+        // alert(JSON.stringify(jsondata));
 
         $.post("/saveClaim", {
                 claimObject: jsondata

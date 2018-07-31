@@ -401,7 +401,7 @@
                                         <div class="form-group ">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Telephone</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <input id="witness_telephone" name="Witness telephone" class="form-control col-md-7 col-xs-12 " type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                                <input id="witness_telephone" name="Witness telephone" class="form-control col-md-7 col-xs-12 " type="tel" maxlength="10" placeholder="123-456-7890">
                                                 <span class="fa fa-phone form-control-feedback right " aria-hidden="true "></span></div>
                                         </div>
 
@@ -602,7 +602,7 @@
 
         jsondata["Accident date-time"] = $("#Accident_datetime").val();
         jsondata["Policy holder remarks"] = $("#policy_holder_remarks").val();
-
+        console.log(jsondata);
 
         $.post("/saveClaim", {
                 claimObject: jsondata
