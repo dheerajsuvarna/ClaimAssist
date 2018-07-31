@@ -15,6 +15,8 @@ function claim() {
             accidentPhotos = e.target.result;S
         };
     }
+    jsondata["Accident date-time"] = $("#Accident_datetime").val();
+    jsondata["Policy holder remarks"] = $("#policy_holder_remarks").val();
     $("input").each(function($i) {
         var name = $(this).attr('name')
         if ($(this).val()) {
@@ -118,7 +120,39 @@ function validateForm() {
 
 //   });
 // });
+function autofill(){
+      event.preventDefault();
+     //Policy Holder
+     document.getElementById("policyholder_name").value ="Felix"
+     document.getElementById("policyholder_email").value ="felix_123@claimAssist.com"
+     document.getElementById("policyholder_insurance_company").value ="Allianz"
+     document.getElementById("policyholder_policy_no").value ="AZ" + Math.floor((Math.random() * 1000000) + 1);
+     document.getElementById("policyholder_country").value ="Germany"
+    // Other Party
+     document.getElementById("otherperson_name").value ="Podolski"
+     document.getElementById("otherperson_email").value ="podolski@claimassist.com"
+     document.getElementById("other_party_insurance_company").value ="Allianz"
+     document.getElementById("other_party_policy_no").value ="AZ" + Math.floor((Math.random() * 1000000) + 1);
+     document.getElementById("other_party_country").value ="France"
+    // Witness
+     document.getElementById("witness_name").value ="Wolfgang"
+     document.getElementById("witness_telephone").value ="0494567890"
+    // Vehicle Details
+     document.getElementById("vehicle_type").value ="SUV"
+     document.getElementById("vehicle_reg_no").value ="DE-123-678"
+     document.getElementById("vehicle_regcountry").value ="Germany"
+     //Accident Details
+     document.getElementById("accident_place").value ="Munich"
+     document.getElementById("Accident_datetime").value ="12-04-2018 00:00"
+     document.getElementById("accident_country").value ="Germany"
+     document.getElementById("police").checked = true;
+     document.getElementById("injury").checked = true;
+     document.getElementById("material_damage").checked = true;
 
+      
+
+     document.getElementById("policy_holder_remarks").value ="He did it"
+   }
 $( document ).ready(function() {
   App.init();
 });
