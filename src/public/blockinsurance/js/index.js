@@ -16,7 +16,7 @@ function claim() {
         };
     }
     jsondata["Accident date-time"] = $("#Accident_datetime").val();
-    jsondata["Policy holder remarks"] = $("#policy_holder_remarks").val();
+    jsondata["policy_holder_remarks"] = $("#policy_holder_remarks").val();
     $("input").each(function($i) {
         var name = $(this).attr('name')
         if ($(this).val()) {
@@ -143,7 +143,7 @@ function autofill(){
      document.getElementById("vehicle_regcountry").value ="Germany"
      //Accident Details
      document.getElementById("accident_place").value ="Munich"
-     document.getElementById("Accident_datetime").value ="12-04-2018 00:00"
+     document.getElementById("Accident_datetime").value ="2012-09-26T12:30"
      document.getElementById("accident_country").value ="Germany"
      document.getElementById("police").checked = true;
      document.getElementById("injury").checked = true;

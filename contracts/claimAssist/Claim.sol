@@ -4,7 +4,7 @@ import "./ClaimStorage.sol";
 
 contract Claim{
 
-    ClaimStorage claimStorage = ClaimStorage(0x2e335f247e91caa168c64b63104c4475b2af3942); // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
+    ClaimStorage claimStorage = ClaimStorage(0x345ca3e014aaf5dca488057592ee47305d9b3e10); // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained
 
     event ClaimStatus(
         address indexed _from,

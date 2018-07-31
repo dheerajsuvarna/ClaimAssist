@@ -11,6 +11,7 @@ routerClaimAssist.get('/', function(req, res) {
 
 routerClaimAssist.post('/saveClaim', function(req, res) {
     let claimDetails = req.body.claimObject;
+    console.log("claimDetails ===> " + JSON.stringify(claimDetails) )
     ipfs.store(claimDetails)
     //call encryption function
     .then(function(ipfs_hash){

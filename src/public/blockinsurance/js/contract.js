@@ -68,7 +68,7 @@ function getFile(claimId)  {
 }
 
 addSignature = function(claimId, newBigChainHash) {
-
+  console.log("Inside Agreement")
   $.getJSON('/public/contracts/AgreementContract.json', function (data) {
 
     var AgreementArtifact = data;
@@ -81,7 +81,7 @@ addSignature = function(claimId, newBigChainHash) {
       if (error) {
         console.log(error);
       }
-      var otherParty = accounts[1];
+      var otherParty = accounts[0];
       App.contracts.AgreementContract.deployed().then(function(instance) {
         AgreementInstance = instance;
         return AgreementInstance.signDocument(claimId, newBigChainHash ,{from: otherParty});
@@ -96,7 +96,6 @@ addSignature = function(claimId, newBigChainHash) {
           if (!error)
           console.log(result.args);
           console.log(JSON.stringify(result.args));
-
         });
       }).catch(function(err) {
         console.log(err.message);
