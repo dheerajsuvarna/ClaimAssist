@@ -1,32 +1,58 @@
 function claim() {
+
   event.preventDefault();
-  var buttonValue = {};
-  $("input").each(function ($i) {
-    var name = $(this).attr('name')
-    if ($(this).val()) {
-      buttonValue[name] = $(this).val();
+  if(validateForm()){
+
+    var jsondata = {};
+    var accidentPhotos;
+    // var accident_photos;
+    var file = document.getElementById('claim_form').files[0];
+    if (file) {
+        // create reader
+        var reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function(e) {
+            accidentPhotos = e.target.result;S
+        };
     }
-    var e = document.getElementById("acc_country");
-    var strCountry = e.options[e.selectedIndex].value;
-    buttonValue['acc_country'] = strCountry;
-  });
-  //Make the POST call to save the claim on IPFS and get back Bigchain hash
-  $.post("/saveClaim", {
-    claimObject: buttonValue
-  }, function (result) {
-    console.log("hash ====> " + result)
-    //Save this hash on Smart Contract
-    window.location.replace("http://localhost:3001/showAgreement");
-  });
+    $("input").each(function($i) {
+        var name = $(this).attr('name')
+        if ($(this).val()) {
+            jsondata[name] = $(this).val();
+        }
+        $("input:radio:checked").each(function($i) {
+            var name = $(this).attr('name')
+            if ($(this).val()) {
+                jsondata[name] = $(this).val();
+            }
+        });
+  
+        $("select").each(function($i) {
+            var name = $(this).attr('name')
+            if ($(this).val()) {
+                jsondata[name] = $(this).val();
+            }
+        });
+  
+    });
+    let policy_no = document.getElementById("policyholder_policy_no").value;
+    let claim_id = hash(policy_no);
+    $.post("/saveClaim", {
+            claimObject: jsondata
+        },
+        function(result) {
+          addClaimOnBlockchain(claim_id, result)
+        });
+  }
+  
 }
-
-
 
 var App = {
   web3Provider: null,
   contracts: {},
 
   init: function () {
+    console.log("Reaching here")
     return App.initWeb3();
   },
 
@@ -57,15 +83,42 @@ var App = {
     //getBigchainHash("0x123123");
     //addHospital("0x821aEa9a577a9b44299B9c15c88cf3087F3b5544");
     //addBillOnBlockchain("0x123123","0x66666");
-    console.log("Hash");
-    getBigchainHash("0x1231234");
+    //console.log("Hash");
   }
 
 };
 
-$(function () {
-  $(window).load(function () {
-    App.init();
 
-  });
+
+var hash = function(s) {
+  console.log("Value to hash == > " + s)
+  var a = 1, c = 0, h, o;
+  if (s) {
+      a = 0;
+      for (h = s.length - 1; h >= 0; h--) {
+          o = s.charCodeAt(h);
+          a = (a<<6&268435455) + o + (o<<14);
+          c = a & 266338304;
+          a = c!==0?a^c>>21:a;
+      }
+  }
+  return String(a);
+};
+
+function validateForm() {
+  let policy_no =document.getElementById("policyholder_policy_no").value;
+  if (policy_no == "") {
+      return false;
+  }else return true;
+}
+
+// $(function () {
+//   $(window).load(function () {
+//     App.init();
+
+//   });
+// });
+
+$( document ).ready(function() {
+  App.init();
 });

@@ -92,7 +92,6 @@ exports.getIPFSHash = function(bcdb_txid){
     var deferred = defer();
     conn.searchAssets(bcdb_txid)
     .then(function(asset){
-        console.log("The Asset ===> " + JSON.stringify(asset[0].data.hash))
         deferred.resolve(asset[0].data.hash)
     }).catch(function(error){
         deferred.resolve(error)

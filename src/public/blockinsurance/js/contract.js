@@ -48,30 +48,33 @@ addClaimOnBlockchain = function(claimId, bigChainHash) {
 
 }
 
-getBigchainHash = function(claimId) {
-
-  $.getJSON('/public/contracts/Claim.json', function (data) {
-
-    var ClaimArtifact = data;
-    var ClaimInstance;
-    App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
-    App.contracts.ClaimContract.setProvider(App.web3Provider);
-
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-      App.contracts.ClaimContract.deployed().then(function(instance) {
-        ClaimInstance = instance;
-        return ClaimInstance.getBigchainHash.call(claimId);
-      }).then(function(hash) {
-        console.log("Bigchain Hash ====> " + hash);
-      }).catch(function(err) {
-        console.log(err.message);
+function getFile(claimId)  {
+  // Since Javascript is asynchronous we had to wrap the Javascript Function in a Promise. And when we call getFile() we make use of Async Await Function
+  return new Promise(resolve => {
+    $.getJSON('/public/contracts/Claim.json', function (data) {
+      var ClaimArtifact = data;
+      var ClaimInstance;
+      App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
+      App.contracts.ClaimContract.setProvider(App.web3Provider);
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        App.contracts.ClaimContract.deployed().then(function(instance) {
+          ClaimInstance = instance;
+          return ClaimInstance.getBigchainHash.call(claimId);
+        }).then(function(hash) {
+          $.get("/getFile/"+hash,
+           function(result) {
+             resolve(JSON.parse(result));
+        });
+        }).catch(function(err) {
+          console.log(err.message);
+        });
       });
     });
-
   });
+  
 }
 
 addSignature = function(claimId, newBigChainHash) {
