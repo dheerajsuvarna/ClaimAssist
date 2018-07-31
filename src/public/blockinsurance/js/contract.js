@@ -1,44 +1,26 @@
 
 addClaimOnBlockchain = function(claimId, bigChainHash) {
-  console.log("Adding Claim")
-  console.log("Cliamid ===> " + claimId + " \n big chain hash ====> " + bigChainHash)
   // Get the Claim.sol contract artifact file and instantiate it with truffle-contract.
   $.getJSON('/public/contracts/Claim.json', function (ClaimArtifact) {
     App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
     App.contracts.ClaimContract.setProvider(App.web3Provider);
     var ClaimInstance;
-
-    // web3.eth.getAccounts()
-    // .then(function(accoutns){
-    //   var claimInitiator = accounts[0];
-    //   App.contracts.ClaimContract.deployed()
-      
-    //   .then(function(instance) {
-    //   ClaimInstance = instance;
-    //   return ClaimInstance.addClaim(claimId, bigChainHash ,{from: claimInitiator});
-    // }) .then(function(response){
-    //   console.log("Transaction successful");
-    //   console.log("Claim added with id: " + response);
-    // })
-    // })
-    // .catch(function(error){
-    //   console.log("There is an error ===> ",error);
-    // });
-
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
-      }
-      
+      }   
       var claimInitiator = accounts[0];
-      console.log("Claim Initiator ===> " ,claimInitiator)
       App.contracts.ClaimContract.deployed().then(function(instance) {
-        console.log("Inside Deployed")
         ClaimInstance = instance;
         return ClaimInstance.addClaim(claimId, bigChainHash ,{from: claimInitiator});
       }).then(function(response) {
-        console.log("Transaction successful");
-        console.log("Claim added with id: " + response);
+        var para = document.createElement("p");
+        var node = document.createTextNode("http://localhost:3001/otherParty?claim_id="+claimId);
+        para.appendChild(node);
+        var element = document.getElementById("successPara");
+        document.getElementById("otherPartyLink").href="http://localhost:3001/otherParty?claim_id="+claimId; 
+        element.appendChild(para);
+        $('#modal').trigger('click');
       }).catch(function(err) {
         console.log(err);
       });
@@ -48,30 +30,33 @@ addClaimOnBlockchain = function(claimId, bigChainHash) {
 
 }
 
-getBigchainHash = function(claimId) {
-
-  $.getJSON('/public/contracts/Claim.json', function (data) {
-
-    var ClaimArtifact = data;
-    var ClaimInstance;
-    App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
-    App.contracts.ClaimContract.setProvider(App.web3Provider);
-
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-      App.contracts.ClaimContract.deployed().then(function(instance) {
-        ClaimInstance = instance;
-        return ClaimInstance.getBigchainHash.call(claimId);
-      }).then(function(hash) {
-        console.log("Bigchain Hash ====> " + hash);
-      }).catch(function(err) {
-        console.log(err.message);
+function getFile(claimId)  {
+  // Since Javascript is asynchronous we had to wrap the Javascript Function in a Promise. And when we call getFile() we make use of Async Await Function
+  return new Promise(resolve => {
+    $.getJSON('/public/contracts/Claim.json', function (data) {
+      var ClaimArtifact = data;
+      var ClaimInstance;
+      App.contracts.ClaimContract = TruffleContract(ClaimArtifact);
+      App.contracts.ClaimContract.setProvider(App.web3Provider);
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        App.contracts.ClaimContract.deployed().then(function(instance) {
+          ClaimInstance = instance;
+          return ClaimInstance.getBigchainHash.call(claimId);
+        }).then(function(hash) {
+          $.get("/getFile/"+hash,
+           function(result) {
+             resolve(JSON.parse(result));
+        });
+        }).catch(function(err) {
+          console.log(err.message);
+        });
       });
     });
-
   });
+  
 }
 
 addSignature = function(claimId, newBigChainHash) {

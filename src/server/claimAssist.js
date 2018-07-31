@@ -11,25 +11,29 @@ routerClaimAssist.get('/', function(req, res) {
 
 routerClaimAssist.post('/saveClaim', function(req, res) {
     let claimDetails = req.body.claimObject;
-
-    console.log("claimDetails ===> ", claimDetails)
-        // ipfs.store(claimDetails)
-        // //call encryption function
-        // .then(function(ipfs_hash){
-        //     return bcdb.saveHashToBCDB(ipfs_hash)
-        // 			console.log(ipfs_hash)
-        // }).then(function(bcdb_txid){
-        // 		console.log(bcdb_txid)
-        //     res.send(bcdb_txid)
-        // }).catch(function(error){
-        //     console.log("There is an error ===> " + error.stack)
-        // })
+    ipfs.store(claimDetails)
+    //call encryption function
+    .then(function(ipfs_hash){
+        return bcdb.saveHashToBCDB(ipfs_hash)
+    }).then(function(bcdb_txid){
+        res.send(bcdb_txid)
+    }).catch(function(error){
+        console.log("There is an error ===> " + error.stack)
+    })
 
 });
 
 
 routerClaimAssist.get('/getFile/:bcdb_txid', function(req, res) {
     let bcdb_txid = req.params.bcdb_txid;
+    // let ipfsHash = req.params.bcdb_txid;
+    // ipfs.getFile(ipfsHash).then(function(content_json){
+    //     // Decrypt the File
+    //     res.send(content_json)
+    // }).catch(function(error){
+    //     console.log("There is an error ===> " + error.stack)
+    // })
+
     bcdb.getIPFSHash(bcdb_txid)
         .then(function(ipfsHash) {
             return ipfs.getFile(ipfsHash)
