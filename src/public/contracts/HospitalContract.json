@@ -6,11 +6,11 @@
       "inputs": [
         {
           "name": "_claimId",
-          "type": "bytes32"
+          "type": "string"
         },
         {
           "name": "_newBigchain_hash",
-          "type": "bytes"
+          "type": "string"
         }
       ],
       "name": "addHospitalBill",
@@ -20,24 +20,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6080604052732467636bea0f3c2441227eedbffac59f11d54a806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055503480156100a657600080fd5b50610315806100b66000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634b23d04214610046575b600080fd5b34801561005257600080fd5b506100bb6004803603810190808035600019169060200190929190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506100bd565b005b33600115156000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663991e5185836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561017e57600080fd5b505af1158015610192573d6000803e3d6000fd5b505050506040513d60208110156101a857600080fd5b810190808051906020019092919050505015151415156101c757600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166309c4426984846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561027f578082015181840152602081019050610264565b50505050905090810190601f1680156102ac5780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1580156102cc57600080fd5b505af11580156102e0573d6000803e3d6000fd5b505050505050505600a165627a7a72305820ab9bb046d9d9e7ed9c3050d118c0f3a57bc0048d8c845ffa22674a0cffaddba50029",
-  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634b23d04214610046575b600080fd5b34801561005257600080fd5b506100bb6004803603810190808035600019169060200190929190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506100bd565b005b33600115156000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663991e5185836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561017e57600080fd5b505af1158015610192573d6000803e3d6000fd5b505050506040513d60208110156101a857600080fd5b810190808051906020019092919050505015151415156101c757600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166309c4426984846040518363ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180836000191660001916815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561027f578082015181840152602081019050610264565b50505050905090810190601f1680156102ac5780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1580156102cc57600080fd5b505af11580156102e0573d6000803e3d6000fd5b505050505050505600a165627a7a72305820ab9bb046d9d9e7ed9c3050d118c0f3a57bc0048d8c845ffa22674a0cffaddba50029",
-  "sourceMap": "247:777:4:-;;;363:42;322:84;;;;;;;;;;;;;;;;;;;;531:1;511:22;;;;;;;;;;;;;;;;;;;;247:777;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:777:4;;;;;;;",
-  "deployedSourceMap": "247:777:4:-;;;;;;;;;;;;;;;;;;;;;;;;839:180;;8:9:-1;5:2;;;30:1;27;20:12;5:2;839:180:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;938:10;806:4;745:65;;:12;;;;;;;;;;;:28;;;774:27;745:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;745:57:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;745:57:4;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;745:57:4;;;;;;;;;;;;;;;;:65;;;737:74;;;;;;;;960:12;;;;;;;;;;;:23;;;984:8;993:17;960:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;960:51:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;960:51:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;960:51:4;;;;839:180;;;:::o",
-  "source": "pragma solidity ^0.4.4;\r\n\r\nimport \"./ClaimStorage.sol\";\r\nimport \"./Claim.sol\";\r\n\r\n\r\n\r\n/// @title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r\n/// @author David Rugendyke\r\n\r\ncontract HospitalContract {\r\n\r\n\r\n    /*** Contracts **************/\r\n\r\n    ClaimStorage claimStorage = ClaimStorage(0x2467636bea0f3c2441227eedbffac59f11d54a80);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained\r\n    Claim claim = Claim(0);                  // The contract that contains the claim methods in Rocket Pool\r\n\r\n    /*** Modifiers ***********/\r\n\r\n    modifier onlyRegisteredHospital(address _resgisteredHospitalAddress) {\r\n        require(claimStorage.getHospitalBool(_resgisteredHospitalAddress) == true);\r\n        _;\r\n    }\r\n\r\n    function addHospitalBill(bytes32 _claimId, bytes _newBigchain_hash ) public onlyRegisteredHospital(msg.sender){\r\n        claimStorage.setNewHash(_claimId,_newBigchain_hash);\r\n    }\r\n\r\n}\r\n",
-  "sourcePath": "C:\\Users\\dheer\\Documents\\BlockchainAPC\\blockinsurance\\contracts\\claimAssist\\HospitalContract.sol",
+  "bytecode": "0x608060405273bde95422681e4c3984635af2f2f35f8c44a4ddc96000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034801561006457600080fd5b506103aa806100746000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f45b72a14610046575b600080fd5b34801561005257600080fd5b506100f3600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506100f5565b005b33600115156000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663991e5185836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156101b657600080fd5b505af11580156101ca573d6000803e3d6000fd5b505050506040513d60208110156101e057600080fd5b810190808051906020019092919050505015151415156101ff57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b3420d0a84846040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808060200180602001838103835285818151815260200191508051906020019080838360005b838110156102ad578082015181840152602081019050610292565b50505050905090810190601f1680156102da5780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b838110156103135780820151818401526020810190506102f8565b50505050905090810190601f1680156103405780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050505050505600a165627a7a72305820e49ae97a15e502929c9aa3a080afd68ade9d9eeafc1ade723830efad7146f8190029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f45b72a14610046575b600080fd5b34801561005257600080fd5b506100f3600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506100f5565b005b33600115156000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663991e5185836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156101b657600080fd5b505af11580156101ca573d6000803e3d6000fd5b505050506040513d60208110156101e057600080fd5b810190808051906020019092919050505015151415156101ff57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b3420d0a84846040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808060200180602001838103835285818151815260200191508051906020019080838360005b838110156102ad578082015181840152602081019050610292565b50505050905090810190601f1680156102da5780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b838110156103135780820151818401526020810190506102f8565b50505050905090810190601f1680156103405780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561036157600080fd5b505af1158015610375573d6000803e3d6000fd5b505050505050505600a165627a7a72305820e49ae97a15e502929c9aa3a080afd68ade9d9eeafc1ade723830efad7146f8190029",
+  "sourceMap": "218:668:4:-;;;334:42;293:84;;;;;;;;;;;;;;;;;;;;218:668;8:9:-1;5:2;;;30:1;27;20:12;5:2;218:668:4;;;;;;;",
+  "deployedSourceMap": "218:668:4:-;;;;;;;;;;;;;;;;;;;;;;;;701:180;;8:9:-1;5:2;;;30:1;27;20:12;5:2;701:180:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;800:10;668:4;607:65;;:12;;;;;;;;;;;:28;;;636:27;607:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;607:57:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;607:57:4;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;607:57:4;;;;;;;;;;;;;;;;:65;;;599:74;;;;;;;;822:12;;;;;;;;;;;:23;;;846:8;855:17;822:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;822:51:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;822:51:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;822:51:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;822:51:4;;;;701:180;;;:::o",
+  "source": "pragma solidity ^0.4.4;\r\n\r\nimport \"./ClaimStorage.sol\";\r\nimport \"./Claim.sol\";\r\n\r\n\r\n\r\n/// @title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r\n\r\ncontract HospitalContract {\r\n\r\n\r\n    /*** Contracts **************/\r\n\r\n    ClaimStorage claimStorage = ClaimStorage(0xbde95422681e4c3984635af2f2f35f8c44a4ddc9);         // The main ClaimAssist (The HUB) contract where primary persistant storage is maintained\r\n\r\n    /*** Modifiers ***********/\r\n\r\n    modifier onlyRegisteredHospital(address _resgisteredHospitalAddress) {\r\n        require(claimStorage.getHospitalBool(_resgisteredHospitalAddress) == true);\r\n        _;\r\n    }\r\n\r\n    function addHospitalBill(string _claimId, string _newBigchain_hash ) public onlyRegisteredHospital(msg.sender){\r\n        claimStorage.setNewHash(_claimId,_newBigchain_hash);\r\n    }\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\jeshw\\blockinsurance\\contracts\\claimAssist\\HospitalContract.sol",
   "ast": {
-    "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/HospitalContract.sol",
+    "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/HospitalContract.sol",
     "exportedSymbols": {
       "HospitalContract": [
-        605
+        633
       ]
     },
-    "id": 606,
+    "id": 634,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 558,
+        "id": 591,
         "literals": [
           "solidity",
           "^",
@@ -48,23 +48,23 @@
         "src": "0:23:4"
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
         "file": "./ClaimStorage.sol",
-        "id": 559,
+        "id": 592,
         "nodeType": "ImportDirective",
-        "scope": 606,
-        "sourceUnit": 557,
+        "scope": 634,
+        "sourceUnit": 590,
         "src": "27:28:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/Claim.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/Claim.sol",
         "file": "./Claim.sol",
-        "id": 560,
+        "id": 593,
         "nodeType": "ImportDirective",
-        "scope": 606,
-        "sourceUnit": 82,
+        "scope": 634,
+        "sourceUnit": 80,
         "src": "57:21:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -73,37 +73,37 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "@title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r\n @author David Rugendyke\r",
+        "documentation": "@title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r",
         "fullyImplemented": true,
-        "id": 605,
+        "id": 633,
         "linearizedBaseContracts": [
-          605
+          633
         ],
         "name": "HospitalContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 565,
+            "id": 598,
             "name": "claimStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 605,
-            "src": "322:84:4",
+            "scope": 633,
+            "src": "293:84:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ClaimStorage_$556",
+              "typeIdentifier": "t_contract$_ClaimStorage_$589",
               "typeString": "contract ClaimStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 561,
+              "id": 594,
               "name": "ClaimStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 556,
-              "src": "322:12:4",
+              "referencedDeclaration": 589,
+              "src": "293:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                 "typeString": "contract ClaimStorage"
               }
             },
@@ -112,42 +112,42 @@
               "arguments": [
                 {
                   "argumentTypes": null,
-                  "hexValue": "307832343637363336626561306633633234343132323765656462666661633539663131643534613830",
-                  "id": 563,
+                  "hexValue": "307862646539353432323638316534633339383436333561663266326633356638633434613464646339",
+                  "id": 596,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "363:42:4",
+                  "src": "334:42:4",
                   "subdenomination": null,
                   "typeDescriptions": {
-                    "typeIdentifier": "t_rational_207829305342745837144301599737747326956102568576_by_1",
-                    "typeString": "int_const 2078...(40 digits omitted)...8576"
+                    "typeIdentifier": "t_rational_1084202658456979074932162660321672931440442269129_by_1",
+                    "typeString": "int_const 1084...(41 digits omitted)...9129"
                   },
-                  "value": "0x2467636bea0f3c2441227eedbffac59f11d54a80"
+                  "value": "0xbde95422681e4c3984635af2f2f35f8c44a4ddc9"
                 }
               ],
               "expression": {
                 "argumentTypes": [
                   {
-                    "typeIdentifier": "t_rational_207829305342745837144301599737747326956102568576_by_1",
-                    "typeString": "int_const 2078...(40 digits omitted)...8576"
+                    "typeIdentifier": "t_rational_1084202658456979074932162660321672931440442269129_by_1",
+                    "typeString": "int_const 1084...(41 digits omitted)...9129"
                   }
                 ],
-                "id": 562,
+                "id": 595,
                 "name": "ClaimStorage",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 556,
-                "src": "350:12:4",
+                "referencedDeclaration": 589,
+                "src": "321:12:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$556_$",
+                  "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$589_$",
                   "typeString": "type(contract ClaimStorage)"
                 }
               },
-              "id": 564,
+              "id": 597,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -155,100 +155,19 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "350:56:4",
+              "src": "321:56:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                 "typeString": "contract ClaimStorage"
-              }
-            },
-            "visibility": "internal"
-          },
-          {
-            "constant": false,
-            "id": 570,
-            "name": "claim",
-            "nodeType": "VariableDeclaration",
-            "scope": 605,
-            "src": "511:22:4",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Claim_$81",
-              "typeString": "contract Claim"
-            },
-            "typeName": {
-              "contractScope": null,
-              "id": 566,
-              "name": "Claim",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 81,
-              "src": "511:5:4",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Claim_$81",
-                "typeString": "contract Claim"
-              }
-            },
-            "value": {
-              "argumentTypes": null,
-              "arguments": [
-                {
-                  "argumentTypes": null,
-                  "hexValue": "30",
-                  "id": 568,
-                  "isConstant": false,
-                  "isLValue": false,
-                  "isPure": true,
-                  "kind": "number",
-                  "lValueRequested": false,
-                  "nodeType": "Literal",
-                  "src": "531:1:4",
-                  "subdenomination": null,
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_rational_0_by_1",
-                    "typeString": "int_const 0"
-                  },
-                  "value": "0"
-                }
-              ],
-              "expression": {
-                "argumentTypes": [
-                  {
-                    "typeIdentifier": "t_rational_0_by_1",
-                    "typeString": "int_const 0"
-                  }
-                ],
-                "id": 567,
-                "name": "Claim",
-                "nodeType": "Identifier",
-                "overloadedDeclarations": [],
-                "referencedDeclaration": 81,
-                "src": "525:5:4",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_Claim_$81_$",
-                  "typeString": "type(contract Claim)"
-                }
-              },
-              "id": 569,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "typeConversion",
-              "lValueRequested": false,
-              "names": [],
-              "nodeType": "FunctionCall",
-              "src": "525:8:4",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Claim_$81",
-                "typeString": "contract Claim"
               }
             },
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 584,
+              "id": 612,
               "nodeType": "Block",
-              "src": "726:105:4",
+              "src": "588:105:4",
               "statements": [
                 {
                   "expression": {
@@ -260,7 +179,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 580,
+                        "id": 608,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -270,12 +189,12 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 577,
+                              "id": 605,
                               "name": "_resgisteredHospitalAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 572,
-                              "src": "774:27:4",
+                              "referencedDeclaration": 600,
+                              "src": "636:27:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -291,32 +210,32 @@
                             ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 575,
+                              "id": 603,
                               "name": "claimStorage",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 565,
-                              "src": "745:12:4",
+                              "referencedDeclaration": 598,
+                              "src": "607:12:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                                 "typeString": "contract ClaimStorage"
                               }
                             },
-                            "id": 576,
+                            "id": 604,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "getHospitalBool",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 391,
-                            "src": "745:28:4",
+                            "referencedDeclaration": 399,
+                            "src": "607:28:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                               "typeString": "function (address) view external returns (bool)"
                             }
                           },
-                          "id": 578,
+                          "id": 606,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -324,7 +243,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "745:57:4",
+                          "src": "607:57:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -335,14 +254,14 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "74727565",
-                          "id": 579,
+                          "id": 607,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "806:4:4",
+                          "src": "668:4:4",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -350,7 +269,7 @@
                           },
                           "value": "true"
                         },
-                        "src": "745:65:4",
+                        "src": "607:65:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -364,21 +283,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 574,
+                      "id": 602,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        667,
-                        668
+                        695,
+                        696
                       ],
-                      "referencedDeclaration": 667,
-                      "src": "737:7:4",
+                      "referencedDeclaration": 695,
+                      "src": "599:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 581,
+                    "id": 609,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -386,38 +305,38 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "737:74:4",
+                    "src": "599:74:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 582,
+                  "id": 610,
                   "nodeType": "ExpressionStatement",
-                  "src": "737:74:4"
+                  "src": "599:74:4"
                 },
                 {
-                  "id": 583,
+                  "id": 611,
                   "nodeType": "PlaceholderStatement",
-                  "src": "822:1:4"
+                  "src": "684:1:4"
                 }
               ]
             },
             "documentation": "* Modifiers **********",
-            "id": 585,
+            "id": 613,
             "name": "onlyRegisteredHospital",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 573,
+              "id": 601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 600,
                   "name": "_resgisteredHospitalAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
-                  "src": "689:35:4",
+                  "scope": 613,
+                  "src": "551:35:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -425,10 +344,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 599,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "689:7:4",
+                    "src": "551:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -438,16 +357,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "688:37:4"
+              "src": "550:37:4"
             },
-            "src": "657:174:4",
+            "src": "519:174:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 603,
+              "id": 631,
               "nodeType": "Block",
-              "src": "949:70:4",
+              "src": "811:70:4",
               "statements": [
                 {
                   "expression": {
@@ -455,70 +374,70 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 599,
+                        "id": 627,
                         "name": "_claimId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 587,
-                        "src": "984:8:4",
+                        "referencedDeclaration": 615,
+                        "src": "846:8:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 600,
+                        "id": 628,
                         "name": "_newBigchain_hash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 589,
-                        "src": "993:17:4",
+                        "referencedDeclaration": 617,
+                        "src": "855:17:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_bytes_memory_ptr",
-                          "typeString": "bytes memory"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         },
                         {
-                          "typeIdentifier": "t_bytes_memory_ptr",
-                          "typeString": "bytes memory"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 596,
+                        "id": 624,
                         "name": "claimStorage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 565,
-                        "src": "960:12:4",
+                        "referencedDeclaration": 598,
+                        "src": "822:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                          "typeIdentifier": "t_contract$_ClaimStorage_$589",
                           "typeString": "contract ClaimStorage"
                         }
                       },
-                      "id": 598,
+                      "id": 626,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setNewHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 436,
-                      "src": "960:23:4",
+                      "referencedDeclaration": 449,
+                      "src": "822:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes_memory_ptr_$returns$__$",
-                        "typeString": "function (bytes32,bytes memory) external"
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory) external"
                       }
                     },
-                    "id": 601,
+                    "id": 629,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -526,20 +445,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "960:51:4",
+                    "src": "822:51:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 602,
+                  "id": 630,
                   "nodeType": "ExpressionStatement",
-                  "src": "960:51:4"
+                  "src": "822:51:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 604,
+            "id": 632,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -550,18 +469,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 592,
+                      "id": 620,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 664,
-                      "src": "938:3:4",
+                      "referencedDeclaration": 692,
+                      "src": "800:3:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
                         "typeString": "msg"
                       }
                     },
-                    "id": 593,
+                    "id": 621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -569,58 +488,58 @@
                     "memberName": "sender",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "938:10:4",
+                    "src": "800:10:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 594,
+                "id": 622,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 591,
+                  "id": 619,
                   "name": "onlyRegisteredHospital",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 585,
-                  "src": "915:22:4",
+                  "referencedDeclaration": 613,
+                  "src": "777:22:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
                     "typeString": "modifier (address)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "915:34:4"
+                "src": "777:34:4"
               }
             ],
             "name": "addHospitalBill",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 590,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 587,
+                  "id": 615,
                   "name": "_claimId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 604,
-                  "src": "864:16:4",
+                  "scope": 632,
+                  "src": "726:15:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 586,
-                    "name": "bytes32",
+                    "id": 614,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "864:7:4",
+                    "src": "726:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
@@ -628,65 +547,65 @@
                 },
                 {
                   "constant": false,
-                  "id": 589,
+                  "id": 617,
                   "name": "_newBigchain_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 604,
-                  "src": "882:23:4",
+                  "scope": 632,
+                  "src": "743:24:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes_memory_ptr",
-                    "typeString": "bytes"
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 588,
-                    "name": "bytes",
+                    "id": 616,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "882:5:4",
+                    "src": "743:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes_storage_ptr",
-                      "typeString": "bytes"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "863:44:4"
+              "src": "725:44:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 595,
+              "id": 623,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "949:0:4"
+              "src": "811:0:4"
             },
-            "scope": 605,
-            "src": "839:180:4",
+            "scope": 633,
+            "src": "701:180:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 606,
-        "src": "247:777:4"
+        "scope": 634,
+        "src": "218:668:4"
       }
     ],
-    "src": "0:1026:4"
+    "src": "0:888:4"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/HospitalContract.sol",
+    "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/HospitalContract.sol",
     "exportedSymbols": {
       "HospitalContract": [
-        605
+        633
       ]
     },
-    "id": 606,
+    "id": 634,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 558,
+        "id": 591,
         "literals": [
           "solidity",
           "^",
@@ -697,23 +616,23 @@
         "src": "0:23:4"
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/ClaimStorage.sol",
         "file": "./ClaimStorage.sol",
-        "id": 559,
+        "id": 592,
         "nodeType": "ImportDirective",
-        "scope": 606,
-        "sourceUnit": 557,
+        "scope": 634,
+        "sourceUnit": 590,
         "src": "27:28:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/dheer/Documents/BlockchainAPC/blockinsurance/contracts/claimAssist/Claim.sol",
+        "absolutePath": "/C/Users/jeshw/blockinsurance/contracts/claimAssist/Claim.sol",
         "file": "./Claim.sol",
-        "id": 560,
+        "id": 593,
         "nodeType": "ImportDirective",
-        "scope": 606,
-        "sourceUnit": 82,
+        "scope": 634,
+        "sourceUnit": 80,
         "src": "57:21:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -722,37 +641,37 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "@title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r\n @author David Rugendyke\r",
+        "documentation": "@title Examples of how to store and read a contract address in your dApps eternal storage for use in the hub / spoke pattern\r",
         "fullyImplemented": true,
-        "id": 605,
+        "id": 633,
         "linearizedBaseContracts": [
-          605
+          633
         ],
         "name": "HospitalContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 565,
+            "id": 598,
             "name": "claimStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 605,
-            "src": "322:84:4",
+            "scope": 633,
+            "src": "293:84:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ClaimStorage_$556",
+              "typeIdentifier": "t_contract$_ClaimStorage_$589",
               "typeString": "contract ClaimStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 561,
+              "id": 594,
               "name": "ClaimStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 556,
-              "src": "322:12:4",
+              "referencedDeclaration": 589,
+              "src": "293:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                 "typeString": "contract ClaimStorage"
               }
             },
@@ -761,42 +680,42 @@
               "arguments": [
                 {
                   "argumentTypes": null,
-                  "hexValue": "307832343637363336626561306633633234343132323765656462666661633539663131643534613830",
-                  "id": 563,
+                  "hexValue": "307862646539353432323638316534633339383436333561663266326633356638633434613464646339",
+                  "id": 596,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "363:42:4",
+                  "src": "334:42:4",
                   "subdenomination": null,
                   "typeDescriptions": {
-                    "typeIdentifier": "t_rational_207829305342745837144301599737747326956102568576_by_1",
-                    "typeString": "int_const 2078...(40 digits omitted)...8576"
+                    "typeIdentifier": "t_rational_1084202658456979074932162660321672931440442269129_by_1",
+                    "typeString": "int_const 1084...(41 digits omitted)...9129"
                   },
-                  "value": "0x2467636bea0f3c2441227eedbffac59f11d54a80"
+                  "value": "0xbde95422681e4c3984635af2f2f35f8c44a4ddc9"
                 }
               ],
               "expression": {
                 "argumentTypes": [
                   {
-                    "typeIdentifier": "t_rational_207829305342745837144301599737747326956102568576_by_1",
-                    "typeString": "int_const 2078...(40 digits omitted)...8576"
+                    "typeIdentifier": "t_rational_1084202658456979074932162660321672931440442269129_by_1",
+                    "typeString": "int_const 1084...(41 digits omitted)...9129"
                   }
                 ],
-                "id": 562,
+                "id": 595,
                 "name": "ClaimStorage",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 556,
-                "src": "350:12:4",
+                "referencedDeclaration": 589,
+                "src": "321:12:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$556_$",
+                  "typeIdentifier": "t_type$_t_contract$_ClaimStorage_$589_$",
                   "typeString": "type(contract ClaimStorage)"
                 }
               },
-              "id": 564,
+              "id": 597,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -804,100 +723,19 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "350:56:4",
+              "src": "321:56:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                 "typeString": "contract ClaimStorage"
-              }
-            },
-            "visibility": "internal"
-          },
-          {
-            "constant": false,
-            "id": 570,
-            "name": "claim",
-            "nodeType": "VariableDeclaration",
-            "scope": 605,
-            "src": "511:22:4",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Claim_$81",
-              "typeString": "contract Claim"
-            },
-            "typeName": {
-              "contractScope": null,
-              "id": 566,
-              "name": "Claim",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 81,
-              "src": "511:5:4",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Claim_$81",
-                "typeString": "contract Claim"
-              }
-            },
-            "value": {
-              "argumentTypes": null,
-              "arguments": [
-                {
-                  "argumentTypes": null,
-                  "hexValue": "30",
-                  "id": 568,
-                  "isConstant": false,
-                  "isLValue": false,
-                  "isPure": true,
-                  "kind": "number",
-                  "lValueRequested": false,
-                  "nodeType": "Literal",
-                  "src": "531:1:4",
-                  "subdenomination": null,
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_rational_0_by_1",
-                    "typeString": "int_const 0"
-                  },
-                  "value": "0"
-                }
-              ],
-              "expression": {
-                "argumentTypes": [
-                  {
-                    "typeIdentifier": "t_rational_0_by_1",
-                    "typeString": "int_const 0"
-                  }
-                ],
-                "id": 567,
-                "name": "Claim",
-                "nodeType": "Identifier",
-                "overloadedDeclarations": [],
-                "referencedDeclaration": 81,
-                "src": "525:5:4",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_Claim_$81_$",
-                  "typeString": "type(contract Claim)"
-                }
-              },
-              "id": 569,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "typeConversion",
-              "lValueRequested": false,
-              "names": [],
-              "nodeType": "FunctionCall",
-              "src": "525:8:4",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Claim_$81",
-                "typeString": "contract Claim"
               }
             },
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 584,
+              "id": 612,
               "nodeType": "Block",
-              "src": "726:105:4",
+              "src": "588:105:4",
               "statements": [
                 {
                   "expression": {
@@ -909,7 +747,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 580,
+                        "id": 608,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -919,12 +757,12 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 577,
+                              "id": 605,
                               "name": "_resgisteredHospitalAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 572,
-                              "src": "774:27:4",
+                              "referencedDeclaration": 600,
+                              "src": "636:27:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -940,32 +778,32 @@
                             ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 575,
+                              "id": 603,
                               "name": "claimStorage",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 565,
-                              "src": "745:12:4",
+                              "referencedDeclaration": 598,
+                              "src": "607:12:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                                "typeIdentifier": "t_contract$_ClaimStorage_$589",
                                 "typeString": "contract ClaimStorage"
                               }
                             },
-                            "id": 576,
+                            "id": 604,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "getHospitalBool",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 391,
-                            "src": "745:28:4",
+                            "referencedDeclaration": 399,
+                            "src": "607:28:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                               "typeString": "function (address) view external returns (bool)"
                             }
                           },
-                          "id": 578,
+                          "id": 606,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -973,7 +811,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "745:57:4",
+                          "src": "607:57:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -984,14 +822,14 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "74727565",
-                          "id": 579,
+                          "id": 607,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "806:4:4",
+                          "src": "668:4:4",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -999,7 +837,7 @@
                           },
                           "value": "true"
                         },
-                        "src": "745:65:4",
+                        "src": "607:65:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1013,21 +851,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 574,
+                      "id": 602,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        667,
-                        668
+                        695,
+                        696
                       ],
-                      "referencedDeclaration": 667,
-                      "src": "737:7:4",
+                      "referencedDeclaration": 695,
+                      "src": "599:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 581,
+                    "id": 609,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1035,38 +873,38 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "737:74:4",
+                    "src": "599:74:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 582,
+                  "id": 610,
                   "nodeType": "ExpressionStatement",
-                  "src": "737:74:4"
+                  "src": "599:74:4"
                 },
                 {
-                  "id": 583,
+                  "id": 611,
                   "nodeType": "PlaceholderStatement",
-                  "src": "822:1:4"
+                  "src": "684:1:4"
                 }
               ]
             },
             "documentation": "* Modifiers **********",
-            "id": 585,
+            "id": 613,
             "name": "onlyRegisteredHospital",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 573,
+              "id": 601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 600,
                   "name": "_resgisteredHospitalAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
-                  "src": "689:35:4",
+                  "scope": 613,
+                  "src": "551:35:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1074,10 +912,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 599,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "689:7:4",
+                    "src": "551:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1087,16 +925,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "688:37:4"
+              "src": "550:37:4"
             },
-            "src": "657:174:4",
+            "src": "519:174:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 603,
+              "id": 631,
               "nodeType": "Block",
-              "src": "949:70:4",
+              "src": "811:70:4",
               "statements": [
                 {
                   "expression": {
@@ -1104,70 +942,70 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 599,
+                        "id": 627,
                         "name": "_claimId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 587,
-                        "src": "984:8:4",
+                        "referencedDeclaration": 615,
+                        "src": "846:8:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 600,
+                        "id": 628,
                         "name": "_newBigchain_hash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 589,
-                        "src": "993:17:4",
+                        "referencedDeclaration": 617,
+                        "src": "855:17:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_bytes_memory_ptr",
-                          "typeString": "bytes memory"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         },
                         {
-                          "typeIdentifier": "t_bytes_memory_ptr",
-                          "typeString": "bytes memory"
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 596,
+                        "id": 624,
                         "name": "claimStorage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 565,
-                        "src": "960:12:4",
+                        "referencedDeclaration": 598,
+                        "src": "822:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ClaimStorage_$556",
+                          "typeIdentifier": "t_contract$_ClaimStorage_$589",
                           "typeString": "contract ClaimStorage"
                         }
                       },
-                      "id": 598,
+                      "id": 626,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setNewHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 436,
-                      "src": "960:23:4",
+                      "referencedDeclaration": 449,
+                      "src": "822:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes_memory_ptr_$returns$__$",
-                        "typeString": "function (bytes32,bytes memory) external"
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory) external"
                       }
                     },
-                    "id": 601,
+                    "id": 629,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1175,20 +1013,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "960:51:4",
+                    "src": "822:51:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 602,
+                  "id": 630,
                   "nodeType": "ExpressionStatement",
-                  "src": "960:51:4"
+                  "src": "822:51:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 604,
+            "id": 632,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1199,18 +1037,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 592,
+                      "id": 620,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 664,
-                      "src": "938:3:4",
+                      "referencedDeclaration": 692,
+                      "src": "800:3:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
                         "typeString": "msg"
                       }
                     },
-                    "id": 593,
+                    "id": 621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1218,58 +1056,58 @@
                     "memberName": "sender",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "938:10:4",
+                    "src": "800:10:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 594,
+                "id": 622,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 591,
+                  "id": 619,
                   "name": "onlyRegisteredHospital",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 585,
-                  "src": "915:22:4",
+                  "referencedDeclaration": 613,
+                  "src": "777:22:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
                     "typeString": "modifier (address)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "915:34:4"
+                "src": "777:34:4"
               }
             ],
             "name": "addHospitalBill",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 590,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 587,
+                  "id": 615,
                   "name": "_claimId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 604,
-                  "src": "864:16:4",
+                  "scope": 632,
+                  "src": "726:15:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 586,
-                    "name": "bytes32",
+                    "id": 614,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "864:7:4",
+                    "src": "726:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
@@ -1277,52 +1115,52 @@
                 },
                 {
                   "constant": false,
-                  "id": 589,
+                  "id": 617,
                   "name": "_newBigchain_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 604,
-                  "src": "882:23:4",
+                  "scope": 632,
+                  "src": "743:24:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes_memory_ptr",
-                    "typeString": "bytes"
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 588,
-                    "name": "bytes",
+                    "id": 616,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "882:5:4",
+                    "src": "743:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes_storage_ptr",
-                      "typeString": "bytes"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "863:44:4"
+              "src": "725:44:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 595,
+              "id": 623,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "949:0:4"
+              "src": "811:0:4"
             },
-            "scope": 605,
-            "src": "839:180:4",
+            "scope": 633,
+            "src": "701:180:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 606,
-        "src": "247:777:4"
+        "scope": 634,
+        "src": "218:668:4"
       }
     ],
-    "src": "0:1026:4"
+    "src": "0:888:4"
   },
   "compiler": {
     "name": "solc",
@@ -1332,10 +1170,10 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0xeec918d74c746167564401103096d45bbd494b74",
-      "transactionHash": "0x887977fa0170d9a45eba8c70587866a994e6e45040a1fd72e2c22f9abdc968cd"
+      "address": "0x2c2b9c9a4a25e24b174f26114e8926a9f2128fe4",
+      "transactionHash": "0x6e97d0fd844ff94962feb45bce9bd4b901b8a2e6f84671aa24e3138a84768e85"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-18T01:14:34.486Z"
+  "updatedAt": "2018-07-31T10:01:11.773Z"
 }
