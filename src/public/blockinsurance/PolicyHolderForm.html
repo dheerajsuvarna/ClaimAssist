@@ -599,9 +599,10 @@
             });
 
         });
-        console.log(jsondata);
-        console.log(claim_form);
-        alert(JSON.stringify(jsondata));
+
+        jsondata["Accident date-time"] = $("#Accident_datetime").val();
+        jsondata["Policy holder remarks"] = $("#policy_holder_remarks").val();
+
 
         $.post("/saveClaim", {
                 claimObject: jsondata
