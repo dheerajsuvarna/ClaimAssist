@@ -1,19 +1,18 @@
-ee![](readme_images/logo.png)
+ee![](/public/blockinsurance/readme_images/logo.png)
 
-# Claim Assit
+# Claim Assist
 > All your claims under one roof
 ----------------------------
-Claim assist is a secure, decentralized application to handle all the claims settlement at the click of a button.
+Claim assist is a secure, decentralized application to handle all the claims settlement.
 
-Currently when a accident ooccurs, the two parties will have to involve in the whole process of claim settlement physically starting from filling the form to claim generation,
-and in this process there is a lot of time and energy wasted. So we wanted to make the life of the policy holders easy by developing an online process that is automated, secure and simple. 
-We use blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
+In the current scenario when an accident occurs, the two parties involved have to go through the entire rigorous and time-consuming process of claim settlement, starting from form filling to claim generation. To facilitate the policyholders, we have developed a web application that is automated, secure and easy to use. 
+Further, we have used blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
 
 
 ## Included Components
 ----------------------------
 - Ethereum
-- Bigchain
+- BigchainDB
 - IPFS
 
 ## Prerequisites
@@ -27,20 +26,20 @@ We use blockchain technology for handling the claim data which makes it fully ta
 ## Usecases
 ----------------------------
 
-There are 3 usercases involved
+We have covered three different use cases :
 
-1. Usecase 1: At the scene of accident both the parties agree on the fault and settle the claim on their own.
-2. usecase 2: There is no mutual agreement on the accident perpetrator and hence they call police to the scene and get the verification done. The Police will also generate a report based on the evidences collected.
-3. usecase 3: There is an injury involved and hence there will police and hospital invloved in the claim process. The police and hiospital will generate their bill and reports and upload it.
+1. Use case 1: Both the parties involved in the accident come to a mutual agreement on who is liable and submit the accident statement form to their respective insurance companies.
+2. Use case 2: There is no mutual agreement on the accident perpetrator and hence they call Police to the scene and get the verification done. The Police will have to upload the report against the respective claim, based on the evidence collected.
+3. Use case 3: There is an injury involved and hence there will be both Police and Hospital involved in the claim process. Both will generate their bills/reports and upload against the respective claim.
 
 ## Architecture
 ----------------------------
 
 
 
-## Compatibility with other blockchain based insurance Application
+## Compatibility with other Blockchain based insurance applications
 ----------------------------
-The system is designed such that it can provide service to multiple insurance companies. The aim is to reduce the job of the insurance companies of getting involved in the claim generation process which is actually painful. We provide an API for the insurance comapnies where they can request for all the data that is requeired for their claim handling process. All the data is encrypted and cant be tampered. 
+We have designed our distributed application such that it can act as a third-party service to multiple insurance companies. Our aim is to ease the claim generation and settlement process for insurance companies and involved stakeholders. We provide an API for the insurance companies where they can request for all the data that is required for their claim handling process. Claim data is encrypted and tamper-proof. 
 
 
 
@@ -49,24 +48,24 @@ The system is designed such that it can provide service to multiple insurance co
 
 ### Claim Generation
 ----------------------------
-The Accident victim/ AP logs in into the system and starts to fill the data for the claim form, the details include his personal as well as the other party's information. once the person submits the form, the supporting files are stored on the IPFS, and the form details is stored in the IPFS as a json, the hash of this file is stored over the Bigchaindb along with the claim id. The bigchaindb acts as a registery for all the claim related data. The hash of bigchain is now stored in the blockchain against the claim id.
+The Accident victim/perpetrator logs into the system and fills the Claim form. On submitting the form, the form details and the supporting files are also stored on IPFS. The hash of these files is stored over the BigchainDB along with the Claim id. BigchainDB acts as a registry for all the claim related data. The hash of BigchainDB is now stored in the blockchain against the Claim id. This completes the Claim generation process.
 
 ![claim generation process](readme_images/claim_generation.gif)
 
 ### Verification and Update
 ----------------------------
-Now the victim can login with his credentials into our system and see the claim in his repository. When he clicks on the entry, the claim data is retrived back from the blockchain. This will have the claim id along with the bigchain db hash, using this hash we query the bigchainDB and get the IPFS hash. The IPFS has will lead us to the form data with all the suporting files uploaded already against the claim. Now the victim can verify the data filled by the first party, and leave his comment and finally submit the form. The updating of the data works similar to the storage.The updated file is stored in IPFS and the new IPFS hash is stored in bigchain, and finally the new bigchain hash is stored in the blockchain.
+Now the other party can log into our system and see the respective claim on Notifications page. When he clicks on View, the claim data is retrieved back from the blockchain and displayed to the user. Now the victim can verify the data filled by the first party, agree/disagree with the details, and also give his remarks and submit the form. The Claim updating process works similar to the Claim generation. The updated file is stored in IPFS and the new IPFS hash is stored in BigchainDB, and finally, the new BigchainDB hash is stored in the blockchain.
 
 ![Verification and update](readme_images/claim_generation.gif)
 
 ### Police Report 
 ----------------------------
-Mean police will get a notification about the accident.They will investigate the case, generate a report and upload all the supporting document. 
+Meanwhile, the police will get a notification about the accident. They will investigate the case, generate a report and upload all the supporting documents. 
 ![police report](readme_images/police.gif)
 
 ### Hospital Report
 ----------------------------
-If any injuries are involved in the accident the Hospital also will come into picture. The hospital can also log in into our system and upload all the bills and other documents and submit it with the claim ID.
+If any injuries are involved in the accident the Hospital also will come into the picture. The hospital can also login into our system and upload all the bills and other documents and submit it with the Claim id.
 ![Hospital report](readme_images/police.gif)
 
 ## Steps:
@@ -74,12 +73,12 @@ If any injuries are involved in the accident the Hospital also will come into pi
 # 1.Run the application
 - Clone the repository:
 `git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git`
-- Go to the project directory and intall the dependencies:
+- Go to the project directory and install the dependencies:
 ```npm install```
 - Run the application finally :
 ` npm run `
 
-Use the link http://localhost:3001 to load the web application in browser.
+Use the link http://localhost:3001 to load the web application in the browser.
 
 This will take you to the landing page of our application. You can find more details about our application here.
 
@@ -113,7 +112,7 @@ links to humans using your project. You can include links like:
 - Repository: https://github.com/your/awesome-project/
 - Issue tracker: https://github.com/your/awesome-project/issues
   - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
+    my@email.com directly instead of using the issue tracker. We value your effort
     to improve the security and privacy of this project!
 - Related projects:
   - Your other project: https://github.com/your/other-project/
