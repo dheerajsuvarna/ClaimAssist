@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 ee![](/public/blockinsurance/readme_images/logo.png)
 
 # Claim Assist
 > All your claims under one roof
+=======
+		![Logo](readme_images/logo.png)
+
+# Claim Assit
+>> All your claims under one roof
+>>>>>>> 413c5e97309e9083df507859d036aa3ca160abba
 ----------------------------
 Claim assist is a secure, decentralized application to handle all the claims settlement.
 
@@ -81,6 +88,7 @@ If any injuries are involved in the accident the Hospital also will come into th
 Use the link http://localhost:3001 to load the web application in the browser.
 
 This will take you to the landing page of our application. You can find more details about our application here.
+<<<<<<< HEAD
 
 ![Landing_page](readme_images/workflow.jpg)
 
@@ -126,3 +134,5 @@ state what the license is and how to find the text version of the license.
 Something like:
 
 "The code in this project is licensed under MIT license."
+=======
+>>>>>>> 413c5e97309e9083df507859d036aa3ca160abba
