@@ -52,8 +52,24 @@ We have covered three different use cases :
 
 ## Architecture
 ----------------------------
-We have used Hub and Spoke architecture where `ClaimStorage.sol` is our hub and other contracts as our spokes. We also employed a persistent storage model which helps in upgradability of contracts. The DApp code interacts with the spokes and store/update/retrieve the data from the storage contract.  
+### Application Arcitecture
+----------------------------
+#### Create a claim
+----------------------------
+![claim creation process](readme_images/createClaim.JPG)
+#### Retrieve a Claim
+----------------------------
+![claim retrieval process](readme_images/retriveClaim.JPG)
+#### Update a claim
+----------------------------
+![claim updation process](readme_images/updateAClaim.JPG)
 
+### Smart Contract Architecture
+----------------------------
+We have used Hub and Spoke architecture where `ClaimStorage.sol` is our hub and other contracts as our spokes. We also employed a persistent storage model which helps in upgradability of contracts. The DApp code interacts with the spokes and store/update/retrieve the data from the storage contract.  
+![Smart contract Architecture](readme_images/smartContractArchitecture.JPG)
+
+![smart contract Delegate architecture](readme_images/SmartContract_delegate.JPG)
 
 ## Compatibility with other Blockchain based insurance applications
 ----------------------------
