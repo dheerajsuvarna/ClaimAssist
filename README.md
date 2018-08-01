@@ -15,6 +15,8 @@ In the current scenario when an accident occurs, the two parties involved have t
 - [Prerequisites](#prerequisites)
 - [Usecases](#usecases)
 - [Architecture](#architecture)
+  * [Application Architecture](#Application-Archtecture)
+  * [Smart Contract Architecture](#Smart-Contract-Architecture)
 - [Compatibility with other Blockchain based insurance applications](#compatibility-with-other-blockchain-based-insurance-applications)
 - [Application Workflow](#application-workflow)
   * [Claim Generation](#claim-generation)
@@ -54,22 +56,31 @@ We have covered three different use cases :
 ----------------------------
 ### Application Arcitecture
 ----------------------------
+We make use IPFS to store the files and use BigchainDB as a registry.
 #### Create a claim
 ----------------------------
+When a claim is created, a unique claimID is generated and it is encrypted and then pushed to IPFS. Once we get the IPFS hash we, store this hash in BigchainDB. After that we get the BigchainDB transaction ID which we then add to the smart contract against the Unique ClaimID.
 ![claim creation process](readme_images/createClaim.JPG)
 #### Retrieve a Claim
 ----------------------------
+When we want to retrieve a file, first we query the smart contract with the claimID and get the BigchainHash. After this we Query bigchainDB and get the IPFS hash. Once we have the IPFS hash, we retrieve the files from IPFS and then Decrypt it on our Node server then send it to the client.
 ![claim retrieval process](readme_images/retriveClaim.JPG)
 #### Update a claim
 ----------------------------
+Now if we want to update some claim Information (Police, other Party or Hospital) we first retrieve it and then update the information then follow the same steps as creating a claim, but in the end we save the new BigchainDb transaction ID against the same ClaimID.
 ![claim updation process](readme_images/updateAClaim.JPG)
 
 ### Smart Contract Architecture
 ----------------------------
 We have used Hub and Spoke architecture where `ClaimStorage.sol` is our hub and other contracts as our spokes. We also employed a persistent storage model which helps in upgradability of contracts. The DApp code interacts with the spokes and store/update/retrieve the data from the storage contract.  
+
 ![Smart contract Architecture](readme_images/smartContractArchitecture.JPG)
 
+The Advantages of using this architecture is that, it allows us to separate Data from Logic. Lets say some Logic has to be replaced, we can easily do it, without the fear of losing the data.
+
 ![smart contract Delegate architecture](readme_images/SmartContract_delegate.JPG)
+
+The Above architecture is built upon the Hub and spoke model, where we have a cetral contract which delegaets the request to the respective logic contracts and also has a Data Storage contract. With this, we can have contract address registry and easily update contract logic. This will be implemented in the next phase.
 
 ## Compatibility with other Blockchain based insurance applications
 ----------------------------
