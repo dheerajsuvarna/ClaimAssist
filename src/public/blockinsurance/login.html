@@ -71,7 +71,7 @@
 
                             <div>
                                 <h1>Claim Assist</h1>
-                                <p>©2016 All Rights Reserved.</p>
+                                <p>©2018 All Rights Reserved.</p>
                             </div>
                         </div>
                     </form>
@@ -129,16 +129,15 @@
 </body>
 <script>
     $(document).ready(function() {
-
         $("#login").click(function() {
             if ($("#role").val() == "Policy Holder") {
-                $("#logina").attr("href", "PolicyHolder_index.html");
+                $("#logina").attr("href", "/loginAccount/policyHolder");
             }
             if ($("#role").val() == "Police") {
-                $("#logina").attr("href", "Police_index.html");
+                $("#logina").attr("href", "/loginAccount/police");
             }
             if ($("#role").val() == "Hospital") {
-                $("#logina").attr("href", "Hospital_index.html");
+                $("#logina").attr("href", "/loginAccount/hospital");
             }
         });
     });

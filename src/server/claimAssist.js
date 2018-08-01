@@ -6,14 +6,12 @@ const bcdb = require('./bigchain')
 var routerClaimAssist = express.Router();
 
 routerClaimAssist.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../public/blockinsurance/PolicyHolderForm.html'));
+    res.sendFile(path.join(__dirname + '/../public/blockinsurance/login.html'));
 });
 
 routerClaimAssist.post('/saveClaim', function(req, res) {
     let claimDetails = req.body.claimObject;
-    console.log("claimDetails ===> " + JSON.stringify(claimDetails) )
     ipfs.store(claimDetails)
-    //call encryption function
     .then(function(ipfs_hash){
         return bcdb.saveHashToBCDB(ipfs_hash)
     }).then(function(bcdb_txid){
@@ -27,14 +25,6 @@ routerClaimAssist.post('/saveClaim', function(req, res) {
 
 routerClaimAssist.get('/getFile/:bcdb_txid', function(req, res) {
     let bcdb_txid = req.params.bcdb_txid;
-    // let ipfsHash = req.params.bcdb_txid;
-    // ipfs.getFile(ipfsHash).then(function(content_json){
-    //     // Decrypt the File
-    //     res.send(content_json)
-    // }).catch(function(error){
-    //     console.log("There is an error ===> " + error.stack)
-    // })
-
     bcdb.getIPFSHash(bcdb_txid)
         .then(function(ipfsHash) {
             return ipfs.getFile(ipfsHash)
@@ -54,6 +44,19 @@ routerClaimAssist.get('/showAgreement', function(req, res) {
 /* ========================================== Login page ========================================================*/
 routerClaimAssist.get('/login', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/blockinsurance/login.html'));
+});
+
+routerClaimAssist.get('/loginAccount/:role', function(req, res) {
+    let role = req.params.role;
+    if(role == 'policyHolder'){
+        res.redirect('/policyHolder');
+    }else if(role == 'police'){
+        res.redirect('/police');
+    }else if(role == 'hospital'){
+        res.redirect('/hospital');
+    }else{
+        res.redirect('/');
+    }
 });
 
 routerClaimAssist.get('/register', function(req, res) {
