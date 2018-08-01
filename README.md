@@ -115,7 +115,7 @@ If any injuries are involved in the accident the Hospital also will come into th
 
 ## Steps:
 ----------------------------
-# 1.Run the application
+# 1.Run the application 
 - Clone the repository: `git clone git@bitbucket.org:dheerajsuvarna2/blockinsurance.git`
 - Install truffle - `npm install -g truffle`
 - Install rimraf - `npm install -g rimraf`
@@ -123,10 +123,13 @@ If any injuries are involved in the accident the Hospital also will come into th
 - Open another console in the same folder and run - `truffle develop` - this starts the truffle testrpc, which is an Ethereum blockchain test network
 - In truffle console, run - `compile` - this compiles the smart contract
 - In truffle console, run - `migrate` - this migrates the smart contracts to the test network
+- Now for our Hub and spoke model to work, copy the deployed address of "ClaimStorage" contract and paste it in the other contracts (claim.sol,agreement.sol,police.sol,hospital.sol,claimManger.sol).
+- In truffle console, again run - `compile` - this migrates the smart contracts to the test network
+- In truffle console, run - `migrate --reset` - this migrates the smart contracts to the test network
 - Open another console and run - `npm run build:contracts` - this script copies the contracts from **./.build** folder to **/src/public/contracts**  
 - In the first console, run - `npm run start`
-- Use the link http://localhost:3001 to load the web application in the browser. This will take you to the landing page of our application. You can find more details about our application here.
-
+- Use the link http://localhost:3001 to load the web application in the browser. This will take you to the Login page of our application. 
+- Before you try to create a claim **Please check if BigchainDB testnet is working** else you are going to get a error on browser console.
 
 
 # Project structure
