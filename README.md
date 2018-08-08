@@ -124,12 +124,44 @@ If any injuries are involved in the accident the Hospital also will come into th
 - In truffle console, run - `compile` - this compiles the smart contract
 - In truffle console, run - `migrate` - this migrates the smart contracts to the test network
 - Now for our Hub and spoke model to work, copy the deployed address of "ClaimStorage" contract and paste it in the other contracts (claim.sol,agreement.sol,police.sol,hospital.sol,claimManger.sol).
-- In truffle console, again run - `compile` - this migrates the smart contracts to the test network
-- In truffle console, run - `migrate --reset` - this migrates the smart contracts to the test network
-- Open another console and run - `npm run build:contracts` - this script copies the contracts from **./.build** folder to **/src/public/contracts**  
-- In the first console, run - `npm run start`
-- Use the link http://localhost:3001 to load the web application in the browser. This will take you to the Login page of our application. 
-- Before you try to create a claim **Please check if BigchainDB testnet is working** else you are going to get a error on browser console.
+
+# 1.Workflow
+### Policy Holder
+- First Goto BigchainDb testnet, make sure it is working.
+- Goto http://localhost:3001 
+- Login into Metamask
+- In the Dropdown, select "Policy Holder"
+- Enter Username - claimAssist , Password - claimAssist 
+- Select "Create Claim" on the side Menu
+- You can either fill out the Form or click on Autofill at the Top.
+- Once filled, Click on submit.
+- Expected Result : You should get pop up modal saying Claim Successfully added. Click on the link.
+
+### Second Party
+- Click on Metamask and create another account. 
+- Switch to Account 2 
+- Fill the Form and click Submit
+- Expected Result : You should get pop up modal saying Agreement Signed. Click on the link to proceed.
+
+### Police
+- create another Account in Metamask, Switch to Account 3
+- Now open a New tab, and once again goto  http://localhost:3001.
+- Now, in the dropdown select "Admin" and login using the same credentials.
+- Add a new Police Station. 
+- Expected Result : You should get alert message saying New Police Station Added
+- Now goto the previous tab with the Police Form, Fill it up and Submit.
+- Expected Result : You should get a modal saying Police report has been added. Click on the link to proceed.
+
+### Hospital
+- create another Account in Metamask, Switch to Account 4
+- Now open a New tab, and once again goto  http://localhost:3001.
+- Now, in the dropdown select "Admin" and login using the same credentials.
+- Add a new Hospital Station. 
+- Expected Result : You should get alert message saying New Hospital Added
+- Now goto the previous tab with the Hospital Form, Fill it up and Submit.
+- Expected Result : You should get a modal saying Hospital Bill Added.
+
+#### After this the Claim is sent to insurance company. This part is handled by the other team.
 
 
 # Project structure
