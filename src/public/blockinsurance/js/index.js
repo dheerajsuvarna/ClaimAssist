@@ -1,8 +1,9 @@
 function claim() {
 
   event.preventDefault();
-  if(validateForm()){
 
+  if(validateForm()){
+    $('#loading').html('<img src="public/blockinsurance/images/loading.gif"> loading...');
     var jsondata = {};
     var accidentPhotos;
     // var accident_photos;
@@ -15,6 +16,7 @@ function claim() {
             accidentPhotos = e.target.result;S
         };
     }
+    jsondata["Other Person Name"]= $("#otherperson_name").val();
     jsondata["Accident date-time"] = $("#Accident_datetime").val();
     jsondata["policy_holder_remarks"] = $("#policy_holder_remarks").val();
     $("input").each(function($i) {

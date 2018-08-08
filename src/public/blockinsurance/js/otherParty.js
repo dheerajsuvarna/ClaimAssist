@@ -18,16 +18,16 @@ async function getClaim(){
      document.getElementById("policy_holder_remarks").value = file["policy_holder_remarks"];
      document.getElementById("responsible_party").value = file["Responsible party"];
 }
+
 function signAgreement(){
   event.preventDefault();
-    console.log("FILE contents " + JSON.stringify(file))
+    let claim_id = getAllUrlParams().claim_id;
     file["Agreement"] = $("#agreement").val();
     file["Verification remarks"] = $("#verification_remarks").val();
     $.post("/saveClaim", {
         claimObject: file
     },
     function(newBCDBTxId) {
-        console.log("New bigchain Hash" + JSON.stringify(newBCDBTxId))
         addSignature(claim_id, newBCDBTxId);
     });
 }

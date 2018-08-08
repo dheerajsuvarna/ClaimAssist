@@ -52,7 +52,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Police officer</h2>
+                            <h2>Admin</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -63,9 +63,7 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a href="/police"><i class="fa fa-home"></i> Home</a> </li>
-                                <li><a href="/policePendingClaims"><i class="fa fa-edit"></i> Pending Claims </a></li>
-                                <li><a href="/policeClaimHistory"><i class="fa fa-desktop"></i> Claim History</a></li>
+                                <li><a href="/admin"><i class="fa fa-home"></i> Home</a> </li>
                                 <!-- <li><a href="/policeNotifications"><i class="fa fa-table"></i> Notifications</span></a></li> -->
 
                             </ul>
@@ -104,7 +102,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="/public/blockinsurance/images/po.jpg" alt="">Police officer
+                                    <img src="/public/blockinsurance/images/po.jpg" alt="">Admin
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -132,20 +130,20 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h4>Please fill the following form :-</h4>
+                            
                         </div>
 
                     </div>
                     <div class="clearfix"></div>
 
                     <!-- Start - Policy holder form -->
-                    <form id="Police_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="submitPoliceReport();">
+                    <form id="Police_form" data-parsley-validate class="form-horizontal form-label-left">
                         <!-- Start Police station details -->
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>Police station details</h2>
+                                        <h2>Add New Hospital</h2>
                                         <ul class="nav navbar-right panel_toolbox">
                                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                             </li>
@@ -156,27 +154,8 @@
                                     <div class="x_content">
                                         <br />
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="police_station_name">Police station name <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="police_station_name" name="Police station name" class="form-control col-md-7 col-xs-12" value="Police Headquarters Munich">
-                                            </div>
-                                        </div>
                                         <div class="form-group ">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 " for="police_officer_name">Police officer name<span class="required ">*</span></label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <input value="Seidlmier" id="police_officer_name" name="Police officer name" class=" form-control col-md-7 col-xs-12 " required="required " type="Email ">
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group ">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Telephone</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <input id="police_telephone" name="Police telephone" class="form-control col-md-7 col-xs-12 " type="tel" maxlength="10" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                                                <span class="fa fa-phone form-control-feedback right " aria-hidden="true "></span></div>
-                                        </div>
-                                        <div class="form-group ">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Country<span class="required ">*</span></label>
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">New Hospital Address<span class="required ">*</span></label>
                                             <div class="col-md-6 col-sm-6 col-xs-12 ">
                                                 <select name="Police station country" class="form-control" id="police_country">
                                                             <option value="">--Select your country--</option>
@@ -189,109 +168,61 @@
                                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Police station details -->
-                        <!-- Start - Accident details -->
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Accident details</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <br />
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="otherperson_name">Place<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="accident_place" name="Accident place" value="Munich" class="form-control col-md-7 col-xs-12" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Accident_datetime">Date-Time<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="datetime-local" value="20-07-2018" id="Accident_datetime" name="Accident date-time" class="date-picker form-control col-md-7 col-xs-12" readonly>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="p1_name">Person 1</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="p1_name" value="Siddhesh" name="Person 1 name" class="form-control col-md-7 col-xs-12" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="p2_name">Person 2</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="p2_name" value="Jeshwanth" name="Person 2 name" class="form-control col-md-7 col-xs-12" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End - Accident details -->
-                        <!-- Start - Case details -->
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Case details</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <br />
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="case_id">Case id</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="case_id" name="Case id" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-
-
                                         <div class="form-group ">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Charges</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
-                                                <input id="police_charges" name="Police charges" class="form-control col-md-7 col-xs-12 " placeholder="Enter in Euros" type="number" min="0.00" max="10000.00" step="1" />&nbsp;Please enter amount in &euro;
-                                                only
+                                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
+                                                        <!-- <button class="btn btn-primary " type="button ">Cancel</button> -->
+                                                        
+                                                        <button  class="btn btn-success" id="add_police_btn" onclick="addHospitalAddress()">Add Hospital</button>
+                                                    </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Claim_form">Upload Police report</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="file" id="police_report" name="Police report" class="form-control col-md-7 col-xs-12" style="border: none;">
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End- Witness details -->
 
-                        <div class="ln_solid "></div>
-                        <div class="form-group ">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
-                                <!-- <button class="btn btn-primary " type="button ">Cancel</button> -->
-                                <button type="button" class="btn btn-primary" id="modal_police" data-toggle="modal" data-target=".bs-example-modal-lg" style="display:none">Large modal</button>
-                                <button class="btn btn-primary " type="reset ">Reset</button>
-                                <button type="submit" class="btn btn-success " id="submit">Submit</button>
+                        <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="x_panel">
+                                        <div class="x_title">
+                                            <h2>Add New Police Station</h2>
+                                            <ul class="nav navbar-right panel_toolbox">
+                                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                                </li>
+                                                </li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content">
+                                            <br />
+    
+                                            <div class="form-group ">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12 ">New Police Station Address<span class="required ">*</span></label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                                    <select name="Police station country" class="form-control" id="police_country">
+                                                                <option value="">--Select your country--</option>
+                                                                <option value="Belgium">Belgium</option>
+                                                                <option value="Croatia">Croatia</option>
+                                                                <option value="Czech Republic">Czech Republic</option>
+                                                                <option value="Egypt">Egypt</option>
+                                                                <option value="France">France</option>
+                                                                <option value="Germany" selected="selected">Germany</option>
+                                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 ">
+                                                            <!-- <button class="btn btn-primary " type="button ">Cancel</button> -->
+                                                           
+                                                            <button  class="btn btn-success" id="add_police_btn" onclick="addPoliceAddress()">Add Police</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        
+                        <div class="ln_solid "></div>
+
 
 
                     </form>
@@ -301,33 +232,7 @@
                 </div>
             </div>
 
-
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-    
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                  </button>
-                                <h4 class="modal-title" id="myModalLabel">Added Police Report</h4>
-                            </div>
-                            <div class="modal-body">
-                                <h4>You have successfully added the police report to the Claim</h4>
-                                <div id="successPara">
-                                    <p>To check how the hospital will Handle the case Please</a>
-                                    <a href="#" id="hospitalLink">Click Here</a>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">
-                                            <a href="">submit</a></button>
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-
+            
             <!-- jQuery -->
             <script src="/public/blockinsurance/js/index.js "></script>
             <script src="/public/blockinsurance/vendors/jquery/dist/jquery.min.js "></script>
@@ -366,7 +271,7 @@
             <script src="/public/blockinsurance/js/custom.min.js "></script>
             <script src="public/blockinsurance/js/web3.min.js"></script>
             <script src="public/blockinsurance/js/truffle-contract.js"></script>
-            <script src="/public/blockinsurance/js/police.js "></script>
+            <script src="/public/blockinsurance/js/admin.js "></script>
             <script src="public/blockinsurance/js/contract.js" type="text/javascript" ></script>
 
 </body>

@@ -39,6 +39,7 @@
 
                             <select name="Role" class="form-control" id="role" required>
                                                         <option value="">--Select your role--</option>
+                                                        <option value="Admin">Admin</option>
                                                         <option value="Policy Holder">Policy Holder</option>
                                                         <option value="Police">Police</option>
                                                         <option value="Hospital">Hospital</option>
@@ -92,6 +93,7 @@
 
                             <select name="Role" class="form-control" id="role" required>
                                                         <option value="">--Select your role--</option>
+                                                        <option value="Admin">Admin</option>
                                                         <option value="Policy Holder">Policy Holder</option>
                                                         <option value="Police">Police</option>
                                                         <option value="Hospital">Hospital</option>
@@ -138,6 +140,9 @@
             }
             if ($("#role").val() == "Hospital") {
                 $("#logina").attr("href", "/loginAccount/hospital");
+            }
+            if ($("#role").val() == "Admin") {
+                $("#logina").attr("href", "/loginAccount/admin");
             }
         });
     });

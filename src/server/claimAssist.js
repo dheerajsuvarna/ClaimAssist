@@ -11,6 +11,7 @@ routerClaimAssist.get('/', function(req, res) {
 
 routerClaimAssist.post('/saveClaim', function(req, res) {
     let claimDetails = req.body.claimObject;
+    console.log("Claim Details", claimDetails)
     ipfs.store(claimDetails)
     .then(function(ipfs_hash){
         return bcdb.saveHashToBCDB(ipfs_hash)
@@ -50,6 +51,8 @@ routerClaimAssist.get('/loginAccount/:role', function(req, res) {
     let role = req.params.role;
     if(role == 'policyHolder'){
         res.redirect('/policyHolder');
+    }else if(role == 'admin'){
+        res.redirect('/admin');
     }else if(role == 'police'){
         res.redirect('/police');
     }else if(role == 'hospital'){
@@ -146,6 +149,12 @@ routerClaimAssist.get('/projectDetail', function(req, res) {
 
 routerClaimAssist.get('/claimStatus', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/blockinsurance/Claim_status.html'));
+});
+
+/* ========================================== Admin ========================================================*/
+
+routerClaimAssist.get('/admin', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/blockinsurance/adminForm.html'));
 });
 
 module.exports = routerClaimAssist;

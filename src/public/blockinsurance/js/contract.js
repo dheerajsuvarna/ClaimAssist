@@ -28,6 +28,7 @@ addClaimOnBlockchain = function(claimId, bigChainHash) {
         var element = document.getElementById("successPara");
         document.getElementById("otherPartyLink").href="http://localhost:3001/otherParty?claim_id="+claimId;
         element.appendChild(para);
+        $('#loading').html();
         $('#modal').trigger('click');
       }).catch(function(err) {
         console.log(err);
@@ -68,7 +69,6 @@ function getFile(claimId)  {
 }
 
 addSignature = function(claimId, newBigChainHash) {
-  console.log("Inside Agreement")
   $.getJSON('/public/contracts/AgreementContract.json', function (data) {
 
     var AgreementArtifact = data;
@@ -82,21 +82,14 @@ addSignature = function(claimId, newBigChainHash) {
         console.log(error);
       }
       var otherParty = accounts[0];
-      App.contracts.AgreementContract.deployed().then(function(instance) {
+        App.contracts.AgreementContract.deployed().then(function(instance) {
         AgreementInstance = instance;
         return AgreementInstance.signDocument(claimId, newBigChainHash ,{from: otherParty});
       }).then(function(response) {
         console.log("Signing successful!");
         console.log("Signature added to claim with id: " + claimId);
-        var event = AgreementInstance.AgreementStatus();
-        event.watch(function(error, result){
-          // result will contain various information
-          // including the argumets given to the `ClaimStatus`
-          // call.
-          if (!error)
-          console.log(result.args);
-          console.log(JSON.stringify(result.args));
-        });
+        document.getElementById("policeLink").href="http://localhost:3001/policeForm?claim_id="+claimId;
+        $('#modal_otherParty').trigger('click');
       }).catch(function(err) {
         console.log(err.message);
       });
@@ -145,12 +138,16 @@ addReportOnBlockchain = function(claimId, newbigChainHash) {
       if (error) {
         console.log(error);
       }
-      var Police = "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef";
+      var Police = accounts[0];
       App.contracts.PoliceContract.deployed().then(function(instance) {
         PoliceInstance = instance;
+        console.log("Claim ID", claimId);
+        console.log("newbigChainHash", newbigChainHash);
         return PoliceInstance.addPoliceReport(claimId, newbigChainHash,{from: Police});
       }).then(function(response) {
         console.log("Police report added to claim ID: " + claimId);
+        document.getElementById("policeLink").href="http://localhost:3001/hospitalForm?claim_id="+claimId;
+        $('#modal_police').trigger('click');
       }).catch(function(err) {
         console.log(err.message);
       });
@@ -177,6 +174,7 @@ addPolice = function(_newPoliceAddress) {
         return ManagerInstance.addPoliceToRegistry(_newPoliceAddress);
       }).then(function(response) {
         console.log("Police added having address ====> " + _newPoliceAddress);
+        alert("New Police Station Added : " +_newHospitalAddress )
       }).catch(function(err) {
         console.log(err.message);
       });
@@ -199,12 +197,13 @@ addBillOnBlockchain = function(claimId, newbigChainHash) {
       if (error) {
         console.log(error);
       }
-      var Hospital = "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544";
+      var Hospital = accounts[0];
       App.contracts.HospitalContract.deployed().then(function(instance) {
         HospitalInstance = instance;
         return HospitalInstance.addHospitalBill(claimId, newbigChainHash,{from: Hospital});
       }).then(function(response) {
         console.log("Hospital bill added to claim ID: " + claimId);
+        $('#modal_hospital').trigger('click');
       }).catch(function(err) {
         console.log(err.message);
       });
@@ -231,6 +230,7 @@ addHospital = function(_newHospitalAddress) {
         return ManagerInstance.addHospitalToRegistry(_newHospitalAddress);
       }).then(function(response) {
         console.log("Hospital added having address ====> " + _newHospitalAddress);
+        alert("New Hospital Added : " +_newHospitalAddress )
       }).catch(function(err) {
         console.log(err.message);
       });
