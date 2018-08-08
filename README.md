@@ -125,7 +125,7 @@ If any injuries are involved in the accident the Hospital also will come into th
 - In truffle console, run - `migrate` - this migrates the smart contracts to the test network
 - Now for our Hub and spoke model to work, copy the deployed address of "ClaimStorage" contract and paste it in the other contracts (claim.sol,agreement.sol,police.sol,hospital.sol,claimManger.sol).
 
-# 1.Workflow
+# 2.Workflow
 ### Policy Holder
 - First Goto BigchainDb testnet, make sure it is working.
 - Goto http://localhost:3001 
