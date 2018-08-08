@@ -146,7 +146,7 @@ addReportOnBlockchain = function(claimId, newbigChainHash) {
         return PoliceInstance.addPoliceReport(claimId, newbigChainHash,{from: Police});
       }).then(function(response) {
         console.log("Police report added to claim ID: " + claimId);
-        document.getElementById("policeLink").href="http://localhost:3001/hospitalForm?claim_id="+claimId;
+        document.getElementById("hospitalLink").href="http://localhost:3001/hospitalForm?claim_id="+claimId;
         $('#modal_police').trigger('click');
       }).catch(function(err) {
         console.log(err.message);
