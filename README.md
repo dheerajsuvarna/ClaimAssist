@@ -9,6 +9,10 @@ Claim assist is a secure, decentralized application to handle all the claims set
 In the current scenario when an accident occurs, the two parties involved have to go through the entire rigorous and time-consuming process of claim settlement, starting from form filling to claim generation. To facilitate the policyholders, we have developed a web application that is automated, secure and easy to use. Further, we have used blockchain technology for handling the claim data which makes it fully tamperproof and reliable.
 
 
+
+
+- Product Video : https://youtu.be/gx99WNYOvns
+
 ## Table of Contents
 -----------------------------
 - [Included Components](#included-components)
@@ -24,7 +28,8 @@ In the current scenario when an accident occurs, the two parties involved have t
   * [Police Report](#police-report)
   * [Hospital Report](#hospital-report)
 - [Steps](#steps)
-  * [1.Run the application](#1run-the-application)
+  * [1.Run the application](#1 Setup the Application)
+  * [2.Workflow](#2 Workflow)
 - [Project structure](#project-structure)
 
     
